@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anexos Curriculares de Inteligencia Artificial</title>
+  <title>Anexo Curricular de Inteligencia Artificial</title>
   <meta name="description" content="Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario del Ministerio de Educacion de la Ciudad Autonoma de Buenos Aires." />
   <style>
     :root {
@@ -30,10 +30,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--azul-oscuro);
-      background:
-        radial-gradient(circle at 12% 16%, rgba(141, 226, 214, 0.78) 0 10rem, transparent 10.2rem),
-        radial-gradient(circle at 88% 84%, rgba(255, 102, 196, 0.44) 0 9rem, transparent 9.2rem),
-        linear-gradient(135deg, var(--blanco) 0%, #F8FBFA 46%, rgba(141, 226, 214, 0.32) 100%);
+      background: var(--azul-oscuro);
     }
 
     main {
@@ -55,13 +52,23 @@
       box-shadow: 0 24px 70px var(--sombra);
     }
 
-    h1 {
-      max-width: 850px;
+    .ministerio {
       margin: 0;
       color: var(--azul-oscuro);
-      font-size: clamp(2rem, 5vw, 4.6rem);
-      line-height: 1.02;
+      font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto;
+      color: var(--azul-oscuro);
+      font-size: clamp(1.9rem, 4vw, 3.5rem);
+      line-height: 1.08;
       letter-spacing: 0;
+      text-align: center;
     }
 
     .texto {
@@ -77,6 +84,7 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+      justify-content: center;
       padding-top: 6px;
     }
 
@@ -142,9 +150,10 @@
 <body>
   <main>
     <section class="landing" aria-labelledby="titulo">
-      <h1 id="titulo">Anexos Curriculares de Inteligencia Artificial</h1>
+      <p class="ministerio">Ministerio de Educación de la Ciudad Autónoma de Buenos Aires</p>
+      <h1 id="titulo">Anexo Curricular de Inteligencia Artificial</h1>
       <p class="texto">
-        El Ministerio de Educación de la Ciudad Autónoma de Buenos Aires presenta los Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario. Basada en los Diseños Curriculares vigentes, esta propuesta organiza una progresión continua desde 1.° grado de la primaria hasta 5.° año de la secundaria, con un claro foco en la alfabetización y enmarcada firmemente en la protección digital. A través de un enfoque que promueve el pensamiento crítico, ético y situado frente a las tecnologías, se busca fortalecer la autonomía de los estudiantes para formar ciudadanos críticos, responsables y preparados para los desafíos de la actualidad.
+        El Ministerio de Educación de la Ciudad Autónoma de Buenos Aires presenta los Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario. Basada en los Diseños Curriculares vigentes, esta propuesta organiza una <strong>progresión continua desde 1.° grado de la primaria hasta 5.° año de la secundaria</strong>, con un claro foco en la alfabetización y enmarcada firmemente en la protección digital. A través de un enfoque que promueve el pensamiento crítico, ético y situado frente a las tecnologías, se busca <strong>fortalecer la autonomía de los estudiantes</strong> para formar ciudadanos críticos, responsables y preparados para los desafíos de la actualidad.
       </p>
       <div class="acciones" aria-label="Accesos a anexos curriculares">
         <a class="boton boton-primario" href="primario.html">Anexo curricular Nivel Primario</a>
