@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anexos Curriculares de Inteligencia Artificial</title>
+  <meta name="description" content="Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario del Ministerio de Educacion de la Ciudad Autonoma de Buenos Aires." />
+  <style>
+    :root {
+      --amarillo: #FFCC00;
+      --azul-oscuro: #153244;
+      --celeste: #8DE2D6;
+      --blanco: #FFFFFF;
+      --negro: #3C3C3B;
+      --fucsia: #FF66C4;
+      --sombra: rgba(21, 50, 68, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--azul-oscuro);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--azul-oscuro);
+      background:
+        radial-gradient(circle at 12% 16%, rgba(141, 226, 214, 0.78) 0 10rem, transparent 10.2rem),
+        radial-gradient(circle at 88% 84%, rgba(255, 102, 196, 0.44) 0 9rem, transparent 9.2rem),
+        linear-gradient(135deg, var(--blanco) 0%, #F8FBFA 46%, rgba(141, 226, 214, 0.32) 100%);
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+    }
+
+    .landing {
+      width: min(100%, 980px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: clamp(28px, 6vw, 64px);
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid rgba(21, 50, 68, 0.12);
+      border-radius: 8px;
+      box-shadow: 0 24px 70px var(--sombra);
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      color: var(--azul-oscuro);
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .texto {
+      max-width: 860px;
+      margin: 0;
+      color: var(--negro);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      line-height: 1.65;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      padding-top: 6px;
+    }
+
+    .boton {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 20px;
+      color: var(--azul-oscuro);
+      border: 2px solid var(--azul-oscuro);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .boton:hover,
+    .boton:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 var(--azul-oscuro);
+      outline: none;
+    }
+
+    .boton:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 0 var(--azul-oscuro);
+    }
+
+    .boton-primario {
+      background: var(--celeste);
+    }
+
+    .boton-secundario {
+      background: var(--fucsia);
+    }
+
+    @media (max-width: 640px) {
+      main {
+        align-items: stretch;
+        padding: 14px;
+      }
+
+      .landing {
+        min-height: calc(100vh - 28px);
+        justify-content: center;
+      }
+
+      .acciones {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .boton {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="landing" aria-labelledby="titulo">
+      <h1 id="titulo">Anexos Curriculares de Inteligencia Artificial</h1>
+      <p class="texto">
+        El Ministerio de Educación de la Ciudad Autónoma de Buenos Aires presenta los Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario. Basada en los Diseños Curriculares vigentes, esta propuesta organiza una progresión continua desde 1.° grado de la primaria hasta 5.° año de la secundaria, con un claro foco en la alfabetización y enmarcada firmemente en la protección digital. A través de un enfoque que promueve el pensamiento crítico, ético y situado frente a las tecnologías, se busca fortalecer la autonomía de los estudiantes para formar ciudadanos críticos, responsables y preparados para los desafíos de la actualidad.
+      </p>
+      <div class="acciones" aria-label="Accesos a anexos curriculares">
+        <a class="boton boton-primario" href="primario.html">Anexo curricular Nivel Primario</a>
+        <!-- Reemplazar el href cuando este publicada la landing/repositorio de Nivel Secundario. -->
+        <a class="boton boton-secundario" href="https://REEMPLAZAR-CON-LA-URL-DEL-GITHUB-SECUNDARIO">Anexo curricular Nivel Secundario</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
