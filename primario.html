@@ -105,7 +105,14 @@
   .cycle-row { padding:10px 0; }
   .cycle-row + .cycle-row { border-top:1px solid #f1f5f9; }
   .cycle-row .glabel { font-size:11px; font-weight:600; padding:2px 8px; border-radius:999px; border:1px solid; display:inline-block; margin-bottom:4px; }
-  .cycle-row h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:3px; }
+  .cycle-row h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:3px; display:flex; align-items:center; gap:6px; }
+  .heading-icon, .rub-icon { width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:currentColor; }
+  .heading-icon svg, .rub-icon svg, .line-icon { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .line-icon { width:20px; height:20px; }
+  .star { width:12px; height:12px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--fucsia); line-height:1; }
+  .star::before { content:""; width:8px; height:8px; border:1.8px solid currentColor; border-radius:2px; transform:rotate(45deg); }
+  .note-star { margin-right:2px; vertical-align:-1px; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   .cycle-row p { font-size:12px; color:#475569; }
   .ejes-section { margin-top:24px; padding-top:24px; border-top:1px solid #e2e8f0; }
   .ejes-title { text-align:center; font-size:18px; font-weight:700; color:#1e293b; margin-bottom:16px; }
@@ -340,7 +347,7 @@
     </button>
     <button class="tab-btn" data-tab="secuencias" onclick="showTab('secuencias',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
-      Secuencias didácticas
+      Materiales para el aula
     </button>
     <button class="tab-btn" data-tab="anexo" onclick="showTab('anexo',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg>
@@ -381,12 +388,12 @@
         <div class="cycle-card-body">
           <div class="cycle-row">
             <span class="glabel badge-pur">1.° y 2.°</span>
-            <h4>👁 Percibir y nombrar</h4>
+            <h4><span class="heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>Percibir y nombrar</h4>
             <p>Descubrir y nombrar la presencia de la IA en dispositivos del hogar y el aula (como asistentes de voz o recomendaciones de videos) para reconocer qué funciones cumplen. Actividades lúdicas y narrativas guiadas.</p>
           </div>
           <div class="cycle-row">
             <span class="glabel badge-pur">3.°</span>
-            <h4>✋ Explorar e interactuar</h4>
+            <h4><span class="heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 11V6a2 2 0 0 1 4 0v5"/><path d="M11 10V5a2 2 0 0 1 4 0v7"/><path d="M15 11V7a2 2 0 0 1 4 0v6c0 5-3 8-7 8h-1c-2.5 0-4.5-1.2-6-3.2L3 15a2 2 0 0 1 3.2-2.4L8 15"/></svg></span>Explorar e interactuar</h4>
             <p>Formular las primeras preguntas críticas ante una respuesta de la IA (por ejemplo: "¿Por qué la IA dio esa respuesta?") para empezar a evaluar sus posibilidades y riesgos</p>
           </div>
         </div>
@@ -396,12 +403,12 @@
         <div class="cycle-card-body">
           <div class="cycle-row">
             <span class="glabel badge-tea">4.° y 5.°</span>
-            <h4>🎨 Explorar y cuestionar</h4>
+            <h4><span class="heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 1.3-3.5 1.8 1.8 0 0 1 1.2-3.2H18a3 3 0 0 0 3-3.1C20.8 6.6 16.8 3 12 3Z"/><circle cx="7.5" cy="10" r=".8"/><circle cx="10" cy="7.5" r=".8"/><circle cx="14" cy="7.5" r=".8"/></svg></span>Explorar y cuestionar</h4>
             <p>Explorar la IA como un insumo en proyectos de clase. Conversar sobre la confianza en lo que se lee, reconocer errores (alucinaciones) y ensayar primeras preguntas (prompts) con mediación docente.</p>
           </div>
           <div class="cycle-row">
             <span class="glabel badge-tea">6.° y 7.°</span>
-            <h4>🧠 Debatir y analizar</h4>
+            <h4><span class="heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></span>Debatir y analizar</h4>
             <p>Realizar experimentaciones críticas para identificar sesgos algorítmicos derivados del entrenamiento humano. Debatir sobre la transparencia y el valor de la autoría humana original en producciones colaborativas.</p>
           </div>
         </div>
@@ -449,7 +456,7 @@
             <li><span class="dot dot-pur"></span>Participa en conversaciones mediadas por el docente para reconocer cómo la IA está presente en nuestra vida cotidiana</li>
             <li><span class="dot dot-pur"></span>Percibe y nombra objetos o aplicaciones del hogar y la escuela que funcionan con ayuda de la IA.</li>
             <li><span class="dot dot-pur"></span>A través de actividades lúdicas y con mediación docente, empieza a preguntarse cómo funcionan estas tecnologías.</li>
-           <li><span class="dot dot-pur"></span><span class="star">⭐</span> Observa cómo una máquina puede identificar dibujos y patrones para entender que "aprende" a partir de ejemplos.</li>
+           <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Observa cómo una máquina puede identificar dibujos y patrones para entender que "aprende" a partir de ejemplos.</li>
           </ul>
         </div>
       </div>
@@ -466,7 +473,7 @@
           <ul class="dot-list">
             <li><span class="dot dot-pur"></span>Con mediación docente, conversa sobre cómo la IA puede ayudar a las personas en sus tareas diarias.</li>
             <li><span class="dot dot-pur"></span>Reconoce y nombra máquinas que realizan tareas de forma automática en distintos espacios de su entorno.</li>
-            <li><span class="dot dot-pur"></span><span class="star">⭐</span> Observa cómo la IA y los robots industriales realizan tareas repetitivas sin cansarse, como sucede con los asistentes de respuesta (chatbots).</li>
+            <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Observa cómo la IA y los robots industriales realizan tareas repetitivas sin cansarse, como sucede con los asistentes de respuesta (chatbots).</li>
           </ul>
         </div>
       </div>
@@ -505,7 +512,7 @@
             <li><span class="dot dot-pur"></span>Identifica y nombra con sus palabras algunas reglas simples de cómo funciona la IA, como su capacidad de encontrar patrones.</li>
             <li><span class="dot dot-pur"></span>Descubre y señala ejemplos de IA en objetos o situaciones que observa en su casa o en la escuela.</li>
             <li><span class="dot dot-pur"></span>Reconoce los cuidados necesarios al usar tecnología e IA en la escuela y con su familia.</li>
-            <li><span class="dot dot-pur"></span><span class="star">⭐</span> Formula sus primeras preguntas sobre qué es verdad y qué no en las respuestas de la IA, reconociendo que puede tener errores.</li>
+            <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Formula sus primeras preguntas sobre qué es verdad y qué no en las respuestas de la IA, reconociendo que puede tener errores.</li>
           </ul>
         </div>
       </div>
@@ -528,7 +535,7 @@
     </div>
 
     <div class="leyenda-estrella">
-      <span>⭐</span> <strong>Nota:</strong> Las competencias marcadas con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
+      <span class="star note-star" aria-label="Profundización/Ampliación"></span> <strong>Nota:</strong> Las competencias marcadas con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
     </div>
 
     <div class="warn-box" style="margin-top:16px">
@@ -589,7 +596,7 @@
             Busca datos sobre autores y compositores utilizando diferentes recursos digitales e IA, evaluando la información obtenida junto al docente. Música.
         </li>
         <li>
-            <span class="dot"></span><span class="star">⭐</span>
+            <span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span>
             Bajo guía docente, explora las posibilidades de los modelos generativos para crear o transformar imágenes mediante consignas simples (prompts) y avatares. Artes Visuales.
         </li>
       </ul>
@@ -599,8 +606,8 @@
       <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
       <ul class="dot-list">
         <li><span class="dot"></span>Identifica qué es la IA y observa cómo funciona en aplicaciones comunes, como los sistemas que nos recomiendan videos o canciones.</li>
-        <li><span class="dot"></span><span class="star">⭐</span> Con acompañamiento docente, explora herramientas como filtros o asistentes para acercarse a la idea de cómo las máquinas "aprenden" (aprendizaje automático)</li>
-        <li><span class="dot"></span><span class="star">⭐</span> Conversa —con mediación docente— sobre los riesgos de crear contenido falso con IA y reconoce que existe la autoría en las obras que circulan en Internet.</li>
+        <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Con acompañamiento docente, explora herramientas como filtros o asistentes para acercarse a la idea de cómo las máquinas "aprenden" (aprendizaje automático)</li>
+        <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Conversa —con mediación docente— sobre los riesgos de crear contenido falso con IA y reconoce que existe la autoría en las obras que circulan en Internet.</li>
       </ul>
     </div>
   </div>
@@ -672,7 +679,7 @@
     <div class="card sub-panel" id="seg-g45">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (4.° y 5.°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>De forma grupal y con guía docente, investiga en entornos digitales e IA aplicando estrategias para buscar, seleccionar y validar información, reconociendo que estos sistemas pueden generar errores o  "alucinaciones".</li><li><span class="dot"></span>Identifica cómo se organiza la información y los contenidos digitales, reconociendo —con ayuda del docente— las particularidades de los entornos que utilizan sistemas de IA.</li><li><span class="dot"></span>Participa en experiencias colectivas de generación de contenidos con IA, analizando junto al docente cómo estos sistemas procesan patrones para producir respuestas que parecen humanas.</li><li><span class="dot"></span>Identifica y conversa sobre las nuevas formas de vincularnos en la cultura digital, reconociendo —con mediación docente— qué retos y posibilidades abren la interconexión y los sistemas de IA.</li><li><span class="dot"></span><span class="star">⭐</span> Analiza junto al docente situaciones de usos no éticos de la IA, como la creación de contenidos o imágenes falsas, para comprender la importancia de actuar con responsabilidad y cuidado en Internet.</li></ul></div>
+          <ul class="dot-list"><li><span class="dot"></span>De forma grupal y con guía docente, investiga en entornos digitales e IA aplicando estrategias para buscar, seleccionar y validar información, reconociendo que estos sistemas pueden generar errores o  "alucinaciones".</li><li><span class="dot"></span>Identifica cómo se organiza la información y los contenidos digitales, reconociendo —con ayuda del docente— las particularidades de los entornos que utilizan sistemas de IA.</li><li><span class="dot"></span>Participa en experiencias colectivas de generación de contenidos con IA, analizando junto al docente cómo estos sistemas procesan patrones para producir respuestas que parecen humanas.</li><li><span class="dot"></span>Identifica y conversa sobre las nuevas formas de vincularnos en la cultura digital, reconociendo —con mediación docente— qué retos y posibilidades abren la interconexión y los sistemas de IA.</li><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Analiza junto al docente situaciones de usos no éticos de la IA, como la creación de contenidos o imágenes falsas, para comprender la importancia de actuar con responsabilidad y cuidado en Internet.</li></ul></div>
       </div>
 
     
@@ -683,9 +690,9 @@
           <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
           <ul class="dot-list">
             <li><span class="dot"></span>Indaga el funcionamiento de buscadores y sistemas de IA bajo guía docente, para analizar cómo la lógica de la herramienta condiciona el tipo de resultado obtenido.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación">⭐</span> Participa en el ensayo colectivo de consignas (prompts), observando cómo pequeñas variaciones en el texto modifican las respuestas probabilísticas del sistema.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación">⭐</span> Contrasta, con mediación del docente, la información de fuentes tradicionales con la generada por IA para comprender las diferencias entre la verificación de hechos y el procesamiento de patrones.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación">⭐</span> En grupo y con guía docente, analiza las respuestas de la IA generativa para identificar mecánicas de "alucinación", discutiendo por qué el sistema prioriza completar el texto sobre la verdad.</li>
+            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> Participa en el ensayo colectivo de consignas (prompts), observando cómo pequeñas variaciones en el texto modifican las respuestas probabilísticas del sistema.</li>
+            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> Contrasta, con mediación del docente, la información de fuentes tradicionales con la generada por IA para comprender las diferencias entre la verificación de hechos y el procesamiento de patrones.</li>
+            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> En grupo y con guía docente, analiza las respuestas de la IA generativa para identificar mecánicas de "alucinación", discutiendo por qué el sistema prioriza completar el texto sobre la verdad.</li>
           </ul>
         </div>
         <div class="campo"><div class="campo-h"><span class="badge badge-pur">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -693,11 +700,11 @@
         <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Investiga —en un marco de trabajo colaborativo— cómo la IA y la Robótica transforman la sociedad, comparando estos cambios con hitos tecnológicos de la historia.</li></ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística | Artes Visuales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span><span class="star">⭐</span> Indaga, con guía docente, en las herramientas de edición con IA para comprender cómo los modelos matemáticos transforman imágenes a partir de comandos textuales.</li></ul></div>
+          <ul class="dot-list"><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Indaga, con guía docente, en las herramientas de edición con IA para comprender cómo los modelos matemáticos transforman imágenes a partir de comandos textuales.</li></ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística | Música</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Con mediación docente, explora modelos generativos de audio para analizar la mecánica de traducción de datos en sonidos y debatir sobre el concepto de autoría.</li></ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Investiga junto al docente el funcionamiento de tecnologías emergentes como la IA, para conversar sobre cómo estos desarrollos impactan en nuestra vida cotidiana y en la sociedad.</li><li><span class="dot"></span>En grupo, analiza el funcionamiento de la IA para identificar cómo se repiten estereotipos (de género, corporales o lingüísticos) y problematizar el entrenamiento de estos sistemas a partir de datos humanos.</li><li><span class="dot"></span>Con guía docente y de forma grupal, debate sobre los cambios en la sociedad frente al avance de la automatización y la IA, reflexionando sobre el rol central de las personas en las tareas que delegan a las máquinas.</li><li><span class="dot"></span><span class="star">⭐</span>Usa IA como asistente para resolver problemas de Programación.</li></ul></div>
+          <ul class="dot-list"><li><span class="dot"></span>Investiga junto al docente el funcionamiento de tecnologías emergentes como la IA, para conversar sobre cómo estos desarrollos impactan en nuestra vida cotidiana y en la sociedad.</li><li><span class="dot"></span>En grupo, analiza el funcionamiento de la IA para identificar cómo se repiten estereotipos (de género, corporales o lingüísticos) y problematizar el entrenamiento de estos sistemas a partir de datos humanos.</li><li><span class="dot"></span>Con guía docente y de forma grupal, debate sobre los cambios en la sociedad frente al avance de la automatización y la IA, reflexionando sobre el rol central de las personas en las tareas que delegan a las máquinas.</li><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span>Usa IA como asistente para resolver problemas de Programación.</li></ul></div>
       </div>
     </div>
 
@@ -712,7 +719,7 @@
           <ul class="dot-list">
             <li><span class="dot"></span>Participa en el ensayo de consignas (prompts) bajo guía docente para observar cómo la IA procesa nuevos datos sobre un tema conocido, analizando la lógica de sus respuestas probabilísticas.</li>
             <li><span class="dot"></span>Con guía docente, analiza las funciones de autocompletar o sugerencias de escritura para comprender cómo el sistema predice palabras basándose en patrones estadísticos y facilitar tareas de revisión.</li>
-            <li><span class="dot"></span><span class="star">⭐</span> De forma grupal y con mediación docente, analiza críticamente los resultados de la IA para evaluar su pertinencia y detectar posibles "alucinaciones", comparando la información producida con fuentes verificadas y conocimientos previos.</li>
+            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> De forma grupal y con mediación docente, analiza críticamente los resultados de la IA para evaluar su pertinencia y detectar posibles "alucinaciones", comparando la información producida con fuentes verificadas y conocimientos previos.</li>
           </ul>
         </div>
 
@@ -746,8 +753,8 @@
           </div>
           <ul class="dot-list">
             <li><span class="dot"></span>En grupo y con mediación docente, reflexiona sobre la interacción consciente en el ciberespacio y el lugar del cuerpo en las artes, analizando los derechos y responsabilidades éticas al utilizar IA en la creación estética.</li>
-            <li><span class="dot"></span><span class="star">⭐</span> Con guía docente y de forma colaborativa, analiza cómo la IA y otras tecnologías transformaron la producción y circulación del arte, debatiendo sobre la transparencia y el valor de la autoría humana original. (Artes Visuales) </li>
-            <li><span class="dot"></span><span class="star">⭐</span> En grupo y con mediación docente, debate sobre la legislación actual y los derechos de autor en obras creadas con asistencia de IA, reconociendo la propiedad intelectual como un valor humano central.</li>
+            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Con guía docente y de forma colaborativa, analiza cómo la IA y otras tecnologías transformaron la producción y circulación del arte, debatiendo sobre la transparencia y el valor de la autoría humana original. (Artes Visuales) </li>
+            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> En grupo y con mediación docente, debate sobre la legislación actual y los derechos de autor en obras creadas con asistencia de IA, reconociendo la propiedad intelectual como un valor humano central.</li>
           </ul>
         </div>
         <div class="campo">
@@ -756,7 +763,7 @@
             <span class="ej ej-am">Alfabetizaciones Múltiples</span>
           </div>
           <ul class="dot-list">
-             <li><span class="dot"></span><span class="star">⭐</span> Indaga colectivamente las posibilidades de los modelos generativos de audio, analizando cómo estos sistemas procesan grandes volúmenes de datos para generar sonidos.</li>
+             <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Indaga colectivamente las posibilidades de los modelos generativos de audio, analizando cómo estos sistemas procesan grandes volúmenes de datos para generar sonidos.</li>
           </ul>
         </div>
         <div class="campo">
@@ -773,7 +780,7 @@
           <ul class="dot-list">
             <li><span class="dot"></span>Indaga en la resolución de problemas de diseño en entornos de Industria 4.0 y Robótica, utilizando la IA como una herramienta de apoyo para iterar soluciones bajo guía docente.</li>
             <li><span class="dot"></span>En grupo y con guía docente, analiza dilemas éticos en el uso de IA e identifica cómo el entrenamiento automático puede reproducir sesgos, promoviendo un diseño inclusivo y responsable.</li>
-            <li><span class="dot"></span><span class="star">⭐</span> Bajo guía docente, ensaya el uso de IA generativa como asistente para la producción de código, evaluando críticamente la lógica del software sugerido y detectando posibles errores o alucinaciones.</li>
+            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Bajo guía docente, ensaya el uso de IA generativa como asistente para la producción de código, evaluando críticamente la lógica del software sugerido y detectando posibles errores o alucinaciones.</li>
           </ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Conoce el funcionamiento básico de motores de búsqueda y sistemas de IA conversacionales. Con guía docente, evalúa resultados según cómo se formula la búsqueda.</li></ul></div>
@@ -788,7 +795,7 @@
     </div>
 
     <div class="leyenda-estrella">
-      <span>⭐</span> <strong>Nota:</strong> Los contenidos marcados con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
+      <span class="star note-star" aria-label="Profundización/Ampliación"></span> <strong>Nota:</strong> Los contenidos marcados con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
     </div>
 
     <div class="warn-box">
@@ -800,15 +807,15 @@
   <div class="panel" id="panel-etico">
     <p class="etico-intro">Este eje se centra en la alfabetización conceptual para comprender cómo la inteligencia artificial impacta en nuestra cultura y sociedad. El objetivo es desmitificar la herramienta, pasando de una narrativa de "magia" a una de "mecánica", donde se reconoce que la IA no piensa ni siente, sino que procesa patrones de datos generados por humanos.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🧠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#fffbeb"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#eff6ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#f5f3ff">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#f5f3ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#ecfdf5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 7.5l3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🌐</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -826,15 +833,15 @@
     <p class="etico-intro">La Protección Digital Infantil y Adolescente (PDIyA) es una línea estratégica prioritaria del Ministerio de Educación de la Ciudad de Buenos Aires, enmarcada en el Plan «Buenos Aires Aprende» (2024-2027) y el Diseño Curricular de Educación Digital. Su objetivo es garantizar condiciones de seguridad, bienestar y ejercicio pleno de derechos para niños y adolescentes dentro de los entornos digitales.</p>
     <p class="etico-intro">Este eje es transversal y busca mitigar los riesgos de los sistemas digitales. Si bien no se promueve un uso autónomo de la IA, la escuela debe actuar como un espacio de alfabetización digital que dé herramientas para la vida cotidiana. Se trata de convertir a la tecnología en objeto de estudio para que los niños identifiquen cómo sus datos y su integridad pueden verse afectados, incluso en interacciones guiadas o en usos recreativos fuera de la escuela.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Resguardo de la privacidad</span></div><p class="principio-desc">Comprender que, en cualquier interacción, los sistemas de IA procesan información para entrenar sus modelos. Aplicar el criterio “Mis datos son míos” para entender que no se deben ingresar nombres, fotos o secretos, ya que la IA no “olvida” ni “entiende” la privacidad humana.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#eff6ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Resguardo de la privacidad</span></div><p class="principio-desc">Comprender que, en cualquier interacción, los sistemas de IA procesan información para entrenar sus modelos. Aplicar el criterio “Mis datos son míos” para entender que no se deben ingresar nombres, fotos o secretos, ya que la IA no “olvida” ni “entiende” la privacidad humana.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fef2f2">⚠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alucinaciones como fallas mecánicas</span></div><p class="principio-desc">Reconocer que los sistemas de IA priorizan completar patrones de texto y cálculos probabilísticos por sobre la verdad, lo que puede generar datos, citas o hechos históricos totalmente inventados ("alucinaciones").</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#fef2f2"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alucinaciones como fallas mecánicas</span></div><p class="principio-desc">Reconocer que los sistemas de IA priorizan completar patrones de texto y cálculos probabilísticos por sobre la verdad, lo que puede generar datos, citas o hechos históricos totalmente inventados ("alucinaciones").</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🧩</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Detección de trucos y engaños</span></div><p class="principio-desc">Identificar que los sistemas pueden ser “engañados” o manipulados para romper sus reglas de seguridad. La tecnología es un software manipulable, no una entidad infalible o mágica.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#fffbeb"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v5h2a3 3 0 1 1 0 6h-2v7H8v-5H6a3 3 0 1 1 0-6h2V3Z"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Detección de trucos y engaños</span></div><p class="principio-desc">Identificar que los sistemas pueden ser “engañados” o manipulados para romper sus reglas de seguridad. La tecnología es un software manipulable, no una entidad infalible o mágica.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Creación de contenidos violentos</span></div><p class="principio-desc">Analizar las consecuencias de generar imágenes hiperrealistas o textos falsos (deepfakes) para hostigar o excluir a compañeros, reforzando que la violencia digital tiene consecuencias reales en los vínculos físicos.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Creación de contenidos violentos</span></div><p class="principio-desc">Analizar las consecuencias de generar imágenes hiperrealistas o textos falsos (deepfakes) para hostigar o excluir a compañeros, reforzando que la violencia digital tiene consecuencias reales en los vínculos físicos.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">⏱</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención de sobreexposición</span></div><p class="principio-desc">Reconocer que muchas aplicaciones usan IA para “atraparnos” mediante recomendaciones personalizadas, promoviendo el equilibrio entre el tiempo digital y el movimiento físico para un desarrollo saludable.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#ecfdf5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención de sobreexposición</span></div><p class="principio-desc">Reconocer que muchas aplicaciones usan IA para “atraparnos” mediante recomendaciones personalizadas, promoviendo el equilibrio entre el tiempo digital y el movimiento físico para un desarrollo saludable.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -856,7 +863,7 @@
     </div>
 
     <div class="card sub-panel active" id="rub-r1">
-      <div class="rub-head-pur">🎓 Primer Ciclo (1.° a 3.°)</div>
+      <div class="rub-head-pur"><span class="rub-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><path d="M8 5v14"/></svg></span>Primer Ciclo (1.° a 3.°)</div>
       <div class="table-wrap">
         <table class="rubrica-table">
           <thead><tr><th>Competencia</th><th>Inicial</th><th>En proceso</th><th>Logrado</th></tr></thead>
@@ -870,7 +877,7 @@
     </div>
 
     <div class="card sub-panel" id="rub-r2">
-      <div class="rub-head-tea">🎓 Segundo Ciclo (4.° a 7.°)</div>
+      <div class="rub-head-tea"><span class="rub-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><path d="M8 5v14"/></svg></span>Segundo Ciclo (4.° a 7.°)</div>
       <div class="table-wrap">
         <table class="rubrica-table">
           <thead><tr><th style="width:22%">Competencia</th><th style="width:10%">Grado</th><th style="width:22%">Inicial</th><th style="width:22%">En proceso</th><th style="width:24%">Logrado</th></tr></thead>
@@ -949,15 +956,15 @@
       <div class="card-body">
         <div class="campo">
           <div class="campo-h"><span class="badge badge-pur">1.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
         <div class="campo">
           <div class="campo-h"><span class="badge badge-pur">2.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
         <div class="campo">
           <div class="campo-h"><span class="badge badge-pur">3.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
       </div>
     </div>
@@ -966,19 +973,19 @@
       <div class="card-body">
         <div class="campo">
           <div class="campo-h"><span class="badge badge-tea">4.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
         <div class="campo">
           <div class="campo-h"><span class="badge badge-tea">5.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
         <div class="campo">
           <div class="campo-h"><span class="badge badge-tea">6.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
         <div class="campo">
           <div class="campo-h"><span class="badge badge-tea">7.° grado</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí materiales para el aula o propuestas de implementación.</li></ul>
         </div>
       </div>
     </div>
@@ -1060,7 +1067,7 @@ function showRubrica(id, btn) {
   if (btn) btn.classList.add('active-' + id);
 }
 
-// ── SECUENCIAS DIDÁCTICAS CYCLE NAV ───────────────────────────────
+// ── MATERIALES PARA EL AULA CYCLE NAV ───────────────────────────────
 function showSecuencia(id, btn) {
   document.querySelectorAll('#panel-secuencias .sub-panel-seq').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('#panel-secuencias .sub-btn-seq').forEach(b => b.classList.remove('active-seq-pc', 'active-seq-sc'));
@@ -1072,7 +1079,7 @@ function showSecuencia(id, btn) {
 // ── SEARCH ───────────────────────────────────────────────────
 const ENTRIES = [
   {tab:'docs',grade:null,subject:'Documentos complementarios',gradeLabel:'Materiales',keywords:'documentos complementarios materiales consulta recursos apoyo'},
-  {tab:'secuencias',grade:null,subject:'Secuencias didácticas',gradeLabel:'Propuestas',keywords:'secuencias didácticas propuestas aula actividades implementación'},
+  {tab:'secuencias',grade:null,subject:'Materiales para el aula',gradeLabel:'Propuestas',keywords:'materiales para el aula propuestas aula actividades implementación'},
   {tab:'anexo',grade:null,subject:'Anexo IA',gradeLabel:'Anexo',keywords:'anexo ia inteligencia artificial materiales asociados'},
 
   {tab:'primer',grade:'g1',subject:'Tecnologías, Diseño y Programación',gradeLabel:'1.° grado',keywords:'inteligencia artificial aplicaciones utilidades experimenta reconocimiento dibujos patrones reflexión procesos tecnológicos impacto vida personas recursos digitales experimentación'},
@@ -1122,7 +1129,7 @@ const ENTRIES = [
   {tab:'rubrica',grade:'r2',subject:'Usar IA en programación y robótica',gradeLabel:'Segundo Ciclo',keywords:'ia programación robótica diseño código evaluar críticamente asistente'},
 ];
 
-const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Secuencias didácticas',anexo:'Anexo IA',mapa:'Mapa'};
+const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Materiales para el aula',anexo:'Anexo IA',mapa:'Mapa'};
 const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-cor',docs:'badge-blu',secuencias:'badge-amb',anexo:'badge-cor',mapa:'badge-blu'};
 
 function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
