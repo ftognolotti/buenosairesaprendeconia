@@ -139,10 +139,15 @@
   .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
   .sub-btn-pc.active-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-seq { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-seq.active-seq-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-seq.active-seq-sc { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-panel { display:none; }
   .sub-panel.active { display:block; }
   .sub-panel-pc { display:none; }
   .sub-panel-pc.active { display:block; }
+  .sub-panel-seq { display:none; }
+  .sub-panel-seq.active { display:block; }
   .campo { margin-bottom:16px; }
   .campo:last-child { margin-bottom:0; }
   .campo-h { display:flex; align-items:center; gap:6px; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #f1f5f9; flex-wrap:wrap; }
@@ -205,6 +210,7 @@
     .sub-panel { display:none !important; }
     .sub-panel.active { display:block !important; }
     .sub-panel-pc { display:block !important; }
+    .sub-panel-seq { display:block !important; }
     .card { break-inside:avoid; }
     table { break-inside:avoid; }
     tr { break-inside:avoid; }
@@ -244,8 +250,8 @@
     color:var(--azul-oscuro);
   }
   .badge-slate, .chip { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
-  .btn-print, .sub-btn, .sub-btn-rub, .sub-btn-pc { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
-  .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .search-item:hover { background:rgba(141,226,214,.24); }
+  .btn-print, .sub-btn, .sub-btn-rub, .sub-btn-pc, .sub-btn-seq { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
+  .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .sub-btn-seq:hover, .search-item:hover { background:rgba(141,226,214,.24); }
   .cycle-card, .principio { border-color:var(--celeste); }
   .cycle-card.pur .cycle-card-head, .rub-head-pur { background:var(--amarillo); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
   .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
@@ -933,11 +939,49 @@
 
   <div class="panel" id="panel-secuencias">
     <p class="rubrica-intro">Espacio para organizar propuestas de enseñanza, recorridos de aula y actividades secuenciadas por ciclo o grado.</p>
-    <div class="card"><div class="card-body">
-      <div class="campo"><div class="campo-h"><span class="badge badge-amb">Secuencias didácticas</span></div>
-        <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+
+    <div class="sub-nav no-print">
+      <button class="sub-btn-seq active-seq-pc" onclick="showSecuencia('pc',this)">Primer Ciclo</button>
+      <button class="sub-btn-seq" onclick="showSecuencia('sc',this)">Segundo Ciclo</button>
+    </div>
+
+    <div class="card sub-panel-seq active" id="seq-pc">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-pur">1.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-pur">2.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-pur">3.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot dot-pur"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
       </div>
-    </div></div>
+    </div>
+
+    <div class="card sub-panel-seq" id="seq-sc">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-tea">4.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-tea">5.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-tea">6.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-tea">7.° grado</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="panel" id="panel-anexo">
@@ -1014,6 +1058,15 @@ function showRubrica(id, btn) {
   const target = document.getElementById('rub-' + id);
   if (target) target.classList.add('active');
   if (btn) btn.classList.add('active-' + id);
+}
+
+// ── SECUENCIAS DIDÁCTICAS CYCLE NAV ───────────────────────────────
+function showSecuencia(id, btn) {
+  document.querySelectorAll('#panel-secuencias .sub-panel-seq').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#panel-secuencias .sub-btn-seq').forEach(b => b.classList.remove('active-seq-pc', 'active-seq-sc'));
+  const target = document.getElementById('seq-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active-seq-' + id);
 }
 
 // ── SEARCH ───────────────────────────────────────────────────
