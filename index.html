@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anexo Curricular de Inteligencia Artificial</title>
   <meta name="description" content="Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario del Ministerio de Educación de la Ciudad Autónoma de Buenos Aires." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
   <style>
     :root {
       --azul-ba: #153244;
@@ -29,7 +32,7 @@
     body {
       min-height: 100vh;
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Archivo", Arial, Helvetica, sans-serif;
       color: var(--azul-ba);
       background:
         linear-gradient(135deg, rgba(141, 226, 214, 0.24) 0 22%, transparent 22% 100%),
@@ -75,10 +78,13 @@
       gap: 18px;
     }
 
-    .brand-logo {
-      width: min(100%, 720px);
-      height: auto;
-      display: block;
+    .brand-title {
+      margin: 0;
+      color: var(--azul-ba);
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: right;
     }
 
     .paleta {
@@ -122,11 +128,12 @@
 
     h1 {
       max-width: 850px;
-      margin: 0;
+      margin: 0 auto;
       color: var(--azul-ba);
-      font-size: clamp(2rem, 4.6vw, 4rem);
+      font-size: clamp(1.6rem, 3.68vw, 3.2rem);
       line-height: 1.02;
       letter-spacing: 0;
+      text-align: center;
     }
 
     .texto {
@@ -144,6 +151,7 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+      justify-content: center;
       padding-top: 4px;
     }
 
@@ -207,17 +215,17 @@
         bottom: -130px;
       }
 
-      .brand-logo {
-        width: 100%;
+      .brand-title {
+        font-size: clamp(1rem, 6vw, 1.35rem);
       }
 
       .acciones {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
       }
 
       .boton {
-        width: 100%;
+        width: min(100%, 360px);
       }
     }
   </style>
@@ -226,7 +234,7 @@
   <main>
     <section class="landing" aria-labelledby="titulo">
       <div class="brand">
-        <img class="brand-logo" src="landing-assets/logo-ministerio-ba.png" alt="Ministerio de Educación de la Ciudad de Buenos Aires" />
+        <p class="brand-title">Ministerio de Educación de la Ciudad</p>
         <div class="paleta" aria-label="Paleta cromática institucional">
           <span></span>
           <span></span>
