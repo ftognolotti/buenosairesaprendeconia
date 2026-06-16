@@ -235,7 +235,7 @@
   .tab-btn[data-tab="secuencias"].active,
   .tab-btn[data-tab="anexo"].active {
     background:var(--celeste);
-    color:var(--azul-oscuro);
+    color:var(--blanco);
   }
   .tab-btn[data-tab="primer"].active, .tab-btn[data-tab="etico"].active { background:#E8F1F5; color:var(--azul-oscuro); box-shadow:inset 0 -3px 0 var(--amarillo); }
   .tab-btn[data-tab="rubrica"].active { background:#E8F1F5; color:var(--azul-oscuro); box-shadow:inset 0 -3px 0 var(--amarillo); }
@@ -245,7 +245,7 @@
   .cycle-card, .principio { border-color:var(--celeste); }
   .cycle-card.pur .cycle-card-head, .rub-head-pur { background:#E8F1F5; color:var(--azul-oscuro); border-color:var(--azul-medio, #035C80); }
   .cycle-card.pur .glabel { background:#E8F1F5; color:var(--azul-oscuro); border-color:var(--azul-medio, #035C80); }
-  .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
+  .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--blanco); border-color:var(--azul-oscuro); }
   .cycle-num { color:var(--azul-oscuro) !important; }
   .info-box { background:rgba(141,226,214,.26); border-color:var(--celeste); }
   .info-box svg, .info-box p { color:var(--azul-oscuro); }
@@ -293,7 +293,7 @@
   .support-card { background:var(--blanco); border:1px solid var(--celeste); border-radius:12px; box-shadow:var(--shadow); overflow:hidden; }
   .support-card-head { padding:10px 14px; font-size:14px; font-weight:800; color:var(--azul-oscuro); border-bottom:1px solid var(--azul-oscuro); }
   .support-card.pur .support-card-head { background:var(--amarillo); }
-  .support-card.tea .support-card-head { background:var(--celeste); }
+  .support-card.tea .support-card-head { background:var(--celeste); color:var(--blanco); }
   .support-card-body { padding:14px 16px; }
   .support-card .dot-list { gap:9px; }
   .support-card .dot-list li { font-size:14px; }
@@ -345,6 +345,39 @@
   .institutional-footer { max-width:960px; margin:0 auto 32px; padding:0 16px; }
   .institutional-footer img { display:block; width:100%; height:auto; border-radius:0 0 8px 8px; }
   @media print { .institutional-footer { break-inside:avoid; margin-bottom:0; } }
+
+  /* Legibilidad: azul sobre azul pasa a blanco, blanco/claro mantiene azul. */
+  .badge-tea,
+  .badge-blu,
+  .ej-am,
+  .sub-btn.active,
+  .sub-btn-rub.active-r2,
+  .tab-btn[data-tab="mapa"].active,
+  .tab-btn[data-tab="segundo"].active,
+  .tab-btn[data-tab="pdi"].active,
+  .tab-btn[data-tab="docs"].active,
+  .tab-btn[data-tab="secuencias"].active,
+  .tab-btn[data-tab="anexo"].active,
+  .cycle-card.tea .cycle-card-head,
+  .rub-head-tea,
+  .support-card.tea .support-card-head,
+  .ciclo-banner.tea p {
+    color:var(--blanco) !important;
+  }
+
+  .cycle-card.tea .cycle-num {
+    background:var(--blanco);
+    color:var(--azul-oscuro) !important;
+  }
+
+  .badge-pur,
+  .badge-cor,
+  .badge-grn,
+  .badge-slate,
+  .sub-btn-rub.active-r1,
+  .sub-btn-pc.active-pc {
+    color:var(--azul-oscuro) !important;
+  }
 </style>
 </head>
 <body>
