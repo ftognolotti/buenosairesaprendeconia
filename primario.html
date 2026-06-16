@@ -9,30 +9,30 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --amarillo:#FFCC00;
-    --azul-oscuro:#153244;
-    --celeste:#8DE2D6;
+    --amarillo:#FFCD02;
+    --azul-oscuro:#1D3343;
+    --celeste:#035C80;
     --blanco:#FFFFFF;
     --negro:#3C3C3B;
-    --fucsia:#FF66C4;
-    --pur-bg:#FFFFFF; --pur-text:#153244; --pur-border:#FF66C4;
-    --tea-bg:#8DE2D6; --tea-text:#153244; --tea-border:#153244;
-    --blu-bg:#8DE2D6; --blu-text:#153244; --blu-border:#153244;
-    --amb-bg:#FFCC00; --amb-text:#153244; --amb-border:#153244;
-    --cor-bg:#FF66C4; --cor-text:#153244; --cor-border:#153244;
-    --grn-bg:#FFFFFF; --grn-text:#153244; --grn-border:#8DE2D6;
-    --radius:10px; --shadow:0 1px 4px rgba(21,50,68,.12);
+    --fucsia:#035C80;
+    --pur-bg:#F4F8FA; --pur-text:#1D3343; --pur-border:#035C80;
+    --tea-bg:#035C80; --tea-text:#FFFFFF; --tea-border:#1D3343;
+    --blu-bg:#035C80; --blu-text:#FFFFFF; --blu-border:#1D3343;
+    --amb-bg:#FFCD02; --amb-text:#1D3343; --amb-border:#1D3343;
+    --cor-bg:#E8F1F5; --cor-text:#1D3343; --cor-border:#035C80;
+    --grn-bg:#FFFFFF; --grn-text:#1D3343; --grn-border:#035C80;
+    --radius:10px; --shadow:0 1px 4px rgba(29,51,67,.12);
     font-family:'Archivo',sans-serif;
   }
-  body { background:#f8fafc; color:#1e293b; font-size:17px; line-height:1.55; }
+  body { background:#f8fafc; color:#1D3343; font-size:17px; line-height:1.55; }
 
   /* ── LAYOUT ── */
   .container { max-width:960px; margin:0 auto; padding:0 16px; }
   header { background:#fff; border-bottom:1px solid #e2e8f0; position:sticky; top:0; z-index:100; }
   header .inner { padding:14px 16px; max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:10px; }
-  header .meta { font-size:11px; font-weight:600; color:#64748b; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
-  header h1 { font-size:22px; font-weight:800; color:#0f172a; }
-  header .sub { font-size:14px; color:#475569; margin-top:2px; }
+  header .meta { font-size:11px; font-weight:600; color:#4E6577; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  header h1 { font-size:22px; font-weight:800; color:#1D3343; }
+  header .sub { font-size:14px; color:#345066; margin-top:2px; }
   .badges { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
   .badge { font-size:11px; font-weight:600; padding:4px 10px; border-radius:999px; border:1px solid; }
   .badge-pur { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
@@ -41,40 +41,40 @@
   .badge-amb { background:var(--amb-bg); color:var(--amb-text); border-color:var(--amb-border); }
   .badge-cor { background:var(--cor-bg); color:var(--cor-text); border-color:var(--cor-border); }
   .badge-grn { background:var(--grn-bg); color:var(--grn-text); border-color:var(--grn-border); }
-  .badge-slate { background:#f1f5f9; color:#475569; border-color:#e2e8f0; }
-  .btn-print { font-size:11px; font-weight:500; color:#64748b; border:1px solid #e2e8f0; background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; display:flex; align-items:center; gap:5px; }
+  .badge-slate { background:#f1f5f9; color:#345066; border-color:#e2e8f0; }
+  .btn-print { font-size:11px; font-weight:500; color:#4E6577; border:1px solid #e2e8f0; background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; display:flex; align-items:center; gap:5px; }
   .btn-print:hover { background:#f8fafc; }
   main { padding:20px 16px 40px; max-width:960px; margin:0 auto; }
 
   /* ── SEARCH ── */
   .search-wrap { position:relative; max-width:480px; margin-bottom:16px; }
-  .search-wrap input { width:100%; padding:8px 34px 8px 32px; border:1px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:13px; background:#fff; color:#1e293b; outline:none; }
-  .search-wrap input:focus { border-color:#94a3b8; box-shadow:0 0 0 2px rgba(148,163,184,.2); }
-  .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:#94a3b8; pointer-events:none; }
-  .search-clear { position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:16px; color:#94a3b8; background:none; border:none; line-height:1; display:none; }
+  .search-wrap input { width:100%; padding:8px 34px 8px 32px; border:1px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:13px; background:#fff; color:#1D3343; outline:none; }
+  .search-wrap input:focus { border-color:#6F8392; box-shadow:0 0 0 2px rgba(148,163,184,.2); }
+  .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:#6F8392; pointer-events:none; }
+  .search-clear { position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:16px; color:#6F8392; background:none; border:none; line-height:1; display:none; }
   .search-results { display:none; position:absolute; left:0; right:0; top:calc(100% + 6px); background:#fff; border:1px solid #e2e8f0; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:200; overflow:hidden; max-height:340px; overflow-y:auto; }
   .search-results.show { display:block; }
-  .search-hint { padding:8px 12px 6px; font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; }
+  .search-hint { padding:8px 12px 6px; font-size:10px; font-weight:600; color:#6F8392; text-transform:uppercase; letter-spacing:.06em; }
   .search-item { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; padding:8px 12px; cursor:pointer; border-top:1px solid #f1f5f9; text-align:left; width:100%; background:none; border-left:none; border-right:none; border-bottom:none; font-family:inherit; }
   .search-item:hover { background:#f8fafc; }
   .search-item-body { flex:1; }
   .search-item-meta { display:flex; align-items:center; gap:5px; margin-bottom:3px; flex-wrap:wrap; }
-  .search-item-subject { font-size:12px; font-weight:600; color:#1e293b; }
-  .search-item-preview { font-size:11px; color:#64748b; line-height:1.4; }
-  .search-empty { padding:16px 12px; text-align:center; font-size:13px; color:#94a3b8; }
-  mark { background:#fef08a; color:#854d0e; border-radius:2px; padding:0 1px; }
+  .search-item-subject { font-size:12px; font-weight:600; color:#1D3343; }
+  .search-item-preview { font-size:11px; color:#4E6577; line-height:1.4; }
+  .search-empty { padding:16px 12px; text-align:center; font-size:13px; color:#6F8392; }
+  mark { background:#FFF3A3; color:#1D3343; border-radius:2px; padding:0 1px; }
 
  
  /* ── TABS ── */
   .tab-nav { display:flex; flex-wrap:wrap; gap:4px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:5px; margin-bottom:24px; box-shadow:var(--shadow); }
-  .tab-btn { display:flex; align-items:center; gap:6px; font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border:none; border-radius:8px; cursor:pointer; background:none; color:#64748b; white-space:nowrap; }
+  .tab-btn { display:flex; align-items:center; gap:6px; font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border:none; border-radius:8px; cursor:pointer; background:none; color:#4E6577; white-space:nowrap; }
   .tab-btn.active { font-weight:600; }
-  .tab-btn[data-tab="mapa"].active     { background:#eff6ff; color:#1d4ed8; }
+  .tab-btn[data-tab="mapa"].active     { background:#E8F1F5; color:#035C80; }
   .tab-btn[data-tab="primer"].active   { background:var(--pur-bg); color:var(--pur-text); }
   .tab-btn[data-tab="segundo"].active  { background:var(--tea-bg); color:var(--tea-text); }
-  .tab-btn[data-tab="etico"].active    { background:#fffbeb; color:#92400e; }
-  .tab-btn[data-tab="pdi"].active      { background:#eff6ff; color:#1d4ed8; }
-  .tab-btn[data-tab="rubrica"].active  { background:#f1f5f9; color:#334155; }
+  .tab-btn[data-tab="etico"].active    { background:#FFF8D6; color:#1D3343; }
+  .tab-btn[data-tab="pdi"].active      { background:#E8F1F5; color:#035C80; }
+  .tab-btn[data-tab="rubrica"].active  { background:#f1f5f9; color:#1D3343; }
   .panel { display:none; }
   .panel.active { display:block; }
 
@@ -88,8 +88,8 @@
 
   /* ── MAPA ── */
   .mapa-hero { text-align:center; margin-bottom:28px; }
-  .mapa-hero h2 { font-size:22px; font-weight:800; color:#1e293b; margin-bottom:6px; }
-  .mapa-hero p { font-size:14px; color:#475569; }
+  .mapa-hero h2 { font-size:22px; font-weight:800; color:#1D3343; margin-bottom:6px; }
+  .mapa-hero p { font-size:14px; color:#345066; }
   .cycle-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px; }
   @media(max-width:580px) { .cycle-grid { grid-template-columns:1fr; } }
   .cycle-card { border-radius:var(--radius); overflow:hidden; border:1px solid; box-shadow:var(--shadow); }
@@ -105,24 +105,24 @@
   .cycle-row { padding:10px 0; }
   .cycle-row + .cycle-row { border-top:1px solid #f1f5f9; }
   .cycle-row .glabel { font-size:11px; font-weight:600; padding:2px 8px; border-radius:999px; border:1px solid; display:inline-block; margin-bottom:4px; }
-  .cycle-row h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:3px; display:flex; align-items:center; gap:6px; }
+  .cycle-row h4 { font-size:13px; font-weight:700; color:#1D3343; margin-bottom:3px; display:flex; align-items:center; gap:6px; }
   .heading-icon, .rub-icon { width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:currentColor; }
   .heading-icon svg, .rub-icon svg, .line-icon { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
   .line-icon { width:20px; height:20px; }
-  .star { width:12px; height:12px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--fucsia); line-height:1; }
+  .star { width:12px; height:12px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--amarillo); line-height:1; }
   .star::before { content:""; width:8px; height:8px; border:1.8px solid currentColor; border-radius:2px; transform:rotate(45deg); }
   .note-star { margin-right:2px; vertical-align:-1px; }
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  .cycle-row p { font-size:12px; color:#475569; }
+  .cycle-row p { font-size:12px; color:#345066; }
   .ejes-section { margin-top:24px; padding-top:24px; border-top:1px solid #e2e8f0; }
-  .ejes-title { text-align:center; font-size:18px; font-weight:700; color:#1e293b; margin-bottom:16px; }
+  .ejes-title { text-align:center; font-size:18px; font-weight:700; color:#1D3343; margin-bottom:16px; }
   .eje-card { background:#fff; border:1px solid #e2e8f0; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
   .eje-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:10px; font-size:18px; }
-  .eje-card h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:5px; }
-  .eje-card p { font-size:12px; color:#475569; }
-  .info-box { display:flex; align-items:flex-start; gap:12px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; padding:14px 16px; margin-top:20px; }
-  .info-box svg { flex-shrink:0; margin-top:1px; color:#3b82f6; }
-  .info-box p { font-size:13px; color:#1e3a8a; font-weight:500; line-height:1.5; }
+  .eje-card h4 { font-size:13px; font-weight:700; color:#1D3343; margin-bottom:5px; }
+  .eje-card p { font-size:12px; color:#345066; }
+  .info-box { display:flex; align-items:flex-start; gap:12px; background:#E8F1F5; border:1px solid #A9C6D3; border-radius:12px; padding:14px 16px; margin-top:20px; }
+  .info-box svg { flex-shrink:0; margin-top:1px; color:#035C80; }
+  .info-box p { font-size:13px; color:#1D3343; font-weight:500; line-height:1.5; }
 
   /* ── PRIMER / SEGUNDO CICLO ── */
   .ciclo-banner { border-radius:12px; padding:16px; margin-bottom:20px; }
@@ -133,20 +133,20 @@
   .ciclo-banner.pur p { color:var(--pur-text); }
   .ciclo-banner.tea p { color:var(--tea-text); }
   .ejes-dig { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 12px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:16px; }
-  .ejes-dig-label { font-size:11px; font-weight:600; color:#475569; }
+  .ejes-dig-label { font-size:11px; font-weight:600; color:#345066; }
   .ej { font-size:11px; font-weight:500; padding:2px 8px; border-radius:999px; }
   .ej-am { background:var(--blu-bg); color:var(--blu-text); }
   .ej-cd { background:var(--cor-bg); color:var(--cor-text); }
   .ej-pc { background:var(--grn-bg); color:var(--grn-text); }
   .sub-nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
-  .sub-btn { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn.active { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
-  .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-rub.active-r1 { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
   .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
-  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-pc.active-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
-  .sub-btn-seq { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-seq { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-seq.active-seq-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
   .sub-btn-seq.active-seq-sc { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-panel { display:none; }
@@ -159,52 +159,52 @@
   .campo:last-child { margin-bottom:0; }
   .campo-h { display:flex; align-items:center; gap:6px; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #f1f5f9; flex-wrap:wrap; }
   .dot-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
-  .dot-list li { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:#334155; line-height:1.5; }
+  .dot-list li { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:#1D3343; line-height:1.5; }
   .dot { width:6px; height:6px; border-radius:50%; background:var(--tea-border); flex-shrink:0; margin-top:5px; }
-  .dot-list li .star { color:#E5C988; flex-shrink:0; line-height:1.2; }
+  .dot-list li .star { color:var(--amarillo); flex-shrink:0; line-height:1.2; }
   .dot-pur { background:var(--pur-border); }
-  .warn-box { display:flex; align-items:flex-start; gap:12px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px; margin-top:20px; }
-  .warn-box p { font-size:13px; color:#92400e; font-weight:500; line-height:1.5; }
+  .warn-box { display:flex; align-items:flex-start; gap:12px; background:#FFF8D6; border:1px solid #FFCD02; border-radius:12px; padding:14px 16px; margin-top:20px; }
+  .warn-box p { font-size:13px; color:#1D3343; font-weight:500; line-height:1.5; }
 
   /* Leyenda de profundización */
-  .leyenda-estrella { background:#f8fafc; color:#475569; border:1px solid #e2e8f0; padding:8px 12px; border-radius:8px; margin-top:16px; font-size:11px; display:inline-flex; align-items:center; gap:6px; font-weight:500; }
+  .leyenda-estrella { background:#f8fafc; color:#345066; border:1px solid #e2e8f0; padding:8px 12px; border-radius:8px; margin-top:16px; font-size:11px; display:inline-flex; align-items:center; gap:6px; font-weight:500; }
 
   /* skill badges in 1er ciclo */
   .area-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:12px; padding-top:12px; border-top:1px solid #f1f5f9; }
-  .area-label { font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; width:100%; }
+  .area-label { font-size:10px; font-weight:600; color:#6F8392; text-transform:uppercase; letter-spacing:.06em; width:100%; }
   .tool-chips { display:flex; flex-wrap:wrap; gap:5px; }
-  .chip { font-size:11px; color:#475569; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:3px 8px; }
+  .chip { font-size:11px; color:#345066; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:3px 8px; }
 
   /* ── EJE ÉTICO ── */
-  .etico-intro { font-size:13px; color:#64748b; margin-bottom:18px; }
+  .etico-intro { font-size:13px; color:#4E6577; margin-bottom:18px; }
   .principio { display:flex; align-items:flex-start; gap:0; border:1px solid #e2e8f0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin-bottom:10px; }
   .principio-icon { width:52px; min-width:52px; display:flex; align-items:center; justify-content:center; font-size:18px; padding:12px 0; flex-shrink:0; }
   .principio-body { padding:12px 14px; flex:1; }
   .principio-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:6px; margin-bottom:4px; }
-  .principio-title { font-size:13px; font-weight:600; color:#1e293b; }
-  .principio-desc { font-size:12px; color:#475569; line-height:1.5; }
+  .principio-title { font-size:13px; font-weight:600; color:#1D3343; }
+  .principio-desc { font-size:12px; color:#345066; line-height:1.5; }
   .preguntas-box { background:#f1f5f9; border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-top:20px; }
-  .preguntas-box h3 { font-size:14px; font-weight:700; color:#1e293b; margin-bottom:12px; }
+  .preguntas-box h3 { font-size:14px; font-weight:700; color:#1D3343; margin-bottom:12px; }
   .preguntas-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
   @media(max-width:580px) { .preguntas-grid { grid-template-columns:1fr; } }
   .pregunta-item { display:flex; align-items:flex-start; gap:8px; background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:10px 12px; }
-  .pregunta-num { width:24px; height:24px; border-radius:50%; background:#f1f5f9; color:#475569; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .pregunta-item p { font-size:12px; font-weight:500; color:#334155; }
+  .pregunta-num { width:24px; height:24px; border-radius:50%; background:#f1f5f9; color:#345066; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .pregunta-item p { font-size:12px; font-weight:500; color:#1D3343; }
 
   /* ── RÚBRICA ── */
-  .rubrica-intro { font-size:13px; color:#64748b; margin-bottom:16px; }
+  .rubrica-intro { font-size:13px; color:#4E6577; margin-bottom:16px; }
   .rubrica-table { width:100%; border-collapse:collapse; min-width:580px; font-size:12px; }
-  .rubrica-table th { padding:10px 12px; font-weight:600; color:#334155; background:#f8fafc; border-bottom:2px solid #e2e8f0; text-align:left; }
-  .rubrica-table td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:#475569; vertical-align:top; }
+  .rubrica-table th { padding:10px 12px; font-weight:600; color:#1D3343; background:#f8fafc; border-bottom:2px solid #e2e8f0; text-align:left; }
+  .rubrica-table td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:#345066; vertical-align:top; }
   .rubrica-table tr:last-child td { border-bottom:none; }
-  .rubrica-table td:first-child { font-weight:600; color:#1e293b; }
-  .rubrica-table td:last-child { background:#f0fdf4; color:#14532d; font-weight:500; }
+  .rubrica-table td:first-child { font-weight:600; color:#1D3343; }
+  .rubrica-table td:last-child { background:#E8F1F5; color:#1D3343; font-weight:500; }
   .rub-head-pur { background:var(--pur-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--pur-text); border-bottom:1px solid var(--pur-border); }
   .rub-head-tea { background:var(--tea-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--tea-text); border-bottom:1px solid var(--tea-border); }
   .table-wrap { overflow-x:auto; }
   .nota-ped { background:#f1f5f9; border:1px solid #e2e8f0; border-radius:10px; padding:12px 14px; margin-top:16px; }
-  .nota-ped .slabel { font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
-  .nota-ped p { font-size:12px; color:#64748b; }
+  .nota-ped .slabel { font-size:10px; font-weight:600; color:#6F8392; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  .nota-ped p { font-size:12px; color:#4E6577; }
 
   /* ── PRINT ── */
   @media print {
@@ -237,7 +237,7 @@
     border-color:var(--celeste);
   }
   .tab-btn { color:var(--azul-oscuro); }
-  .tab-btn:hover { background:rgba(141,226,214,.28); }
+  .tab-btn:hover { background:rgba(3,92,128,.16); }
   .tab-btn[data-tab="mapa"].active,
   .tab-btn[data-tab="segundo"].active,
   .tab-btn[data-tab="pdi"].active,
@@ -247,20 +247,13 @@
     background:var(--celeste);
     color:var(--azul-oscuro);
   }
-  .tab-btn[data-tab="primer"].active,
-  .tab-btn[data-tab="etico"].active {
-    background:var(--amarillo);
-    color:var(--azul-oscuro);
-  }
-  .tab-btn[data-tab="rubrica"].active {
-    background:var(--fucsia);
-    color:var(--azul-oscuro);
-  }
+  .tab-btn[data-tab="primer"].active, .tab-btn[data-tab="etico"].active { background:#E8F1F5; color:var(--azul-oscuro); box-shadow:inset 0 -3px 0 var(--amarillo); }
+  .tab-btn[data-tab="rubrica"].active { background:#E8F1F5; color:var(--azul-oscuro); box-shadow:inset 0 -3px 0 var(--amarillo); }
   .badge-slate, .chip { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
   .btn-print, .sub-btn, .sub-btn-rub, .sub-btn-pc, .sub-btn-seq { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
-  .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .sub-btn-seq:hover, .search-item:hover { background:rgba(141,226,214,.24); }
+  .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .sub-btn-seq:hover, .search-item:hover { background:rgba(3,92,128,.14); }
   .cycle-card, .principio { border-color:var(--celeste); }
-  .cycle-card.pur .cycle-card-head, .rub-head-pur { background:var(--amarillo); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
+  .cycle-card.pur .cycle-card-head, .rub-head-pur { background:#E8F1F5; color:var(--azul-oscuro); border-color:var(--azul-medio, #035C80); }
   .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
   .cycle-num { color:var(--azul-oscuro) !important; }
   .info-box { background:rgba(141,226,214,.26); border-color:var(--celeste); }
@@ -276,17 +269,32 @@
   .rubrica-table td:last-child { background:rgba(141,226,214,.22); color:var(--azul-oscuro); }
   .dot { background:var(--azul-oscuro); }
   .dot-pur { background:var(--fucsia); }
-  .dot-list li .star { color:var(--fucsia); }
+  .dot-list li .star { color:var(--amarillo); }
   mark { background:var(--amarillo); color:var(--azul-oscuro); }
 
 
   .search-wrap { margin-left:auto; }
   .docs-card { margin-top:16px; }
   .doc-link { color:var(--azul-oscuro); font-weight:700; text-decoration:none; }
-  .doc-link:hover { color:var(--fucsia); text-decoration:underline; }
+  .doc-link:hover { color:var(--amarillo); text-decoration:underline; }
   .doc-link-muted { color:var(--negro); }
   .doc-desc { font-size:13px; color:var(--negro); line-height:1.55; margin-top:2px; }
 
+/* CAMBIO DE LETRA GENERAL */
+  body, header .sub, .mapa-hero p { font-size: 16px !important; }
+  header h1, .mapa-hero h2 { font-size: 24px !important; }
+  .ejes-title, .eje-icon, .principio-icon { font-size: 20px !important; }
+  .cycle-card-head { font-size: 17px !important; }
+  .preguntas-box h3, .rub-head-pur, .rub-head-tea { font-size: 16px !important; }
+  .search-wrap input, .search-empty, .tab-btn, .cycle-num, .cycle-row h4, .eje-card h4, .info-box p, .ciclo-banner p, .warn-box p, .etico-intro, .principio-title, .rubrica-intro { font-size: 15px !important; }
+  .search-item-subject, .cycle-row p, .eje-card p, .sub-btn, .sub-btn-rub, .sub-btn-pc, .dot-list li, .principio-desc, .pregunta-item p, .rubrica-table, .nota-ped p { font-size: 14px !important; }
+  header .meta, .badge, .btn-print, .search-item-preview, .cycle-row .glabel, .ejes-dig-label, .ej, .leyenda-estrella, .chip, .pregunta-num { font-size: 13px !important; }
+  .search-hint, .area-label, .nota-ped .slabel { font-size: 12px !important; }
+  .search-clear { font-size: 18px !important; }
+
+  .institutional-footer { max-width:960px; margin:0 auto 32px; padding:0 16px; }
+  .institutional-footer img { display:block; width:100%; height:auto; border-radius:0 0 8px 8px; }
+  @media print { .institutional-footer { break-inside:avoid; margin-bottom:0; } }
 </style>
 </head>
 <body>
@@ -357,11 +365,11 @@
   <div class="panel active" id="panel-mapa">
 <div style="
   background: #FFFFFF;
-  border: 1px solid #8DE2D6;
+  border: 1px solid #035C80;
   border-radius: 16px;
   padding: 28px 32px;
   margin-bottom: 28px;
-  box-shadow: 0 1px 4px rgba(21,50,68,.12);
+  box-shadow: 0 1px 4px rgba(29,51,67,.12);
   text-align: center;
 ">
   <p style="
@@ -807,15 +815,15 @@
   <div class="panel" id="panel-etico">
     <p class="etico-intro">Este eje se centra en la alfabetización conceptual para comprender cómo la inteligencia artificial impacta en nuestra cultura y sociedad. El objetivo es desmitificar la herramienta, pasando de una narrativa de "magia" a una de "mecánica", donde se reconoce que la IA no piensa ni siente, sino que procesa patrones de datos generados por humanos.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#f5f3ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#ecfdf5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 7.5l3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 7.5l3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -833,15 +841,15 @@
     <p class="etico-intro">La Protección Digital Infantil y Adolescente (PDIyA) es una línea estratégica prioritaria del Ministerio de Educación de la Ciudad de Buenos Aires, enmarcada en el Plan «Buenos Aires Aprende» (2024-2027) y el Diseño Curricular de Educación Digital. Su objetivo es garantizar condiciones de seguridad, bienestar y ejercicio pleno de derechos para niños y adolescentes dentro de los entornos digitales.</p>
     <p class="etico-intro">Este eje es transversal y busca mitigar los riesgos de los sistemas digitales. Si bien no se promueve un uso autónomo de la IA, la escuela debe actuar como un espacio de alfabetización digital que dé herramientas para la vida cotidiana. Se trata de convertir a la tecnología en objeto de estudio para que los niños identifiquen cómo sus datos y su integridad pueden verse afectados, incluso en interacciones guiadas o en usos recreativos fuera de la escuela.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Resguardo de la privacidad</span></div><p class="principio-desc">Comprender que, en cualquier interacción, los sistemas de IA procesan información para entrenar sus modelos. Aplicar el criterio “Mis datos son míos” para entender que no se deben ingresar nombres, fotos o secretos, ya que la IA no “olvida” ni “entiende” la privacidad humana.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Resguardo de la privacidad</span></div><p class="principio-desc">Comprender que, en cualquier interacción, los sistemas de IA procesan información para entrenar sus modelos. Aplicar el criterio “Mis datos son míos” para entender que no se deben ingresar nombres, fotos o secretos, ya que la IA no “olvida” ni “entiende” la privacidad humana.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fef2f2"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alucinaciones como fallas mecánicas</span></div><p class="principio-desc">Reconocer que los sistemas de IA priorizan completar patrones de texto y cálculos probabilísticos por sobre la verdad, lo que puede generar datos, citas o hechos históricos totalmente inventados ("alucinaciones").</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alucinaciones como fallas mecánicas</span></div><p class="principio-desc">Reconocer que los sistemas de IA priorizan completar patrones de texto y cálculos probabilísticos por sobre la verdad, lo que puede generar datos, citas o hechos históricos totalmente inventados ("alucinaciones").</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v5h2a3 3 0 1 1 0 6h-2v7H8v-5H6a3 3 0 1 1 0-6h2V3Z"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Detección de trucos y engaños</span></div><p class="principio-desc">Identificar que los sistemas pueden ser “engañados” o manipulados para romper sus reglas de seguridad. La tecnología es un software manipulable, no una entidad infalible o mágica.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v5h2a3 3 0 1 1 0 6h-2v7H8v-5H6a3 3 0 1 1 0-6h2V3Z"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Detección de trucos y engaños</span></div><p class="principio-desc">Identificar que los sistemas pueden ser “engañados” o manipulados para romper sus reglas de seguridad. La tecnología es un software manipulable, no una entidad infalible o mágica.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Creación de contenidos violentos</span></div><p class="principio-desc">Analizar las consecuencias de generar imágenes hiperrealistas o textos falsos (deepfakes) para hostigar o excluir a compañeros, reforzando que la violencia digital tiene consecuencias reales en los vínculos físicos.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Creación de contenidos violentos</span></div><p class="principio-desc">Analizar las consecuencias de generar imágenes hiperrealistas o textos falsos (deepfakes) para hostigar o excluir a compañeros, reforzando que la violencia digital tiene consecuencias reales en los vínculos físicos.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#ecfdf5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención de sobreexposición</span></div><p class="principio-desc">Reconocer que muchas aplicaciones usan IA para “atraparnos” mediante recomendaciones personalizadas, promoviendo el equilibrio entre el tiempo digital y el movimiento físico para un desarrollo saludable.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención de sobreexposición</span></div><p class="principio-desc">Reconocer que muchas aplicaciones usan IA para “atraparnos” mediante recomendaciones personalizadas, promoviendo el equilibrio entre el tiempo digital y el movimiento físico para un desarrollo saludable.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -1160,11 +1168,11 @@ function doSearch(){
         <div class="search-item-body">
           <div class="search-item-meta">
             <span class="badge ${TAB_COLORS[e.tab]}" style="font-size:10px">${TAB_LABELS[e.tab]}</span>
-            ${e.gradeLabel ? `<span style="font-size:10px;color:#64748b">${escapeHtml(e.gradeLabel)}</span>` : ''}
+            ${e.gradeLabel ? `<span style="font-size:10px;color:#4E6577">${escapeHtml(e.gradeLabel)}</span>` : ''}
           </div>
           <p class="search-item-subject">${hl(e.subject, q)}</p>
         </div>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6F8392" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </button>`;
     });
     box.innerHTML = html;
@@ -1213,20 +1221,8 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape') document.getElementById('search-results').classList.remove('show');
 });
 </script>
+  <footer class="institutional-footer" aria-label="Ministerio de Educacion de la Ciudad">
+    <img src="assets/footer-ministerio-escudo.png" alt="Ministerio de Educacion | Buenos Aires Ciudad">
+  </footer>
 </body>
 </html>
-
-<style>
-  /* CAMBIO DE LETRA GENERAL */
-  body, header .sub, .mapa-hero p { font-size: 16px !important; }
-  header h1, .mapa-hero h2 { font-size: 24px !important; }
-  .ejes-title, .eje-icon, .principio-icon { font-size: 20px !important; }
-  .cycle-card-head { font-size: 17px !important; }
-  .preguntas-box h3, .rub-head-pur, .rub-head-tea { font-size: 16px !important; }
-  .search-wrap input, .search-empty, .tab-btn, .cycle-num, .cycle-row h4, .eje-card h4, .info-box p, .ciclo-banner p, .warn-box p, .etico-intro, .principio-title, .rubrica-intro { font-size: 15px !important; }
-  .search-item-subject, .cycle-row p, .eje-card p, .sub-btn, .sub-btn-rub, .sub-btn-pc, .dot-list li, .principio-desc, .pregunta-item p, .rubrica-table, .nota-ped p { font-size: 14px !important; }
-  header .meta, .badge, .btn-print, .search-item-preview, .cycle-row .glabel, .ejes-dig-label, .ej, .leyenda-estrella, .chip, .pregunta-num { font-size: 13px !important; }
-  .search-hint, .area-label, .nota-ped .slabel { font-size: 12px !important; }
-  .search-clear { font-size: 18px !important; }
-</style>
-
