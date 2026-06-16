@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --azul-ba: #153244;
-      --azul-apoyo: #125C83;
-      --celeste: #8DE2D6;
+      --azul-ba: #1D3343;
+      --azul-apoyo: #035C80;
+      --amarillo-acento: #FFCD02;
       --blanco: #FFFFFF;
       --gris-fondo: #F3F3F3;
       --gris-medio: #C2C2C2;
@@ -35,7 +35,7 @@
       font-family: "Archivo", Arial, Helvetica, sans-serif;
       color: var(--azul-ba);
       background:
-        linear-gradient(135deg, rgba(141, 226, 214, 0.24) 0 22%, transparent 22% 100%),
+        linear-gradient(135deg, rgba(3, 92, 128, 0.24) 0 22%, transparent 22% 100%),
         var(--azul-ba);
     }
 
@@ -100,9 +100,9 @@
 
     .paleta span:nth-child(1) { background: var(--azul-ba); }
     .paleta span:nth-child(2) { background: var(--azul-apoyo); }
-    .paleta span:nth-child(3) { background: var(--celeste); }
-    .paleta span:nth-child(4) { background: var(--gris-fondo); }
-    .paleta span:nth-child(5) { background: var(--gris-medio); }
+    .paleta span:nth-child(3) { background: var(--amarillo-acento); }
+    .paleta span:nth-child(4) { background: var(--azul-ba); opacity: 0.16; }
+    .paleta span:nth-child(5) { background: var(--azul-apoyo); opacity: 0.18; }
 
     .contenido {
       position: relative;
@@ -117,8 +117,8 @@
       margin: 0;
       padding: 8px 12px;
       color: var(--azul-ba);
-      background: rgba(141, 226, 214, 0.34);
-      border: 1px solid var(--celeste);
+      background: rgba(3, 92, 128, 0.12);
+      border: 1px solid rgba(3, 92, 128, 0.36);
       border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 800;
@@ -182,11 +182,12 @@
 
     .boton:active {
       transform: translateY(0);
-      box-shadow: 0 4px 0 var(--azul-ba);
+      box-shadow: 0 4px 0 var(--amarillo-acento);
     }
 
     .boton-primario {
-      background: var(--celeste);
+      color: var(--blanco);
+      background: var(--azul-apoyo);
     }
 
     .boton-secundario {
@@ -229,7 +230,20 @@
         width: min(100%, 360px);
       }
     }
-  </style>
+  
+    .institutional-footer {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: 0 clamp(18px, 5vw, 56px) clamp(24px, 4vw, 36px);
+    }
+
+    .institutional-footer img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0 0 8px 8px;
+    }
+</style>
 </head>
 <body>
   <main>
@@ -260,5 +274,8 @@
       </div>
     </section>
   </main>
+  <footer class="institutional-footer" aria-label="Ministerio de Educacion de la Ciudad">
+    <img src="assets/footer-ministerio-escudo.png" alt="Ministerio de Educacion | Buenos Aires Ciudad">
+  </footer>
 </body>
 </html>
