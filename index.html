@@ -27,7 +27,16 @@
 
     html {
       height: 100%;
-      background: var(--azul-ba);
+      background: var(--azul-apoyo);
+    }
+
+    .header-iframe {
+      width: 100%;
+      height: 20px;
+      border: none;
+      display: block;
+      overflow: hidden;
+      flex-shrink: 0; /* Evita que se deforme o achique */
     }
 
     /* 1. CONFIGURACIÓN DEL CONTENEDOR PADRE FLEX */
@@ -38,7 +47,7 @@
       display: flex;
       flex-direction: column; /* Alinea main e iframe verticalmente */
       font-family: "Archivo", Arial, Helvetica, sans-serif;
-      color: var(--azul-ba);
+      color: var(--azul-apoyo);
       overflow-x: hidden;
     }
 
@@ -93,11 +102,10 @@
 
     .paleta {
       width: min(100%, 560px);
-      height: 12px;
+      height: 6px;
       display: grid;
       grid-template-columns: 2.2fr 1.2fr 1fr 1fr 0.9fr;
       justify-self: end;
-      border: 1px solid rgba(21, 50, 68, 0.18);
       border-radius: 999px;
       overflow: hidden;
     }
@@ -239,6 +247,8 @@
   </style>
 </head>
 <body>
+  <iframe src="header.html" class="header-iframe" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
+  <div class="barra-superior"></div>
 
   <main>
     <section class="landing" aria-labelledby="titulo">
@@ -268,7 +278,7 @@
     </section>
   </main>
 
-  <iframe src="footer.html" style="width: 100%; border: none; display: block; height: 150px; overflow: hidden;" scrolling="no"></iframe>
+  <iframe src="footer.html" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
 
 </body>
 </html>
