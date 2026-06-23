@@ -145,7 +145,7 @@
   .ejes-dig { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 12px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:16px; }
   .ejes-dig-label { font-size:11px; font-weight:600; color:#345066; }
   .ej { font-size:11px; font-weight:500; padding:2px 8px; border-radius:999px; }
-  .ej-am { background:var(--blu-bg); color:var(--blu-text); }
+.ej-am { background:var(--cor-bg); color:var(--azul-oscuro) !important; border: 1px solid var(--celeste); }
   .ej-cd { background:var(--cor-bg); color:var(--cor-text); }
   .ej-pc { background:var(--grn-bg); color:var(--grn-text); }
   .sub-nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
@@ -153,9 +153,7 @@
   .sub-btn.active { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-rub.active-r1 { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
-  .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
-  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
-  .sub-btn-pc.active-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-pc.active-pc { background:var(--tea-bg); color:var(--blanco); border-color:var(--tea-border); }  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-seq { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-seq.active-seq-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
   .sub-btn-seq.active-seq-sc { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
@@ -307,9 +305,9 @@
   @media print { .institutional-footer { break-inside:avoid; margin-bottom:0; } }
 
   /* Legibilidad: azul sobre azul pasa a blanco, blanco/claro mantiene azul. */
-  .badge-tea,
+.badge-tea,
   .badge-blu,
-  .ej-am,
+  .sub-btn-pc.active-pc, /*  CORREGIDO */
   .sub-btn.active,
   .sub-btn-rub.active-r2,
   .sub-btn-seq.active-seq-sc,
@@ -322,7 +320,7 @@
   .cycle-card.tea .cycle-card-head,
   .rub-head-tea,
   .ciclo-banner.tea p {
-    color:var(--blanco) !important;
+    color: var(--blanco) !important;
   }
 
   .cycle-card.tea .cycle-num {
@@ -477,7 +475,7 @@
   <div class="panel" id="panel-primer">
     <div class="ciclo-banner pur">
       <div class="badges" style="margin-bottom:10px">
-        <span class="badge badge-tea">Primer Ciclo · 1.°, 2.° y 3.° grado</span>
+        <span class="badge badge-pur">Primer Ciclo · 1.°, 2.° y 3.° grado</span>
         <span class="badge badge-pur">Basado en el DC Primario GCBA 2024</span>
       </div>
       <p>Desde el asombro y la curiosidad, los alumnos perciben la IA en su entorno y exploran sus funciones mediante juegos y narrativas guiadas. Esta aproximación inicial se despliega de forma transversal en los diversos Campos de Conocimiento, articulándose con los ejes de Educación Digital: Alfabetizaciones Múltiples, Ciudadanía Digital y Pensamiento Computacional, de acuerdo a lo establecido en el Diseño Curricular. A continuación, se presenta una serie de competencias de IA a desarrollar en cada campo:</p>
@@ -859,15 +857,15 @@
   <div class="panel" id="panel-etico">
     <p class="etico-intro">Este eje se centra en la alfabetización conceptual para comprender cómo la inteligencia artificial impacta en nuestra cultura y sociedad. El objetivo es desmitificar la herramienta, pasando de una narrativa de "magia" a una de "mecánica", donde se reconoce que la IA no piensa ni siente, sino que procesa patrones de datos generados por humanos.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
+    <div class="principio"><div class="principio-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5a4 4 0 0 0-3 6.6A4 4 0 0 0 8 19"/><path d="M16 5a4 4 0 0 1 3 6.6A4 4 0 0 1 16 19"/><path d="M8 5c1.8 0 3 1.2 3 3v8c0 1.8-1.2 3-3 3"/><path d="M16 5c-1.8 0-3 1.2-3 3v8c0 1.8 1.2 3 3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span></div><p class="principio-desc">Analizar colectivamente la tendencia a atribuir intenciones, sentimientos o sabiduría a la IA debido al uso de lenguaje natural. El tono cercano o aparentemente empático es una estrategia de diseño para facilitar la interacción y no un signo de comprensión real.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
+    <div class="principio"><div class="principio-icon" ><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Desmitificar la idea de que la IA "sabe" o "entiende", analizando cómo identifica patrones en el lenguaje para generar respuestas estadísticamente probables a partir de información previa.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
+    <div class="principio"><div class="principio-icon" ><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 7.5l3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
+    <div class="principio"><div class="principio-icon" ><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 7.5l3 3"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#FFF8D6"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
+    <div class="principio"><div class="principio-icon" ><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
