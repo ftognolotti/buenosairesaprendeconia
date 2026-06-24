@@ -161,8 +161,9 @@ main {
   .sub-nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
   .sub-btn { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn.active { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
-  .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
-  .sub-btn-rub.active-r1 { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background: var(--blu-bg); color:#4E6577; }
+  .sub-btn-rub.active-r1 { background:var(--tea-bg); color:var(--blanco); border-color:var(--pur-border); }
+  .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--blanco); border-color:var(--pur-border); }
   .sub-btn-pc.active-pc { background:var(--tea-bg); color:var(--blanco); border-color:var(--tea-border); }  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-seq { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-seq.active-seq-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
@@ -270,6 +271,8 @@ main {
   .badge-slate, .chip { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
   .btn-print, .sub-btn, .sub-btn-rub, .sub-btn-pc, .sub-btn-seq { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
   .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .sub-btn-seq:hover, .search-item:hover { background:rgba(3,92,128,.14); }
+  .sub-btn-rub.active-r1:hover { color:var(--azul-oscuro); } /* COLOR OSCURO EN TEXTO HOVER EN BOTON ACTIVO */
+  .sub-btn-rub.active-r2:hover { color:var(--azul-oscuro); } /* COLOR OSCURO EN TEXTO HOVER EN BOTON ACTIVO */
   .cycle-card, .principio { border-color:var(--celeste); }
   .cycle-card.pur .cycle-card-head, .rub-head-pur { background:#E8F1F5; color:var(--azul-oscuro); border-color:var(--azul-medio, #035C80); }
   .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--blanco); border-color:var(--azul-oscuro); }
@@ -317,8 +320,6 @@ main {
 .badge-tea,
   .badge-blu,
   .sub-btn-pc.active-pc, /*  CORREGIDO */
-  .sub-btn.active,
-  .sub-btn-rub.active-r2,
   .sub-btn-seq.active-seq-sc,
   .tab-btn[data-tab="mapa"].active,
   .tab-btn[data-tab="segundo"].active,
