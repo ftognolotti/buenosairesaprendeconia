@@ -158,7 +158,7 @@ main {
   .sub-btn { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn.active { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
-  .sub-btn-rub.active-r1 { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-rub.active-r1 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
   .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#4E6577; }
   .sub-btn-pc.active-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
@@ -371,6 +371,7 @@ main {
   .badge-blu,
   .ej-am,
   .sub-btn.active,
+  .sub-btn-rub.active-r1,
   .sub-btn-rub.active-r2,
   .tab-btn[data-tab="mapa"].active,
   .tab-btn[data-tab="segundo"].active,
@@ -394,7 +395,6 @@ main {
   .badge-cor,
   .badge-grn,
   .badge-slate,
-  .sub-btn-rub.active-r1,
   .sub-btn-pc.active-pc {
     color:var(--azul-oscuro) !important;
   }
@@ -691,44 +691,103 @@ main {
       </div>
     </div>
   </div>
-  <div class="panel" id="panel-rubrica" role="tabpanel">
-    <p class="rubrica-intro">Estas rúbricas constituyen un instrumento guía para operacionalizar criterios de evaluación y orientar la tarea docente. En el Ciclo Básico, el foco está puesto en el paso de «la magia a la mecánica», recuperando la base construida en el Nivel Primario, pero avanzando hacia un uso mediado como asistente de estudio. En el Ciclo Orientado, el foco está puesto en la autonomía, la co-creación estratégica, el análisis de grandes volúmenes de datos y el diseño de contenidos en múltiples lenguajes y formatos.</p>
+<div class="panel" id="panel-rubrica" role="tabpanel">
+  <p class="rubrica-intro">Estas rúbricas constituyen un instrumento guía para operacionalizar criterios de evaluación y orientar la tarea docente. En el Ciclo Básico, el foco está puesto en el paso de «la magia a la mecánica», recuperando la base construida en el Nivel Primario, pero avanzando hacia un uso mediado como asistente de estudio. En el Ciclo Orientado, el foco está puesto en la autonomía, la co-creación estratégica, el análisis de grandes volúmenes de datos y el diseño de contenidos en múltiples lenguajes y formatos.</p>
+  
+  <div class="sub-nav no-print" role="tablist" aria-label="Ciclos de la rúbrica docente">
+    <button class="sub-btn-rub active-r1" onclick="showRubrica('r1', this)" role="tab" aria-selected="true" aria-controls="rub-r1">Ciclo Básico (1.°-2.°)</button>
+    <button class="sub-btn-rub" onclick="showRubrica('r2', this)" role="tab" aria-selected="false" aria-controls="rub-r2">Ciclo Orientado (3.°-5.°)</button>
+  </div>
 
-    <div class="card sub-panel active" id="rub-r1">
-      <div class="rub-head-pur">🎓 Ciclo Básico (1.° a 2.°)</div>
-      <div class="table-wrap">
-        <table class="rubrica-table">
-          <thead><tr><th style="width:24%">Competencia</th><th style="width:25%">Inicial</th><th style="width:25%">Básico</th><th style="width:26%">Logrado</th></tr></thead>
-          <tbody>
-            <tr><td>Alfabetización técnica y funcionamiento</td><td>Utiliza términos antropomórficos, atribuyendo conciencia o sentimientos a la IA. Por ejemplo, dice «La IA sabe».</td><td>Identifica a la IA como un software de cálculo probabilístico basado en patrones estadísticos. Por ejemplo, reformula «la IA sabe» por «la IA predice».</td><td>Explica la mecánica básica del aprendizaje automático (<em>machine learning</em>) y la lógica de los modelos de lenguaje. Por ejemplo, describe por qué dos <em>prompts</em> similares pueden dar respuestas distintas.</td></tr>
-            <tr><td>Pensamiento crítico y validación</td><td>Acepta la información generada por la IA como una verdad absoluta sin cuestionarla.</td><td>Detecta errores o «alucinaciones» evidentes y reconoce que la IA puede fallar. Por ejemplo, señala un dato incorrecto en una respuesta.</td><td>Valida y refuta sistemáticamente las respuestas de la IA contrastándolas con fuentes confiables. Detecta sesgos básicos de entrenamiento. Por ejemplo, presenta la respuesta de la IA junto a la fuente confiable que la confirma o refuta.</td></tr>
-            <tr><td>Interacción estratégica</td><td>Utiliza la IA para sustituir el esfuerzo intelectual propio (delegación cognitiva).</td><td>Emplea asistentes conversacionales para generar borradores o ideas iniciales que luego revisa.</td><td>Diseña y aplica instrucciones (<em>prompts</em>) precisas. Por ejemplo, optimiza la interacción para obtener respuestas de alta calidad técnica.</td></tr>
-            <tr><td>Protección digital</td><td>Requiere de acompañamiento para identificar riesgos y aplicar pautas de protección de su privacidad.</td><td>Identifica riesgos asociados al uso de datos personales y el impacto del perfilamiento automatizado.</td><td>Resguarda proactivamente su privacidad. Aplica criterios éticos de autoría y conoce normas de propiedad intelectual. Por ejemplo, cita correctamente una producción realizada con asistencia de IA.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="card sub-panel" id="rub-r2">
-      <div class="rub-head-tea">🎓 Ciclo Orientado (3.° a 5.°)</div>
-      <div class="table-wrap">
-        <table class="rubrica-table">
-          <thead><tr><th style="width:24%">Competencia</th><th style="width:25%">Inicial</th><th style="width:25%">Básico</th><th style="width:26%">Logrado</th></tr></thead>
-          <tbody>
-            <tr><td>Co-creación y funcionamiento técnico especializado</td><td>Utiliza la IA para la producción de contenidos multimodales básicos a partir de instrucciones simples y sin iteración.</td><td>Diseña, aplica e itera instrucciones precisas para producir recursos multimodales (texto, imagen, audio) complejos, personalizados y de alta calidad técnica.</td><td>Se posiciona como co-creador activo, utilizando la IA para el co-diseño de contenidos multimodales y para resolver problemas complejos de manera autónoma. Actúa como editor responsable y curador de sus producciones.</td></tr>
-            <tr><td>Pensamiento crítico ante la desinformación</td><td>Identifica errores y alucinaciones evidentes, pero tiene dificultades para reconocer sesgos algorítmicos sutiles (estereotipos de género, clase, etc.) y vulnerabilidades técnicas (<em>prompt injection</em>) en las respuestas.</td><td>Distingue información falsa o engañosa (<em>deepfakes</em>) reconociendo sus dimensiones políticas y económicas. Comprende el impacto de los sesgos en el acceso a la información.</td><td>Evalúa críticamente el impacto de los algoritmos en la democracia, la privacidad y la formación de la opinión pública. Implementa prácticas seguras y éticas en la difusión de información. Por ejemplo, fundamenta por qué un modelo de IA no es neutro en su diseño.</td></tr>
-            <tr><td>Interacción estratégica</td><td>Diseña instrucciones (<em>prompts</em>) simples y requiere de múltiples reformulaciones para lograr que la respuesta de la IA sea efectiva.</td><td>Diseña, aplica e itera instrucciones precisas, logrando obtener de la IA respuestas pertinentes, precisas y personalizadas. Comprende la necesidad de evaluar críticamente los resultados.</td><td>Gestiona con autonomía y con una mirada crítica todo el proceso de interacción con la IA. Asume un rol activo en la identificación de sesgos y alucinaciones, como también en la validación conceptual y la veracidad y rigurosidad de los resultados.</td></tr>
-            <tr><td>Ciudadanía y ética de autoría</td><td>Identifica la necesidad de proteger sus datos personales y gestionar su huella digital. Aplica criterios generales de citación.</td><td>Administra su privacidad y sus datos personales. Reflexiona sobre los riesgos del plagio y las implicancias éticas de la autoría sintética.</td><td>Gestiona con autonomía y proactividad su identidad y huella digital. Implementa estrategias de resguardo de su intimidad frente a mecanismos automatizados de seguimiento. Asume una postura ética y aplica criterios de integridad académica y citación de fuentes sintéticas.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="nota-ped">
-      <p class="slabel">Nota pedagógica</p>
-      <p>Esta rúbrica es un instrumento orientador para una evaluación formativa y continua. Un estudiante que se encuentra en nivel «Inicial» no implica un déficit, sino una etapa del recorrido de aprendizaje.</p>
+  <div class="card sub-panel active" id="rub-r1">
+    <div class="rub-head-pur">🎓 Ciclo Básico (1.° y 2.°)</div>
+    <div class="table-wrap">
+      <table class="rubrica-table">
+        <thead>
+          <tr>
+            <th>Competencia</th>
+            <th>Inicial</th>
+            <th>Básico</th>
+            <th>Logrado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim-cell"><strong>Alfabetización técnica y funcionamiento</span></td>
+            <td>Utiliza términos antropomórficos, atribuyendo conciencia o sentimientos a la IA. Por ejemplo, dice «La IA sabe».</td>
+            <td>Identifica a la IA como un software de cálculo probabilístico basado en patrones estadísticos. Por ejemplo, reformula «la IA sabe» por «la IA predice».</td>
+            <td>Explica la mecánica básica del aprendizaje automático (machine learning) y la lógica de los modelos de lenguaje. Por ejemplo, describe por qué dos prompts similares pueden dar respuestas distintas.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Pensamiento crítico y validación</span></td>
+            <td>Acepta la información generada por la IA como una verdad absoluta sin cuestionarla.</td>
+            <td>Detecta errores o «alucinaciones» evidentes y reconoce que la IA puede fallar. Por ejemplo, señala un dato incorrecto en una respuesta.</td>
+            <td>Valida y refuta sistemáticamente las respuestas de la IA contrastándolas con fuentes confiables. Detecta sesgos básicos de entrenamiento. Por ejemplo, presenta la respuesta de la IA junto a la fuente confiable que la confirma o refuta.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Interacción estratégica</span></td>
+            <td>Utiliza la IA para sustituir el esfuerzo intelectual propio (delegación cognitiva).</td>
+            <td>Emplea asistentes conversacionales para generar borradores o ideas iniciales que luego revisa.</td>
+            <td>Diseña y aplica instrucciones (prompts) precisas. Por ejemplo, optimiza la interacción para obtener respuestas de alta calidad técnica.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Protección digital</span></td>
+            <td>Requiere de acompañamiento para identificar riesgos y aplicar pautas de protección de su privacidad.</td>
+            <td>Identifica riesgos asociados al uso de datos personales y el impacto del perfilamiento automatizado.</td>
+            <td>Resguarda proactivamente su privacidad. Aplica criterios éticos de autoría y conoce normas de propiedad intelectual. Por ejemplo, cita correctamente una producción realizada con asistencia de IA.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
+  <div class="card sub-panel" id="rub-r2">
+    <div class="rub-head-tea">🎓 Ciclo Orientado (3.° a 5.°)</div>
+    <div class="table-wrap">
+      <table class="rubrica-table">
+        <thead>
+          <tr>
+            <th>Copetencia</th>
+            <th>Inicial</th>
+            <th>Básico</th>
+            <th>Logrado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim-cell"><strong>Co-creación y funcionamiento técnico especializado</span></td>
+            <td>Utiliza la IA para la producción de contenidos multimodales básicos a partir de instrucciones simples y sin iteración.</td>
+            <td>Diseña, aplica e itera instrucciones precisas para producir recursos multimodales (texto, imagen, audio) complejos, personalizados y de alta calidad técnica.</td>
+            <td>Se posiciona como co-creador activo, utilizando la IA para el co-diseño de contenidos multimodales y para resolver problemas complejos de manera autónoma. Actúa como editor responsable y curador de sus producciones.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Pensamiento crítico ante la desinformación</span></td>
+            <td>Identifica errores y alucinaciones evidentes, pero tiene dificultades para reconocer sesgos algorítmicos sutiles (estereotipos de género, clase, etc.) y vulnerabilidades técnicas (prompt injection) en las respuestas.</td>
+            <td>Distingue información falsa o engañosa (deepfakes) reconociendo sus dimensiones políticas y económicas. Comprende el impacto de los sesgos en el acceso a la información.</td>
+            <td>Evalúa críticamente el impacto de los algoritmos en la democracia, la privacidad y la formación de la opinión pública. Implementa prácticas seguras y éticas en la difusión de información. Por ejemplo, fundamenta por qué un modelo de IA no es neutro en su diseño.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Interacción estratégica</span></td>
+            <td>Diseña instrucciones (prompts) simples y requiere de múltiples reformulaciones para lograr que la respuesta de la IA sea efectiva.</td>
+            <td>Diseña, aplica e itera instrucciones precisas, logrando obtener de la IA respuestas pertinentes, precisas y personalizadas. Comprende la necesidad de evaluar críticamente los resultados.</td>
+            <td>Gestiona con autonomía y con una mirada crítica todo el proceso de interacción con la IA. Asume un rol activo en la identificación de sesgos y alucinaciones, como también en la validación conceptual y la veracidad y rigurosidad de los resultados.</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><strong>Ciudadanía y ética de autoría</span></td>
+            <td>Identifica la necesidad de proteger sus datos personales y gestionar su huella digital. Aplica criterios generales de citación.</td>
+            <td>Administra su privacidad y sus datos personales. Reflexiona sobre los riesgos del plagio y las implicancias éticas de la autoría sintética.</td>
+            <td>Gestiona con autonomía y proactividad su identidad y huella digital. Implementa estrategias de resguardo de su intimidad frente a mecanismos automatizados de seguimiento. Asume una postura ética y aplica criterios de integridad académica y citación de fuentes sintéticas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="nota-ped">
+    <p class="slabel">Nota pedagógica</p>
+    <p>Esta rúbrica es un instrumento orientador para una evaluación formativa y continua. Un estudiante que se encuentra en nivel «Inicial» no implica un déficit, sino una etapa del recorrido de aprendizaje.</p>
+  </div>
+</div>
   <div class="panel" id="panel-docs" role="tabpanel">
     <p class="rubrica-intro">Materiales de consulta para ampliar orientaciones, marcos de referencia y recursos de implementación vinculados al trabajo pedagógico con inteligencia artificial.</p>
 
