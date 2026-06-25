@@ -10,6 +10,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 
+/* CSS DEL BOTÓN VOLVER */
+/* Contenedor principal: separa los extremos */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Empuja el botón a la izq y el buscador a la der */
+  gap: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+/* Botón "Volver" adaptado para llevar texto e ícono */
+.btn-back-main {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre la flecha y el texto */
+  padding: 0 16px; /* Espacio interno para que no quede pegado al borde */
+  height: 38px; /* Altura ideal alineada con los inputs estándar */
+  background: var(--blanco);
+  border: 1px solid var(--negro); /* Fondo blanco y borde negro */
+  border-radius: 10px;
+  color: var(--negro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0; /* Evita que el botón se achique */
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-back-main:hover {
+  background: rgba(0, 0, 0, 0.05); /* Hover sutil oscuro sobre el fondo blanco */
+}
+/* Buscador original */
+.search-wrap {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+} /* CSS DEL BOTÓN VOLVER */
+
+
+
+
   .header-iframe {
     width: 100%;
     height: 20px;
@@ -421,11 +464,23 @@ main {
 </header>
 
 <main>
-  <div class="search-wrap no-print" role="search">
-    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search-input" placeholder="Buscar por espacio curricular, año, concepto" autocomplete="off" aria-label="Buscar contenidos del anexo por espacio curricular, año o concepto" aria-controls="search-results" oninput="doSearch()" onfocus="doSearch()">
-    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Limpiar búsqueda">×</button>
-    <div class="search-results" id="search-results" role="listbox" aria-label="Resultados de búsqueda"></div>
+<div class="search-container no-print">
+    <!-- Botón Volver (Pegado a la izquierda con texto) -->
+    <a href="index.html" class="btn-back-main">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Volver</span>
+    </a>
+
+    <!-- Buscador (Empujado y alineado a la derecha) -->
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" placeholder="Buscar por materia, grado, concepto…" autocomplete="off" oninput="doSearch()" onfocus="doSearch()">
+      <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
+      <div class="search-results" id="search-results"></div>
+    </div>
   </div>
 
   <nav class="tab-nav" role="tablist" aria-label="Secciones del anexo">
