@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer</title>
+  <style>
+    /* Variables extraídas de mundial digital.txt */
+    :root {
+      --amarillo: #FFD100;
+      --turquesa: #00B5BF;
+      --gris: #1D3343;
+      --gris-m: #5F5E5A;
+      --gris-c: #F1EFE8;
+      --blanco: #FFFFFF;
+      --celeste: #035C80;
+      --borde: rgba(44,44,42,0.09);
+    }
+
+    /* Reseteo básico para el iframe */
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: transparent; /* Permite que se adapte al fondo si fuera necesario */
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* Estilos adaptados para el Footer */
+    footer { 
+      background: var(--gris); 
+      color: rgba(255,255,255,0.4); 
+      text-align: center; 
+      padding: 20px 10px; /* Padding añadido para emprolijar dentro del iframe */
+      font-size: 11px;
+      border-top: 4px solid var(--celeste); 
+    }
+
+    /* Estructura interna del footer provisto */
+    .bgc-footer-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+/* Estilos corregidos para los logos del footer */
+    .bgc-footer-logos {
+      display: flex;
+      align-items: center; /* Alinea los logos verticalmente al centro */
+      justify-content: center;
+      gap: 30px; /* Un poco más de separación para que luzcan mejor */
+    }
+
+    .bgc-footer-logos img {
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Logo del Ministerio (Agrandado) */
+    #bgc-footer-logos-mi {
+      height: 30px;
+    }
+
+    /* Logo de Educación Digital (Tal cual estaba) */
+    #bgc-footer-logos-ed {
+      height: 25px;
+    }
+
+    .bgc-footer-sep {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .bgc-footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .bgc-footer-links a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .bgc-footer-links a:hover {
+      color: var(--celeste);
+    }
+
+    .bgc-footer-legal {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 5px;
+    }
+
+    /* Responsivo básico */
+    @media (max-width: 600px) {
+      .bgc-footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<footer>  
+  <div class="bgc-footer">    
+    <div class="bgc-footer-inner">
+      <div class="bgc-footer-logos">        
+        <img id="bgc-footer-logos-mi" src="./Logos/Ministerio.png" alt="Ministerio">        
+        <img id="bgc-footer-logos-ed" src="./Logos/ED.png" alt="ED">      
+      </div>
+      <div class="bgc-footer-sep"></div>
+      <div class="bgc-footer-links">        
+        <a href="https://boletinoficial.buenosaires.gob.ar" target="_blank">Boletín oficial</a>        
+        <a href="https://buenosaires.gob.ar/terminos" target="_blank">Términos y condiciones</a>        
+        <a href="https://buenosaires.gob.ar/privacidad" target="_blank">Política de privacidad</a>        
+        <a href="https://buenosaires.gob.ar/oficios" target="_blank">Oficios Judiciales</a>        
+        <a href="https://buenosaires.gob.ar/transparencia" target="_blank">Transparencia</a>      
+      </div>
+      <div class="bgc-footer-legal">        
+        © Buenos Aires Aprende con IA · Todos los derechos reservados.      
+      </div>
+    </div>  
+  </div>
+</footer>
+
+</body>
+</html>

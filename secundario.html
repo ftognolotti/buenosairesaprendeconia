@@ -9,6 +9,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+
+  .header-iframe {
+    width: 100%;
+    height: 20px;
+    /* position: sticky; */
+    border: none;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0; /* Evita que se deforme o achique */
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --amarillo:#FFCD02;
@@ -26,11 +37,14 @@
     --radius:10px; --shadow:0 1px 4px rgba(29,51,67,.12);
     font-family:'Archivo',sans-serif;
   }
-  body { background:#f8fafc; color:#1D3343; font-size:17px; line-height:1.55; }
+  body { background:#f8fafc; color:#1D3343; font-size:17px; line-height:1.55; display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Fuerza al body a medir al menos el alto total de la ventana */
+  margin: 0;}
 
   /* ── LAYOUT ── */
   .container { max-width:960px; margin:0 auto; padding:0 16px; }
-  header { background:#fff; border-bottom:1px solid #e2e8f0; position:sticky; top:0; z-index:100; }
+  header { background:#fff; border-bottom:1px solid #e2e8f0; /*position:sticky; */top:0; z-index:100; }
   header .inner { padding:14px 16px; max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:10px; }
   header .meta { font-size:11px; font-weight:600; color:#4E6577; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
   header h1 { font-size:22px; font-weight:800; color:#1D3343; }
@@ -46,7 +60,13 @@
   .badge-slate { background:#f1f5f9; color:#345066; border-color:#e2e8f0; }
   .btn-print { font-size:11px; font-weight:500; color:#4E6577; border:1px solid #e2e8f0; background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; display:flex; align-items:center; gap:5px; }
   .btn-print:hover { background:#f8fafc; }
-  main { padding:20px 16px 40px; max-width:960px; margin:0 auto; }
+main {
+  flex: 1; /* Esto empuja automáticamente al footer hacia abajo */
+  padding: 20px 16px 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%; /* Asegura que mantenga su ancho en el layout flex */
+}
 
   /* ── SEARCH ── */
   .search-wrap { position:relative; max-width:480px; margin-bottom:16px; }
@@ -169,7 +189,7 @@
   /* ── EJE ÉTICO ── */
   .etico-intro { font-size:13px; color:#4E6577; margin-bottom:18px; }
   .principio { display:flex; align-items:flex-start; gap:0; border:1px solid #e2e8f0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin-bottom:10px; }
-  .principio-icon { width:52px; min-width:52px; display:flex; align-items:center; justify-content:center; font-size:18px; padding:12px 0; flex-shrink:0; }
+  .principio-icon { width:52px; min-width:52px; display:flex; align-items:center; justify-content:center; font-size:18px; padding:12px 0; flex-shrink:0; align-self: stretch;}
   .principio-body { padding:12px 14px; flex:1; }
   .principio-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:6px; margin-bottom:4px; }
   .principio-title { font-size:13px; font-weight:600; color:#1D3343; }
@@ -189,7 +209,7 @@
   .rubrica-table td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:#345066; vertical-align:top; }
   .rubrica-table tr:last-child td { border-bottom:none; }
   .rubrica-table td:first-child { font-weight:600; color:#1D3343; }
-  .rubrica-table td:last-child { background:#E8F1F5; color:#1D3343; font-weight:500; }
+  .rubrica-table td:last-child {color:#1D3343; font-weight:500; }
   .rub-head-pur { background:var(--pur-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--pur-text); border-bottom:1px solid var(--pur-border); }
   .rub-head-tea { background:var(--tea-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--tea-text); border-bottom:1px solid var(--tea-border); }
   .table-wrap { overflow-x:auto; }
@@ -257,7 +277,7 @@
   .principio-desc, .rubrica-table td, .rubrica-intro, .etico-intro, .cycle-row p, .pregunta-item p, .nota-ped p, .search-item-preview { color:var(--negro); }
   .principio-icon { color:var(--azul-oscuro); }
   .rubrica-table th { background:var(--azul-oscuro); color:var(--blanco); border-bottom-color:var(--celeste); }
-  .rubrica-table td:last-child { background:rgba(141,226,214,.22); color:var(--azul-oscuro); }
+  .rubrica-table td:last-child { color:var(--azul-oscuro); }
   .dot { background:var(--azul-oscuro); }
   .dot-pur { background:var(--fucsia); }
   .dot-list li .star { color:var(--amarillo); }
@@ -278,7 +298,7 @@
   main { scroll-margin-top:96px; }
   .intro-panel { background:var(--blanco); border:1px solid var(--celeste); border-radius:12px; padding:24px 28px; margin-bottom:26px; box-shadow:var(--shadow); text-align:center; }
   .intro-panel p { color:var(--negro); font-size:17px; line-height:1.7; max-width:760px; margin:0 auto; font-weight:500; }
-  .tab-nav { position:sticky; top:78px; z-index:80; }
+  .tab-nav { /*position:sticky; */ top:78px; z-index:80; }
   .tab-btn, .sub-btn, .sub-btn-rub, .sub-btn-pc, .btn-print, .search-clear, .search-item { transition:background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
   .tab-btn:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .btn-print:hover { transform:translateY(-1px); }
   .tab-btn:focus-visible, .sub-btn:focus-visible, .sub-btn-rub:focus-visible, .sub-btn-pc:focus-visible, .btn-print:focus-visible, .search-clear:focus-visible, .search-item:focus-visible, .doc-link:focus-visible, .search-wrap input:focus-visible { outline:3px solid rgba(255,102,196,.35); outline-offset:2px; }
@@ -381,7 +401,7 @@
 </style>
 </head>
 <body>
-
+  <iframe src="header.html" class="header-iframe" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
 <header>
   <div class="inner">
     <div>
@@ -631,13 +651,13 @@
   <div class="panel" id="panel-etico" role="tabpanel">
     <p class="etico-intro">Este eje transversal está orientado a garantizar un posicionamiento crítico y consciente respecto al impacto de la inteligencia artificial e impulsa el uso de la tecnología como un recurso que potencia las capacidades humanas y el proceso de aprendizaje, resguardando la dimensión humana de los vínculos pedagógicos y previniendo la atribución de cualidades humanas a los sistemas automatizados.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#FFF8D6">🧠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Reformulación del lenguaje y análisis crítico para la comprensión de la IA como un sistema de procesamiento probabilístico en lugar de un ente con conciencia o intencionalidad.</p></div></div>
+    <div class="principio"><div class="principio-icon">🧠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span></div><p class="principio-desc">Reformulación del lenguaje y análisis crítico para la comprensión de la IA como un sistema de procesamiento probabilístico en lugar de un ente con conciencia o intencionalidad.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y equidad</span></div><p class="principio-desc">Identificación de estereotipos de género o clase en las respuestas de la IA. Contraste de la información generada con fuentes académicas y científicas validadas.</p></div></div>
+    <div class="principio"><div class="principio-icon">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y equidad</span></div><p class="principio-desc">Identificación de estereotipos de género o clase en las respuestas de la IA. Contraste de la información generada con fuentes académicas y científicas validadas.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Delegación cognitiva</span></div><p class="principio-desc">Reflexión sobre cuándo el uso de la IA anula el pensamiento autónomo. Uso de la IA como asistente, no como reemplazo. Necesidad de promover la metacognición y la supervisión humana, resguardando el vínculo pedagógico y humano como el eje insustituible del proceso de aprendizaje.</p></div></div>
+    <div class="principio"><div class="principio-icon">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Delegación cognitiva</span></div><p class="principio-desc">Reflexión sobre cuándo el uso de la IA anula el pensamiento autónomo. Uso de la IA como asistente, no como reemplazo. Necesidad de promover la metacognición y la supervisión humana, resguardando el vínculo pedagógico y humano como el eje insustituible del proceso de aprendizaje.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Responsabilidad y propiedad intelectual</span></div><p class="principio-desc">Uso legal y honesto de la tecnología. Debate sobre la ética de la autoría frente a obras generadas por IA. Importancia de la cita cuando se usan herramientas de IA.</p></div></div>
+    <div class="principio"><div class="principio-icon">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Responsabilidad y propiedad intelectual</span></div><p class="principio-desc">Uso legal y honesto de la tecnología. Debate sobre la ética de la autoría frente a obras generadas por IA. Importancia de la cita cuando se usan herramientas de IA.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -653,11 +673,11 @@
     <p class="etico-intro">La Protección Digital Infantil y Adolescente (PDIyA) es una línea estratégica prioritaria del Ministerio de Educación de la Ciudad de Buenos Aires, enmarcada en el Plan «Buenos Aires Aprende» (2024-2027) y el Diseño Curricular de Educación Digital. Su objetivo es garantizar condiciones de seguridad, bienestar y ejercicio pleno de derechos para niños y adolescentes dentro de los entornos digitales.</p>
     <p class="etico-intro">Este eje es transversal y busca mitigar los riesgos de los sistemas digitales. La escuela debe actuar como un espacio de alfabetización digital que aborde la tecnología como un objeto de estudio para que los estudiantes adquieran cada vez mayor autonomía e identifiquen con precisión cómo sus datos personales, su privacidad y su integridad pueden verse afectados, tanto en las actividades áulicas como en sus interacciones recreativas fuera del ámbito escolar.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#E8F1F5">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Protección de datos</span></div><p class="principio-desc">Concientización sobre el riesgo de compartir información sensible (nombres, fotos, ubicación) que se usa para entrenar modelos. Recomendación del uso exclusivo de cuentas institucionales para garantizar entornos controlados.</p></div></div>
+    <div class="principio"><div class="principio-icon">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Protección de datos</span></div><p class="principio-desc">Concientización sobre el riesgo de compartir información sensible (nombres, fotos, ubicación) que se usa para entrenar modelos. Recomendación del uso exclusivo de cuentas institucionales para garantizar entornos controlados.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#FFF8D6">🧩</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alfabetización crítica</span></div><p class="principio-desc">Abordaje de los deepfakes y la manipulación audiovisual. Reconocimiento de las dimensiones políticas, éticas y económicas de la desinformación hiperrealista. Desplazamiento del rol pasivo de "espectador engañado" al de "prosumidor responsable".</p></div></div>
+    <div class="principio"><div class="principio-icon">🧩</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alfabetización crítica</span></div><p class="principio-desc">Abordaje de los deepfakes y la manipulación audiovisual. Reconocimiento de las dimensiones políticas, éticas y económicas de la desinformación hiperrealista. Desplazamiento del rol pasivo de "espectador engañado" al de "prosumidor responsable".</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Violencia digital y responsabilidad</span></div><p class="principio-desc">Abordaje de los conflictos (ciberacoso, la difusión no consentida de imágenes, etc.) originados en entornos virtuales que afectan el clima escolar y la vida de los estudiantes involucrados.</p></div></div>
+    <div class="principio"><div class="principio-icon">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Violencia digital y responsabilidad</span></div><p class="principio-desc">Abordaje de los conflictos (ciberacoso, la difusión no consentida de imágenes, etc.) originados en entornos virtuales que afectan el clima escolar y la vida de los estudiantes involucrados.</p></div></div>
 
     <div class="preguntas-box">
       <h3>Preguntas orientadoras para el docente</h3>
@@ -671,48 +691,87 @@
       </div>
     </div>
   </div>
-  <div class="panel" id="panel-rubrica" role="tabpanel">
-    <p class="rubrica-intro">Estas rúbricas constituyen un instrumento guía para operacionalizar criterios de evaluación y orientar la tarea docente. En el Ciclo Básico, el foco está puesto en el paso de «la magia a la mecánica», recuperando la base construida en el Nivel Primario, pero avanzando hacia un uso mediado como asistente de estudio. En el Ciclo Orientado, el foco está puesto en la autonomía, la co-creación estratégica, el análisis de grandes volúmenes de datos y el diseño de contenidos en múltiples lenguajes y formatos.</p>
+<div class="panel" id="panel-rubrica" role="tabpanel">
+  <p class="rubrica-intro">Estas rúbricas constituyen un instrumento guía para operacionalizar criterios de evaluación y orientar la tarea docente. En el Ciclo Básico, el foco está puesto en el paso de «la magia a la mecánica», recuperando la base construida en el Nivel Primario, pero avanzando hacia un uso mediado como asistente de estudio. En el Ciclo Orientado, el foco está puesto en la autonomía, la co-creación estratégica, el análisis de grandes volúmenes de datos y el diseño de contenidos en múltiples lenguajes y formatos.</p>
+  
+  <div class="sub-nav no-print" role="tablist" aria-label="Ciclos de la rúbrica docente">
+    <button class="sub-btn-rub active-r1" onclick="showRubrica('r1', this)" role="tab" aria-selected="true" aria-controls="rub-r1">Ciclo Básico (1.°-2.°)</button>
+    <button class="sub-btn-rub" onclick="showRubrica('r2', this)" role="tab" aria-selected="false" aria-controls="rub-r2">Ciclo Orientado (3.°-5.°)</button>
+  </div>
 
-    <div class="sub-nav no-print" role="tablist" aria-label="Ciclos de la rúbrica docente">
-      <button class="sub-btn-rub active-r1" onclick="showRubrica('r1', this)" aria-selected="true" type="button">Ciclo Básico (1.°-2.°)</button>
-      <button class="sub-btn-rub" onclick="showRubrica('r2', this)" aria-selected="false" type="button">Ciclo Orientado (3.°-5.°)</button>
-    </div>
-
-    <div class="card sub-panel active" id="rub-r1">
-      <div class="rub-head-pur">🎓 Ciclo Básico (1.° a 2.°)</div>
-      <div class="table-wrap">
-        <table class="rubrica-table">
-          <thead><tr><th style="width:24%">Competencia</th><th style="width:25%">Inicial</th><th style="width:25%">Básico</th><th style="width:26%">Logrado</th></tr></thead>
+  <div class="card sub-panel active" id="rub-r1">
+    <div class="rub-head-pur">🎓 Ciclo Básico (1.° y 2.°)</div>
+    <div class="table-wrap">
+      <table class="rubrica-table">
+        <thead>
+          <tr>
+            <th>Competencia</th>
+            <th>Inicial</th>
+            <th>Básico</th>
+            <th>Logrado</th>
+          </tr>
+        </thead>
           <tbody>
-            <tr><td>Alfabetización técnica y funcionamiento</td><td>Utiliza términos antropomórficos, atribuyendo conciencia o sentimientos a la IA. Por ejemplo, dice «La IA sabe».</td><td>Identifica a la IA como un software de cálculo probabilístico basado en patrones estadísticos. Por ejemplo, reformula «la IA sabe» por «la IA predice».</td><td>Explica la mecánica básica del aprendizaje automático (<em>machine learning</em>) y la lógica de los modelos de lenguaje. Por ejemplo, describe por qué dos <em>prompts</em> similares pueden dar respuestas distintas.</td></tr>
-            <tr><td>Pensamiento crítico y validación</td><td>Acepta la información generada por la IA como una verdad absoluta sin cuestionarla.</td><td>Detecta errores o «alucinaciones» evidentes y reconoce que la IA puede fallar. Por ejemplo, señala un dato incorrecto en una respuesta.</td><td>Valida y refuta sistemáticamente las respuestas de la IA contrastándolas con fuentes confiables. Detecta sesgos básicos de entrenamiento. Por ejemplo, presenta la respuesta de la IA junto a la fuente confiable que la confirma o refuta.</td></tr>
-            <tr><td>Interacción estratégica</td><td>Utiliza la IA para sustituir el esfuerzo intelectual propio (delegación cognitiva).</td><td>Emplea asistentes conversacionales para generar borradores o ideas iniciales que luego revisa.</td><td>Diseña y aplica instrucciones (<em>prompts</em>) precisas. Por ejemplo, optimiza la interacción para obtener respuestas de alta calidad técnica.</td></tr>
-            <tr><td>Protección digital</td><td>Requiere de acompañamiento para identificar riesgos y aplicar pautas de protección de su privacidad.</td><td>Identifica riesgos asociados al uso de datos personales y el impacto del perfilamiento automatizado.</td><td>Resguarda proactivamente su privacidad. Aplica criterios éticos de autoría y conoce normas de propiedad intelectual. Por ejemplo, cita correctamente una producción realizada con asistencia de IA.</td></tr>
+            <tr><td>Alfabetización técnica y funcionamiento</td>
+              <td>Utiliza términos antropomórficos, atribuyendo conciencia o sentimientos a la IA. Por ejemplo, dice «La IA sabe».</td>
+              <td>Identifica a la IA como un software de cálculo probabilístico basado en patrones estadísticos. Por ejemplo, reformula «la IA sabe» por «la IA predice».</td>
+              <td>Explica la mecánica básica del aprendizaje automático (<em>machine learning</em>) y la lógica de los modelos de lenguaje. Por ejemplo, describe por qué dos <em>prompts</em> similares pueden dar respuestas distintas.</td></tr>
+            <tr><td>Pensamiento crítico y validación</td>
+              <td>Acepta la información generada por la IA como una verdad absoluta sin cuestionarla.</td>
+              <td>Detecta errores o «alucinaciones» evidentes y reconoce que la IA puede fallar. Por ejemplo, señala un dato incorrecto en una respuesta.</td>
+              <td>Valida y refuta sistemáticamente las respuestas de la IA contrastándolas con fuentes confiables. Detecta sesgos básicos de entrenamiento. Por ejemplo, presenta la respuesta de la IA junto a la fuente confiable que la confirma o refuta.</td></tr>
+            <tr><td>Interacción estratégica</td>
+              <td>Utiliza la IA para sustituir el esfuerzo intelectual propio (delegación cognitiva).</td>
+              <td>Emplea asistentes conversacionales para generar borradores o ideas iniciales que luego revisa.</td>
+              <td>Diseña y aplica instrucciones (<em>prompts</em>) precisas. Por ejemplo, optimiza la interacción para obtener respuestas de alta calidad técnica.</td></tr>
+            <tr><td>Protección digital</td>
+              <td>Requiere de acompañamiento para identificar riesgos y aplicar pautas de protección de su privacidad.</td>
+              <td>Identifica riesgos asociados al uso de datos personales y el impacto del perfilamiento automatizado.</td>
+              <td>Resguarda proactivamente su privacidad. Aplica criterios éticos de autoría y conoce normas de propiedad intelectual. Por ejemplo, cita correctamente una producción realizada con asistencia de IA.</td></tr>
           </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="card sub-panel" id="rub-r2">
-      <div class="rub-head-tea">🎓 Ciclo Orientado (3.° a 5.°)</div>
-      <div class="table-wrap">
-        <table class="rubrica-table">
-          <thead><tr><th style="width:24%">Competencia</th><th style="width:25%">Inicial</th><th style="width:25%">Básico</th><th style="width:26%">Logrado</th></tr></thead>
-          <tbody>
-            <tr><td>Co-creación y funcionamiento técnico especializado</td><td>Utiliza la IA para la producción de contenidos multimodales básicos a partir de instrucciones simples y sin iteración.</td><td>Diseña, aplica e itera instrucciones precisas para producir recursos multimodales (texto, imagen, audio) complejos, personalizados y de alta calidad técnica.</td><td>Se posiciona como co-creador activo, utilizando la IA para el co-diseño de contenidos multimodales y para resolver problemas complejos de manera autónoma. Actúa como editor responsable y curador de sus producciones.</td></tr>
-            <tr><td>Pensamiento crítico ante la desinformación</td><td>Identifica errores y alucinaciones evidentes, pero tiene dificultades para reconocer sesgos algorítmicos sutiles (estereotipos de género, clase, etc.) y vulnerabilidades técnicas (<em>prompt injection</em>) en las respuestas.</td><td>Distingue información falsa o engañosa (<em>deepfakes</em>) reconociendo sus dimensiones políticas y económicas. Comprende el impacto de los sesgos en el acceso a la información.</td><td>Evalúa críticamente el impacto de los algoritmos en la democracia, la privacidad y la formación de la opinión pública. Implementa prácticas seguras y éticas en la difusión de información. Por ejemplo, fundamenta por qué un modelo de IA no es neutro en su diseño.</td></tr>
-            <tr><td>Interacción estratégica</td><td>Diseña instrucciones (<em>prompts</em>) simples y requiere de múltiples reformulaciones para lograr que la respuesta de la IA sea efectiva.</td><td>Diseña, aplica e itera instrucciones precisas, logrando obtener de la IA respuestas pertinentes, precisas y personalizadas. Comprende la necesidad de evaluar críticamente los resultados.</td><td>Gestiona con autonomía y con una mirada crítica todo el proceso de interacción con la IA. Asume un rol activo en la identificación de sesgos y alucinaciones, como también en la validación conceptual y la veracidad y rigurosidad de los resultados.</td></tr>
-            <tr><td>Ciudadanía y ética de autoría</td><td>Identifica la necesidad de proteger sus datos personales y gestionar su huella digital. Aplica criterios generales de citación.</td><td>Administra su privacidad y sus datos personales. Reflexiona sobre los riesgos del plagio y las implicancias éticas de la autoría sintética.</td><td>Gestiona con autonomía y proactividad su identidad y huella digital. Implementa estrategias de resguardo de su intimidad frente a mecanismos automatizados de seguimiento. Asume una postura ética y aplica criterios de integridad académica y citación de fuentes sintéticas.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="nota-ped">
-      <p class="slabel">Nota pedagógica</p>
-      <p>Esta rúbrica es un instrumento orientador para una evaluación formativa y continua. Un estudiante que se encuentra en nivel «Inicial» no implica un déficit, sino una etapa del recorrido de aprendizaje.</p>
+      </table>
     </div>
   </div>
+
+  <div class="card sub-panel" id="rub-r2">
+    <div class="rub-head-tea">🎓 Ciclo Orientado (3.° a 5.°)</div>
+    <div class="table-wrap">
+      <table class="rubrica-table">
+        <thead>
+          <tr>
+            <th>Copetencia</th>
+            <th>Inicial</th>
+            <th>Básico</th>
+            <th>Logrado</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr><td>Co-creación y funcionamiento técnico especializado</td>
+              <td>Utiliza la IA para la producción de contenidos multimodales básicos a partir de instrucciones simples y sin iteración.</td>
+              <td>Diseña, aplica e itera instrucciones precisas para producir recursos multimodales (texto, imagen, audio) complejos, personalizados y de alta calidad técnica.</td>
+              <td>Se posiciona como co-creador activo, utilizando la IA para el co-diseño de contenidos multimodales y para resolver problemas complejos de manera autónoma. Actúa como editor responsable y curador de sus producciones.</td></tr>
+            <tr><td>Pensamiento crítico ante la desinformación</td>
+              <td>Identifica errores y alucinaciones evidentes, pero tiene dificultades para reconocer sesgos algorítmicos sutiles (estereotipos de género, clase, etc.) y vulnerabilidades técnicas (<em>prompt injection</em>) en las respuestas.</td>
+              <td>Distingue información falsa o engañosa (<em>deepfakes</em>) reconociendo sus dimensiones políticas y económicas. Comprende el impacto de los sesgos en el acceso a la información.</td>
+              <td>Evalúa críticamente el impacto de los algoritmos en la democracia, la privacidad y la formación de la opinión pública. Implementa prácticas seguras y éticas en la difusión de información. Por ejemplo, fundamenta por qué un modelo de IA no es neutro en su diseño.</td></tr>
+            <tr><td>Interacción estratégica</td>
+              <td>Diseña instrucciones (<em>prompts</em>) simples y requiere de múltiples reformulaciones para lograr que la respuesta de la IA sea efectiva.</td>
+              <td>Diseña, aplica e itera instrucciones precisas, logrando obtener de la IA respuestas pertinentes, precisas y personalizadas. Comprende la necesidad de evaluar críticamente los resultados.</td>
+              <td>Gestiona con autonomía y con una mirada crítica todo el proceso de interacción con la IA. Asume un rol activo en la identificación de sesgos y alucinaciones, como también en la validación conceptual y la veracidad y rigurosidad de los resultados.</td></tr>
+            <tr><td>Ciudadanía y ética de autoría</td>
+              <td>Identifica la necesidad de proteger sus datos personales y gestionar su huella digital. Aplica criterios generales de citación.</td>
+              <td>Administra su privacidad y sus datos personales. Reflexiona sobre los riesgos del plagio y las implicancias éticas de la autoría sintética.</td>
+              <td>Gestiona con autonomía y proactividad su identidad y huella digital. Implementa estrategias de resguardo de su intimidad frente a mecanismos automatizados de seguimiento. Asume una postura ética y aplica criterios de integridad académica y citación de fuentes sintéticas.</td></tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="nota-ped">
+    <p class="slabel">Nota pedagógica</p>
+    <p>Esta rúbrica es un instrumento orientador para una evaluación formativa y continua. Un estudiante que se encuentra en nivel «Inicial» no implica un déficit, sino una etapa del recorrido de aprendizaje.</p>
+  </div>
+</div>
   <div class="panel" id="panel-docs" role="tabpanel">
     <p class="rubrica-intro">Materiales de consulta para ampliar orientaciones, marcos de referencia y recursos de implementación vinculados al trabajo pedagógico con inteligencia artificial.</p>
 
@@ -774,9 +833,9 @@
   </div>
 
 </main>
-  <footer class="institutional-footer" aria-label="Ministerio de Educacion de la Ciudad">
-    <img src="footer-ministerio-escudo.png" alt="Ministerio de Educacion | Buenos Aires Ciudad">
-  </footer><script>
+  <iframe src="footer.html" style="width: 100%; border: none; display: block; height: 150px; overflow: hidden;" scrolling="no"></iframe>
+  
+<script>
 // ── TAB NAVIGATION ──────────────────────────────────────────
 function normalizeMainPanels() {
   const main = document.querySelector('main');

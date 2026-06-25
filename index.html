@@ -12,6 +12,7 @@
     :root {
       --azul-ba: #1D3343;
       --azul-apoyo: #035C80;
+      --celeste: #035C80;
       --amarillo-acento: #FFCD02;
       --blanco: #FFFFFF;
       --gris-fondo: #F3F3F3;
@@ -25,25 +26,38 @@
     }
 
     html {
-      min-height: 100%;
-      background: var(--azul-ba);
+      height: 100%;
+      background: var(--azul-apoyo);
     }
 
+    .header-iframe {
+      width: 100%;
+      height: 20px;
+      border: none;
+      display: block;
+      overflow: hidden;
+      flex-shrink: 0; /* Evita que se deforme o achique */
+    }
+
+    /* 1. CONFIGURACIÓN DEL CONTENEDOR PADRE FLEX */
     body {
-      min-height: 100vh;
       margin: 0;
+      padding: 0;
+      min-height: 100vh;      
+      display: flex;
+      flex-direction: column; /* Alinea main e iframe verticalmente */
       font-family: "Archivo", Arial, Helvetica, sans-serif;
-      color: var(--azul-ba);
-      background:
-        linear-gradient(135deg, rgba(3, 92, 128, 0.24) 0 22%, transparent 22% 100%),
-        var(--azul-ba);
+      color: var(--azul-apoyo);
+      overflow-x: hidden;
     }
 
+    /* 2. REGLA LIMPIA PARA EL CONTENEDOR CENTRAL */
     main {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 32px 18px;
+      flex: 1;                /* Absorbe el espacio libre restando el alto del iframe */
+      display: flex;
+      align-items: center;     /* Centra la landing de forma horizontal */
+      justify-content: center; /* Centra la landing de forma vertical */
+      padding: 20px;          /* Espacio mínimo a los costados para que no toque los bordes */
     }
 
     .landing {
@@ -75,7 +89,6 @@
       position: relative;
       z-index: 1;
       display: grid;
-      gap: 18px;
     }
 
     .brand-title {
@@ -89,11 +102,10 @@
 
     .paleta {
       width: min(100%, 560px);
-      height: 12px;
+      height: 6px;
       display: grid;
       grid-template-columns: 2.2fr 1.2fr 1fr 1fr 0.9fr;
       justify-self: end;
-      border: 1px solid rgba(21, 50, 68, 0.18);
       border-radius: 999px;
       overflow: hidden;
     }
@@ -173,10 +185,17 @@
       transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
-    .boton:hover,
-    .boton:focus-visible {
+    .boton-primario:hover,
+    .boton-primario:focus-visible {
       transform: translateY(-2px);
       box-shadow: 0 10px 0 var(--azul-ba);
+      outline: none;
+    }
+
+    .boton-secundario:hover,
+    .boton-secundario:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 var(--azul-apoyo);
       outline: none;
     }
 
@@ -192,22 +211,17 @@
 
     .boton-secundario {
       color: var(--blanco);
-      background: var(--azul-apoyo);
-    }
-
-    .boton-secundario:hover,
-    .boton-secundario:focus-visible {
       background: var(--azul-ba);
     }
 
     @media (max-width: 640px) {
       main {
-        align-items: stretch;
         padding: 14px;
       }
 
       .landing {
-        min-height: calc(100vh - 28px);
+        /* Permite que en pantallas chicas se acomode libremente sin forzar los scrolls del viewport total */
+        min-height: auto; 
         justify-content: center;
       }
 
@@ -230,22 +244,12 @@
         width: min(100%, 360px);
       }
     }
-  
-    .institutional-footer {
-      width: min(100%, 1040px);
-      margin: 0 auto;
-      padding: 0 clamp(18px, 5vw, 56px) clamp(24px, 4vw, 36px);
-    }
-
-    .institutional-footer img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 0 0 8px 8px;
-    }
-</style>
+  </style>
 </head>
 <body>
+  <iframe src="header.html" class="header-iframe" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
+  <div class="barra-superior"></div>
+
   <main>
     <section class="landing" aria-labelledby="titulo">
       <div class="brand">
@@ -269,13 +273,12 @@
 
       <div class="acciones" aria-label="Accesos a anexos curriculares">
         <a class="boton boton-primario" href="primario.html">Anexo curricular Nivel Primario</a>
-        <!-- Reemplazar el href cuando esté publicada la landing/repositorio de Nivel Secundario. -->
         <a class="boton boton-secundario" href="secundario.html">Anexo curricular Nivel Secundario</a>
       </div>
     </section>
   </main>
-  <footer class="institutional-footer" aria-label="Ministerio de Educacion de la Ciudad">
-    <img src="footer-ministerio-escudo.png" alt="Ministerio de Educacion | Buenos Aires Ciudad">
-  </footer>
+
+  <iframe src="footer.html" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
+
 </body>
 </html>
