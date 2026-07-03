@@ -44,7 +44,6 @@
 /* Buscador original */
 .search-wrap {
   position: relative;
-  max-width: 480px;
   width: 100%;
   margin-bottom: 0 !important;
   margin-left: 0 !important;
@@ -112,7 +111,7 @@ main {
 }
 
   /* ── SEARCH ── */
-  .search-wrap { position:relative; max-width:480px; margin-bottom:16px; }
+  .search-wrap { position:relative; margin-bottom:16px; }
   .search-wrap input { width:100%; padding:8px 34px 8px 32px; border:1px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:13px; background:#fff; color:#1D3343; outline:none; }
   .search-wrap input:focus { border-color:#6F8392; box-shadow:0 0 0 2px rgba(148,163,184,.2); }
   .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:#6F8392; pointer-events:none; }
@@ -337,7 +336,6 @@ main {
 
   /* Ajustes de presentación y accesibilidad */
   header { box-shadow:0 1px 0 rgba(21,50,68,.06); }
-  header .inner { align-items:center; }
   main { scroll-margin-top:96px; }
   .intro-panel { background:var(--blanco); border:1px solid var(--celeste); border-radius:12px; padding:24px 28px; margin-bottom:26px; box-shadow:var(--shadow); text-align:center; }
   .intro-panel p { color:var(--negro); font-size:17px; line-height:1.7; max-width:760px; margin:0 auto; font-weight:500; }
@@ -383,16 +381,7 @@ main {
   .cycle-closing-box { grid-column:1 / -1; display:flex; align-items:flex-start; gap:12px; background:rgba(141,226,214,.26); border:1px solid var(--celeste); border-radius:12px; padding:14px 16px; }
   .cycle-closing-box svg { flex-shrink:0; margin-top:1px; color:var(--azul-oscuro); }
   .cycle-closing-box p { color:var(--azul-oscuro); font-size:15px; font-weight:500; line-height:1.5; }
-  @media(max-width:760px) { .cycle-support-grid { grid-template-columns:1fr; } .orientation-grid { grid-template-columns:1fr; } }
-  @media(max-width:760px) {
-    header { position:static; }
-    header .inner { align-items:flex-start; }
-    .badges { width:100%; }
-    .search-wrap { max-width:none; margin-left:0; }
-    .tab-nav { position:static; overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px; }
-    .tab-btn { flex:0 0 auto; }
-    .intro-panel { padding:20px 18px; text-align:left; }
-  }
+
 /* CAMBIO DE LETRA GENERAL */
   body, header .sub, .mapa-hero p { font-size: 16px !important; }
   header h1, .mapa-hero h2 { font-size: 24px !important; }
@@ -477,6 +466,7 @@ main {
       <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
       <div class="search-results" id="search-results"></div>
     </div>
+
   </div>
 
   <nav class="tab-nav" role="tablist" aria-label="Secciones del anexo">

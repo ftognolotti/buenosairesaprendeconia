@@ -43,14 +43,31 @@
 /* Buscador original */
 .search-wrap {
   position: relative;
-  max-width: 480px;
   width: 100%;
   margin-bottom: 0 !important;
   margin-left: 0 !important;
 } /* CSS DEL BOTÓN VOLVER */
 
-
-
+ /* CSS DEL BOTÓN FAQ */
+.btn-faq {
+  display: flex;
+  align-items: center;
+  padding: 0 16px; /* Espacio interno para que no quede pegado al borde */
+  height: 38px; /* Altura ideal alineada con los inputs estándar */
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--negro); /* Fondo blanco y borde negro */
+  border-radius: 10px;
+  color: var(--negro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0; /* Evita que el botón se achique */
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-faq:hover {
+  background: rgba(0, 0, 0, 0.05); /* Hover sutil oscuro sobre el fondo blanco */
+}
 
   .header-iframe {
     width: 100%;
@@ -111,7 +128,7 @@ main {
 }
 
   /* ── SEARCH ── */
-  .search-wrap { position:relative; max-width:480px; margin-bottom:16px; }
+  .search-wrap { position:relative; margin-bottom:16px; }
   .search-wrap input { width:100%; padding:8px 34px 8px 32px; border:1px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:13px; background:#fff; color:#1D3343; outline:none; }
   .search-wrap input:focus { border-color:#6F8392; box-shadow:0 0 0 2px rgba(148,163,184,.2); }
   .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:#6F8392; pointer-events:none; }
@@ -388,6 +405,8 @@ main {
   .badge-slate{
     color:var(--azul-oscuro) !important;
   }
+
+
 </style>
 </head>
 <body>
@@ -424,7 +443,7 @@ main {
       <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
       <div class="search-results" id="search-results"></div>
     </div>
-  </div>
+</div>
 
   <nav class="tab-nav" role="tablist">
     <button class="tab-btn active" data-tab="mapa"    onclick="showTab('mapa',this)"   role="tab">
@@ -462,7 +481,8 @@ main {
     <button class="tab-btn" data-tab="anexo" onclick="showTab('anexo',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg>
       Anexo IA
-    </button>  </nav>
+    </button>   
+  </nav>
 
   <div class="panel active" id="panel-mapa">
 <div style="
@@ -538,7 +558,7 @@ main {
         <span class="badge badge-pur">Primer Ciclo · 1.°, 2.° y 3.° grado</span>
         <span class="badge badge-pur">Basado en el DC Primario GCBA 2024</span>
       </div>
-      <p>Desde el asombro y la curiosidad, los alumnos perciben la IA en su entorno y exploran sus funciones mediante juegos y narrativas guiadas. Esta aproximación inicial se despliega de forma transversal en los diversos Campos de Conocimiento, articulándose con los ejes de Educación Digital: Alfabetizaciones Múltiples, Ciudadanía Digital y Pensamiento Computacional, de acuerdo a lo establecido en el Diseño Curricular. A continuación, se presenta una serie de competencias de IA a desarrollar en cada campo:</p>
+      <p>Desde el asombro y la curiosidad, los alumnos perciben la IA en su entorno y exploran sus funciones mediante juegos y narrativas guiadas. Esta aproximación inicial se despliega de forma transversal en los diversos Campos de Conocimiento, articulándose con los ejes de Educación Digital: Alfabetizaciones Múltiples, Ciudadanía Digital y Pensamiento Computacional, de acuerdo a lo establecido en el Diseño Curricular. A continuación, se presenta una serie de competencias de IA a desarrollar en cada campo:</p>
       <div class="ejes-dig" style="margin-top:8px">
         <span class="ejes-dig-label">Ejes de Educación Digital:</span>
         <span class="ej ej-am">Alfabetizaciones Múltiples</span>
