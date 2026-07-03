@@ -9,6 +9,43 @@
 <style>
 
 
+  /* ── SALTO LÍNEA BUSCADOR ── */
+@media (max-width: 730px) {
+  .search-container {
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+  }
+
+  .search-wrap {
+    order: 3;        /* Fuerza al buscador a ir al final (abajo) */
+    width: 100%;     /* Hace que el buscador ocupe todo el ancho disponible */
+  }
+}
+/* CSS DEL BOTÓN PREGUNTAS FRECUENTES */
+.btn-faq-main {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre la flecha y el texto */
+  padding: 0 16px; /* Espacio interno para que no quede pegado al borde */
+  height: 38px; /* Altura ideal alineada con los inputs estándar */
+  background: var(--azul);
+  border: 1px solid var(--negro); /* Fondo blanco y borde negro */
+  border-radius: 10px;
+  color: var(--negro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0; /* Evita que el botón se achique */
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-faq-main:hover {
+  background: rgba(0, 0, 0, 0.05); /* Hover sutil oscuro sobre el fondo blanco */
+}
+
+
+
+
+
 /* CSS DEL BOTÓN VOLVER */
 /* Contenedor principal: separa los extremos */
 .search-container {
@@ -435,6 +472,9 @@ main {
       </svg>
       <span>Volver</span>
     </a>
+        <a href="#" class="btn-faq-main">
+      <span id="faq-btn">Preguntas Frecuentes</span>
+    </a>
 
     <!-- Buscador (Empujado y alineado a la derecha) -->
     <div class="search-wrap">
@@ -443,7 +483,8 @@ main {
       <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
       <div class="search-results" id="search-results"></div>
     </div>
-</div>
+
+  </div>
 
   <nav class="tab-nav" role="tablist">
     <button class="tab-btn active" data-tab="mapa"    onclick="showTab('mapa',this)"   role="tab">

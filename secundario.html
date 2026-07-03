@@ -10,16 +10,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 
+
+
+  /* ── SALTO LÍNEA BUSCADOR ── */
+@media (max-width: 730px) {
+  .search-container {
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+  }
+
+  .search-wrap {
+    order: 3;        /* Fuerza al buscador a ir al final (abajo) */
+    width: 100%;     /* Hace que el buscador ocupe todo el ancho disponible */
+  }
+}
+/* CSS DEL BOTÓN PREGUNTAS FRECUENTES */
+.btn-faq-main {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre la flecha y el texto */
+  padding: 0 16px; /* Espacio interno para que no quede pegado al borde */
+  height: 38px; /* Altura ideal alineada con los inputs estándar */
+  background: var(--azul);
+  border: 1px solid var(--negro); /* Fondo blanco y borde negro */
+  border-radius: 10px;
+  color: var(--negro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0; /* Evita que el botón se achique */
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-faq-main:hover {
+  background: rgba(0, 0, 0, 0.05); /* Hover sutil oscuro sobre el fondo blanco */
+}
+
 /* CSS DEL BOTÓN VOLVER */
 /* Contenedor principal: separa los extremos */
 .search-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Empuja el botón a la izq y el buscador a la der */
   gap: 16px;
   margin-bottom: 16px;
   width: 100%;
 }
+
 /* Botón "Volver" adaptado para llevar texto e ícono */
 .btn-back-main {
   display: flex;
@@ -102,6 +138,9 @@
   .badge-slate { background:#f1f5f9; color:#345066; border-color:#e2e8f0; }
   .btn-print { font-size:11px; font-weight:500; color:#4E6577; border:1px solid #e2e8f0; background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; display:flex; align-items:center; gap:5px; }
   .btn-print:hover { background:#f8fafc; }
+  /* ── SALTO LÍNEA BUSCADOR ── */
+
+
 main {
   flex: 1; /* Esto empuja automáticamente al footer hacia abajo */
   padding: 20px 16px 40px;
@@ -109,6 +148,9 @@ main {
   margin: 0 auto;
   width: 100%; /* Asegura que mantenga su ancho en el layout flex */
 }
+
+
+
 
   /* ── SEARCH ── */
   .search-wrap { position:relative; margin-bottom:16px; }
@@ -128,7 +170,7 @@ main {
   .search-empty { padding:16px 12px; text-align:center; font-size:13px; color:#6F8392; }
   mark { background:#FFF3A3; color:#1D3343; border-radius:2px; padding:0 1px; }
 
- 
+
  /* ── TABS ── */
   .tab-nav { display:flex; flex-wrap:wrap; gap:4px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:5px; margin-bottom:24px; box-shadow:var(--shadow); }
   .tab-btn { display:flex; align-items:center; gap:6px; font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border:none; border-radius:8px; cursor:pointer; background:none; color:#4E6577; white-space:nowrap; }
@@ -457,6 +499,9 @@ main {
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
       <span>Volver</span>
+    </a>
+        <a href="#" class="btn-back-main">
+      <span id="faq-btn">Preguntas Frecuentes</span>
     </a>
 
     <!-- Buscador (Empujado y alineado a la derecha) -->
