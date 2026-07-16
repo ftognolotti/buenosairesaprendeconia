@@ -9,6 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
   <style>
+
+
+    .boton-proximamente {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 60px;
+      color: var(--blanco);
+      background: var(--gris-oscuro);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
     :root {
       --azul-ba: #1D3343;
       --azul-apoyo: #035C80;
@@ -17,6 +35,7 @@
       --blanco: #FFFFFF;
       --gris-fondo: #F3F3F3;
       --gris-medio: #C2C2C2;
+      --gris-oscuro: #999999;
       --gris-texto: #3C3C3B;
       --sombra: rgba(21, 50, 68, 0.18);
     }
@@ -272,8 +291,7 @@
       </div>
 
       <div class="acciones" aria-label="Accesos a anexos curriculares">
-        <a class="boton boton-primario" href="#">Próximamente</a>
-        <a class="boton boton-secundario" href="#">Próximamente</a>
+        <a class="boton-proximamente">Próximamente</a>
       </div>
     </section>
   </main>

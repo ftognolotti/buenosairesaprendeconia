@@ -58,6 +58,7 @@
       align-items: center; /* Alinea los logos verticalmente al centro */
       justify-content: center;
       gap: 30px; /* Un poco más de separación para que luzcan mejor */
+      
     }
 
     .bgc-footer-logos img {
@@ -67,12 +68,13 @@
 
     /* Logo del Ministerio (Agrandado) */
     #bgc-footer-logos-mi {
-      height: 30px;
+      max-height: 30px;
+      
     }
 
     /* Logo de Educación Digital (Tal cual estaba) */
     #bgc-footer-logos-ed {
-      height: 25px;
+      max-height: 25px;
     }
 
     .bgc-footer-sep {
@@ -105,12 +107,30 @@
     }
 
     /* Responsivo básico */
-    @media (max-width: 600px) {
+    @media (max-width: 450px) {
       .bgc-footer-links {
         flex-direction: column;
         gap: 10px;
       }
+
+      /* 1. Achicamos la separación para ganar espacio en celulares */
+      .bgc-footer-logos img{
+        gap: 5vw; /* Separación proporcional al ancho de la pantalla */
+       max-width: 60%;
+      }
+
+      /* 2. Hacemos que la altura dependa del ancho de pantalla para que se achiquen solos */
+      #bgc-footer-logos-mi {
+        height: 7vw;  /* Se escala proporcionalmente al ancho del celular */
+        max-height: 30px;
+      }
+
+      #bgc-footer-logos-ed {
+        height: 5.8vw; /* Mantiene la proporción visual con el otro logo */
+        max-height: 25px;
+      }
     }
+
   </style>
 </head>
 <body>
