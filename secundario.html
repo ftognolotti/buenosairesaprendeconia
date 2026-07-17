@@ -573,6 +573,35 @@ color: var(--azul-oscuro);
   .sub-btn-pc.active-pc {
     color:var(--azul-oscuro) !important;
   }
+
+.sub-btn-seq {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  color: #4E6577;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.sub-btn-seq.active {
+  background: var(--tea-bg);
+  color: var(--tea-text);
+  border-color: var(--tea-border);
+}
+
+.sub-panel-seq {
+  display: none;
+}
+
+.sub-panel-seq.active {
+  display: block;
+}
+
+
 </style>
 </head>
 <body>
@@ -1227,13 +1256,52 @@ color: var(--azul-oscuro);
     </div>
   </div>
 
-  <div class="panel" id="panel-secuencias" role="tabpanel">
-    <p class="rubrica-intro">Espacio para organizar propuestas de enseñanza, recorridos de aula y actividades secuenciadas por ciclo o grado.</p>
-    <div class="empty-state">
-      <span class="badge badge-amb">Materiales para el aula</span>
-      <p>Espacio preparado para sumar propuestas de implementación, recorridos de aula y actividades por ciclo o grado.</p>
+<div class="panel" id="panel-secuencias">
+    <p class="rubrica-intro"></p>
+
+    <div class="sub-nav no-print">
+      <button class="sub-btn-seq active" onclick="showSecuencia('pc',this)">Ciclo Básico</button>
+      <button class="sub-btn-seq" onclick="showSecuencia('sc',this)">Ciclo Orientado</button>
     </div>
-  </div>
+
+    <div class="card sub-panel-seq active" id="seq-pc">
+      <div class="card-body">
+        <div class="campo">
+            <!--VIDEO 1-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video A</a></div>
+            <!--VIDEO 2-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video B</a></div>
+            <!--VIDEO 3-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video C</a></div>
+            <!--VIDEO 4-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video D</a></div>
+            <!--VIDEO 5-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video E</a></div>
+            <!--VIDEO 6-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video F</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sub-panel-seq" id="seq-sc">
+      <div class="card-body">
+        <div class="campo">
+            <!--VIDEO 1-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 1</a></div>
+            <!--VIDEO 2-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 2</a></div>
+            <!--VIDEO 3-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 3</a></div>
+            <!--VIDEO 4-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 4</a></div>
+            <!--VIDEO 5-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 5</a></div>
+            <!--VIDEO 6-->
+            <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Video 6</a></div>
+        </div>
+      </div>
+    </div>
+</div>
 
   <div class="panel" id="panel-anexo" role="tabpanel">
     <!--<p class="rubrica-intro">Titulo</p>-->
@@ -1316,6 +1384,23 @@ function showRubrica(id, btn) {
     btn.setAttribute('aria-selected', 'true');
   }
 }
+// ── SECUENCIAS CYCLE NAV ─────────────────────────────────────
+function showSecuencia(id, btn) {
+  // Ocultar todos los paneles
+  document.querySelectorAll('#panel-secuencias .sub-panel-seq').forEach(p => p.classList.remove('active'));
+  
+  // Remover clase active de todos los botones
+  document.querySelectorAll('#panel-secuencias .sub-btn-seq').forEach(b => b.classList.remove('active'));
+  
+  // Mostrar el panel seleccionado
+  const target = document.getElementById('seq-' + id);
+  if (target) target.classList.add('active');
+  
+  // Activar el botón clickeado
+  if (btn) btn.classList.add('active');
+}
+
+
 
 // ── SEARCH ───────────────────────────────────────────────────
 const ENTRIES = [
