@@ -393,8 +393,21 @@ main {
 
   .search-wrap { margin-left:auto; }
   .docs-card { margin-top:16px; }
-  .doc-link { color:var(--azul-oscuro); font-weight:700; text-decoration:none; }
-  .doc-link:hover { color:var(--amarillo); text-decoration:underline; }
+.doc-link {
+color: var(--azul-oscuro);
+  font-weight: 700;
+  text-decoration: none;
+  /* Creamos un subrayado personalizado */
+  border-bottom: 2px solid var(--azul-oscuro);
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
+}
+
+.doc-link:hover {
+  color: var(--amarillo);
+  border-bottom-color: var(--amarillo);
+}
+
   .doc-link-muted { color:var(--negro); }
   .doc-desc { font-size:13px; color:var(--negro); line-height:1.55; margin-top:2px; }
 
@@ -1111,7 +1124,7 @@ main {
         </div>
         <div class="campo">
           <div class="campo-h"><a class="doc-link" href="https://drive.google.com/drive/folders/12T_MhjtfAZIg0NZjtmH2PrnNkgy_9AtE?usp=drive_link" target="_blank" rel="noopener">Kit para escuelas</a></div>
-          <p class="doc-desc">PROXIMAMENTE</p>
+          <p class="doc-desc">Reúne secuencias didácticas y experiencias pedagógicas para implementar el Anexo en el aula. Incluye un cuaderno de NotebookLM diseñado para despejar dudas y orientar la integración de la IA con sentido pedagógico.</p>
         </div>
       </div>
     </div>
