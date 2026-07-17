@@ -42,8 +42,84 @@
   background: rgba(0, 0, 0, 0.05); /* Hover sutil oscuro sobre el fondo blanco */
 }
 
-
-
+/* ── PANEL PREGUNTAS FRECUENTES ── */
+.faq-panel {
+  display: none;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin: 10px 0 20px 0;
+  padding: 20px 20px 8px 20px;
+  position: relative;
+}
+.faq-panel.open {
+  display: block;
+}
+.faq-panel .faq-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6F8392;
+  background: none;
+  border: none;
+  font-weight: 300;
+}
+.faq-panel .faq-close:hover {
+  color: #1D3343;
+}
+.faq-panel .faq-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1D3343;
+  margin-bottom: 16px;
+}
+.faq-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #1D3343;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.faq-question .faq-toggle {
+  font-size: 22px;
+  font-weight: 300;
+  color: #6F8392;
+  margin-left: 12px;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-toggle {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  display: none;
+  font-size: 14px;
+  color: #345066;
+  line-height: 1.6;
+  padding: 6px 0 4px 0;
+}
+.faq-item.open .faq-answer {
+  display: block;
+}
+.btn-faq-main.active-faq {
+  background: var(--amarillo);
+  border-color: var(--negro);
+  color: var(--negro);
+}
 
 
 /* CSS DEL BOTÓN VOLVER */
@@ -485,7 +561,7 @@ color: var(--azul-oscuro);
       </svg>
       <span>Volver</span>
     </a>
-        <a href="#" class="btn-faq-main">
+        <a href="#" class="btn-faq-main" id="faqToggleBtn">
       <span id="faq-btn">Preguntas frecuentes</span>
     </a>
 
@@ -496,6 +572,200 @@ color: var(--azul-oscuro);
       <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
       <div class="search-results" id="search-results"></div>
     </div>
+
+  </div>
+
+  <!-- PANEL DE PREGUNTAS FRECUENTES -->
+  <div class="faq-panel" id="faqPanel">
+    <button class="faq-close" id="faqCloseBtn" aria-label="Cerrar preguntas frecuentes">×</button>
+    <div class="faq-title">Preguntas frecuentes</div>
+
+
+    <!--PREGUNTAS ACÁ-->
+
+    
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Por qué incorporar la inteligencia artificial en el currículum ahora?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>La incorporación obligatoria no es un punto de partida, sino la institucionalización de un proceso que ya cuenta con una base sólida: a junio de 2026, más de 30.000 docentes fueron formados en IA y la Ciudad desplegó un ecosistema de infraestructura tecnológica y cuentas institucionales seguras. Se avanza hacia la obligatoriedad para garantizar la equidad educativa: que el aprendizaje sobre la IA no dependa de la iniciativa individual de un docente, sino que sea un derecho de todos los estudiantes.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Qué es la Protección Digital Infantil y Adolescente (PDIyA) y por qué se incluye en el Anexo?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>La PDIyA es una línea estratégica prioritaria del Ministerio de Educación que busca garantizar condiciones de seguridad, bienestar y el ejercicio pleno de los derechos de los estudiantes en los entornos virtuales. En este Anexo, la alfabetización en IA se aborda como una herramienta de prevención. No se trata solo de aprender a usar tecnología, sino de preparar a los estudiantes para identificar y mitigar riesgos específicos a través de cuatro ejes de acción:</p>
+        <ul style="padding-left: 30px;">
+            <li><strong>Protección de datos:</strong> concientizar sobre el resguardo de información personal y sensible que suele usarse para entrenar modelos de IA.</li>
+            <li><strong>Alfabetización informacional:</strong> enseñar a reconocer alucinaciones, sesgos algorítmicos, técnicas de manipulación (como deepfakes) y vulnerabilidades (como el prompt injection).</li>
+            <li><strong>Convivencia y responsabilidad:</strong> abordar los conflictos en entornos virtuales (como el ciberacoso o la difusión no consentida de imágenes) que impactan en el clima escolar y el bienestar emocional.</li>
+            <li><strong>Prevención de la sobreexposición:</strong> reconocer cómo los sistemas de IA analizan nuestras preferencias para captar nuestra atención y recomendarnos contenidos personalizados. Promover el equilibrio entre el tiempo en pantallas y el movimiento físico para un desarrollo saludable.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Cuál es el enfoque pedagógico del Anexo?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>El enfoque varía según el nivel, pero comparte un eje en común: la IA no es una herramienta neutral ni mágica, sino un software diseñado por personas que refleja sus decisiones y sesgos, y que puede cometer errores. Sobre esa base compartida, cada nivel tiene un propósito diferenciado.</p>
+        <p>En el Nivel Primario, el foco es aprender sobre la IA: tratarla como objeto de estudio para comprender su naturaleza, su funcionamiento y sus límites. En el Nivel Secundario, el foco evoluciona hacia aprender con la IA: usarla como recurso pedagógico mediado que amplifica las capacidades analíticas y creativas, sin reemplazar el esfuerzo intelectual propio.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Por qué es importante que en las escuelas se enseñe sobre IA?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Porque la IA ha modificado radicalmente las formas de acceder, producir y validar conocimiento. La escuela tiene la responsabilidad de:</p>
+        <ul style="padding-left: 30px;">
+            <li><strong>Desmitificar la tecnología.</strong> Enseñar que la IA es un algoritmo mecánico e imperfecto que puede cometer errores y reproducir sesgos y estereotipos.</li>
+            <li><strong>Alfabetización crítica.</strong> Formar sujetos que no solo usen tecnología, sino que comprendan su mecánica para decidir cuándo, para qué y cómo usarla.</li>
+            <li><strong>Construir ciudadanía.</strong> En un mundo mediado por algoritmos, acceder a saberes rigurosos sobre IA es un requisito para una ciudadanía plena y autónoma.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Qué aprenden los estudiantes en cada nivel y ciclo?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>La progresión está organizada en espiral a lo largo de toda la escolaridad: los mismos conceptos reaparecen con mayor profundidad en cada etapa.</p>
+        <p><strong>● Nivel Primario: aprender sobre la IA</strong></p>
+        <ul style="padding-left: 30px;">
+            <li><strong>1.° a 3.° grado:</strong> el foco está puesto en percibir y nombrar, reconocer la presencia de la IA en el entorno cotidiano y comenzar a distinguir entre acciones humanas y funciones automáticas de las máquinas.</li>
+            <li><strong>4.° y 5.° grado:</strong> la progresión avanza hacia explorar y cuestionar, detectar errores (alucinaciones), contrastar con fuentes confiables y formular los primeros interrogantes sobre la lógica de estos sistemas.</li>
+            <li><strong>6.° y 7.° grado:</strong> el tramo funciona como una zona de transición. Sin abandonar la mirada crítica, los estudiantes comienzan a usar la IA de manera acotada y reflexiva. En 6.° grado, con andamiaje docente explícito para comparar, detectar errores y evaluar pertinencia. En 7.°, con mayor autonomía para coautorear bajo criterio propio, formulando prompts de manera intencional y asumiendo responsabilidad sobre el resultado.</li>
+        </ul>
+        <p><strong>● Nivel Secundario: aprender con la IA</strong></p>
+        <ul style="padding-left: 30px;">
+            <li><strong>Ciclo Básico:</strong> el foco es la alfabetización y desmitificación. Recuperar lo aprendido en Primaria y avanzar hacia un uso mediado como asistente de estudio, validando respuestas con fuentes confiables e identificando sesgos y alucinaciones como fallas mecánicas de los modelos.</li>
+            <li><strong>Ciclo Orientado:</strong> la IA deja de ser un objeto general para convertirse en una herramienta specializada que potencia los saberes de cada orientación. Los estudiantes se posicionan como cocreadores activos: producen contenidos multimodales, diseñan e iteran prompts, evalúan implicancias éticas de la coautoría y asumen la responsabilidad de autor y curador final de toda producción realizada con asistencia de la IA.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Qué significa «evitar la delegación cognitiva»?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Uno de los riesgos pedagógicos más concretos de introducir IA en el aula es que los estudiantes cedan a la máquina su capacidad de juicio, su curiosidad y su esfuerzo intelectual. El Anexo trabaja activamente para evitar esto: la IA no se usa para que resuelva tareas en lugar del estudiante, sino como insumo para la experimentación. Detectar sus errores, cuestionar sus respuestas y contrastar con otras fuentes son las operaciones centrales.</p>
+        <p>En Primaria, la IA no se usa para que resuelva tareas en lugar del estudiante, sino como insumo para la experimentación: detectar sus errores, cuestionar sus respuestas, contrastar con otras fuentes. En Secundaria, se concibe a la IA como un andamiaje tecnológico que amplía las capacidades analíticas sin reemplazar nunca el esfuerzo intelectual propio ni el vínculo educativo. El docente es el garante de que ese proceso ocurra en ambos niveles.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿La IA va a reemplazar el pensamiento de los estudiantes?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Al contrario. El diseño pedagógico del Anexo se basa en el principio de centralidad humana: las decisiones didácticas y el juicio ético permanecen siempre bajo el control de las personas.</p>
+        <p>La determinación final sobre qué es verdad, qué es valioso y qué es ético es una facultad exclusivamente humana que la escuela debe proteger.</p>
+        <ul style="padding-left: 30px;">
+            <li>En Primaria se aprende SOBRE la IA para evitar la delegación cognitiva.</li>
+            <li>En Secundaria se aprende CON IA, utilizándola para potenciar la creatividad y la resolución de problemas sin sustituir la reflexión personal.</li>
+        </ul>
+        <p>El Anexo promueve el desarrollo de las 4C —pensamiento crítico, creatividad, comunicación y colaboración— como capacidades que la tecnología no puede replicar y que deben fortalecerse en cada etapa de la escolaridad.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Cuál es el rol docente frente a este Anexo?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>El Anexo se implementa como cualquier diseño curricular: el docente es quien lo lleva al aula, lo contextualiza de acuerdo a su grupo, y toma las decisiones didácticas que mejor respondan a la realidad de su escuela. En ese sentido, no cambia su responsabilidad profesional habitual.</p>
+        <p>Lo que sí es específico de este contenido es el rol que el docente asume frente a la IA como objeto y como herramienta. En todos los niveles y ciclos, el docente es guía permanente del proceso: define qué preguntas merece hacerle a la herramienta, establece los criterios de validación, acompaña la lectura crítica de los resultados y orienta la contrastación con fuentes confiables. Es también quien cuida que la interacción con la IA sea siempre una oportunidad para pensar, no un atajo que reemplace el esfuerzo intelectual de los estudiantes, y que el entorno de trabajo —cuentas institucionales, sin datos personales expuestos— sea seguro.</p>
+        <p>En definitiva, el docente sostiene en cada clase el principio de centralidad humana que estructura todo el Anexo: ninguna decisión didáctica, ética o de evaluación queda nunca en manos de un sistema automatizado.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Cómo ayuda la IA a la alfabetización tradicional (lectura y escritura)?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>A través del Plan de Bialfabetización, se busca formar lectores expertos que dominen tanto el soporte papel (para la lectura profunda y la atención sostenida) como los entornos digitales e inteligentes. La IA puede convertirse en una aliada en ese proceso: interactuar con estos sistemas supone leer, interpretar, formular preguntas e instrucciones cada vez más precisas, analizar las respuestas y revisarlas críticamente. Con la mediación del docente, este diálogo con la IA se transforma en una oportunidad para fortalecer la comprensión lectora, la escritura, la oralidad y el pensamiento crítico, evitando que la tecnología reemplace procesos cognitivos que los estudiantes necesitan seguir desarrollando.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Qué riesgos se abordan en el aula?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>La escuela es el entorno seguro para abordar los riesgos concretos que implica habitar entornos digitales mediados por IA. Los mismos ejes se profundizan a lo largo de los niveles:</p>
+        <ul style="padding-left: 30px;">
+            <li><strong>Veracidad:</strong> en Primaria, detectar alucinaciones y desarrollar el hábito de contrastar con fuentes confiables. En Secundaria, evaluar sistemáticamente la procedencia y confiabilidad de la información, y reconocer deepfakes y manipulación audiovisual.</li>
+            <li><strong>Sesgos:</strong> en Primaria, identificar que la IA puede reproducir prejuicios de género, cultura o etnia. En Secundaria, auditar sesgos algorítmicos y comprender su impacto en la formación de la opinión pública y la democracia.</li>
+            <li><strong>Privacidad:</strong> en ambos niveles, comprender qué información recolectan las plataformas y usar exclusivamente cuentas institucionales. En Secundaria, se suma la gestión de la huella digital y el reconocimiento de mecanismos de perfilamiento automatizado.</li>
+            <li><strong>Simulación:</strong> en Primaria, reconocer el tono empático de la IA como función mecánica. En Secundaria, identificar vulnerabilidades técnicas como el prompt injection y asumir el desplazamiento del rol de espectador engañado al de creador responsable.</li>
+            <li><strong>Sobreexposición a pantallas:</strong> en Primaria, concientizar sobre el impacto del uso de pantallas y promover pautas de equilibrio y la alternancia con actividades de movimiento físico. En Secundaria, problematizar la sobreexposición tecnológica y reflexionar sobre la gestión del tiempo digital para resguardar la salud física y socioemocional.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Los chicos van a usar la IA solos en clase?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>No. En todos los niveles y ciclos, la interacción con la tecnología está mediada de manera permanente por el docente, quien actúa como guía y garante del proceso pedagógico.</p>
+        <p>En el Nivel Primario, esta interacción sigue una progresión sumamente cuidada y dividida en tres etapas:</p>
+        <ul style="padding-left: 30px;">
+            <li><strong>De 1.° a 3.° grado:</strong> los estudiantes no interactúan directamente con ninguna herramienta de IA. El docente es quien proyecta la tecnología en una pantalla colectiva para realizar una exploración grupal y guiar la discusión.</li>
+            <li><strong>4.° a 5.° grado:</strong> se avanza hacia una exploración de forma grupal y guiada. Los estudiantes no utilizan herramientas de IA de manera individual. Se trabaja bajo la mediación constante del docente, de forma grupal, para analizar respuestas y comprender la lógica de los algoritmos.</li>
+            <li><strong>6.° y 7.° grado:</strong> en esta etapa de transición, se habilita una experimentación individual acotada. El uso se realiza bajo el monitoreo directo del docente, con propósitos pedagógicos específicos orientados a que aprendan a comparar, detectar errores y cocrear de manera reflexiva.</li>
+        </ul>
+        <p>En el Nivel Secundario, este principio de mediación también se mantiene, aunque se expresa de manera diferente según el ciclo.</p>
+        <ul style="padding-left: 30px;">
+            <li><strong>Ciclo Básico:</strong> el docente establece los criterios de validación antes de que el estudiante consulte la IA y orienta el proceso de contrastación con fuentes confiables.</li>
+            <li><strong>Ciclo Orientado:</strong> aunque se persigue una mayor autonomía de los estudiantes para el uso de la IA como asistente en proyectos complejos, el docente acompaña para que se posicionen como creadores y editores de toda producción.</li>
+        </ul>
+        <p>En ambos niveles y todos los ciclos, la evaluación de los aprendizajes es una responsabilidad exclusivamente humana, que no puede delegarse en sistemas automatizados.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Qué diferencia hay entre lo que se aprende en Primaria y en Secundaria?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>La distinción conceptual central es la siguiente: en Primaria, la IA es un objeto de estudio (algo que se estudia, se desmitifica y se comprende). En el tramo final de Primaria (6.° y 7.° grado), opera como objeto de experimentación reflexiva: los estudiantes comienzan a usarla de manera acotada, siempre bajo guía docente permanente. En Secundaria, la IA se convierte progresivamente en una herramienta para la construcción de conocimiento, que potencia capacidades humanas para analizar, crear y resolver problemas complejos.</p>
+        <p>Esta progresión no implica que en Secundaria se abandone la mirada crítica, sino que esa mirada se ejerce ahora también desde la práctica. El estudiante no solo comprende que la IA puede fallar, sino que trabaja con ella asumiendo la responsabilidad de validar y editar cada producción.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        <span>¿Se necesitan dispositivos o conexión especial para implementar el Anexo?</span>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>No necesariamente. Muchas de las actividades del Primer Ciclo de Nivel Primario no requieren que los estudiantes interactúen directamente con ninguna herramienta: el docente puede guiar la exploración y discusión sin necesidad de dispositivos individuales. La implementación se adapta a los recursos disponibles en cada escuela.</p>
+    </div>
+</div>
+
 
   </div>
 
@@ -1397,6 +1667,46 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
   if(e.key === 'Escape') document.getElementById('search-results').classList.remove('show');
 });
+
+// ── FAQ ─────────────────────────────────────────────────────
+(function() {
+  const faqBtn = document.getElementById('faqToggleBtn');
+  const faqPanel = document.getElementById('faqPanel');
+  const faqCloseBtn = document.getElementById('faqCloseBtn');
+
+  function closeFaq() {
+    faqPanel.classList.remove('open');
+    faqBtn.classList.remove('active-faq');
+  }
+
+  function openFaq() {
+    faqPanel.classList.add('open');
+    faqBtn.classList.add('active-faq');
+  }
+
+  function toggleFaq(e) {
+    e.preventDefault();
+    if (faqPanel.classList.contains('open')) {
+      closeFaq();
+    } else {
+      openFaq();
+    }
+  }
+
+  faqBtn.addEventListener('click', toggleFaq);
+  faqCloseBtn.addEventListener('click', closeFaq);
+
+  // Acordeón: clic en pregunta
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', function(e) {
+      const item = this.closest('.faq-item');
+      if (item) {
+        item.classList.toggle('open');
+      }
+    });
+  });
+})();
+
 </script>
   <iframe src="footer.html" style="width: 100%; border: none; display: block; height: 150px; overflow: hidden;" scrolling="no"></iframe>
 </body>
