@@ -8,8 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 
+/*-- CSS DEL VIDEO RESPONSIVE */
+.contenedor-video {
+    width: 100%;             /* Ocupa el 100% del ancho de su pantalla/padre */
+    max-width: 480px;        /* Opcional: El tamaño máximo que quieres que alcance en PC */
+}
+.contenedor-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;    /* Mantiene la proporción perfecta del video al achicarse */
+}
 
-  /* ── SALTO LÍNEA BUSCADOR ── */
+
+/* ── SALTO LÍNEA BUSCADOR ── */
 @media (max-width: 730px) {
   .search-container {
     flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
@@ -1374,8 +1385,21 @@ color: var(--azul-oscuro);
           <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/plan-de-bialfabetizacion-potenciado-por-ia?id=27b71d77-784e-4619-8f2e-09441ed87825" target="_blank" rel="noopener">Plan de Bialfabetización potenciado por IA</a></div>
           <p class="doc-desc">Marco programático que integra la lectura y escritura tradicional con las nuevas competencias digitales y algorítmicas.</p>
         </div>
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Presentación del Anexo de Inteligencia Artificial para Nivel Primario y Nivel Secundario</a></div>
+        <div class="contenedor-video">
+            <iframe 
+                src="https://www.youtube.com/embed/P-K-BTSSFi0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
       </div>
     </div>
+  </div>
 
     <div class="card docs-card">
       <div class="rub-head-pur">Recursos para la implementación en el aula</div>
@@ -1397,7 +1421,6 @@ color: var(--azul-oscuro);
           <p class="doc-desc">Reúne secuencias didácticas y experiencias pedagógicas para implementar el Anexo en el aula. Incluye un cuaderno de NotebookLM diseñado para despejar dudas y orientar la integración de la IA con sentido pedagógico.</p>
         </div>
       </div>
-    </div>
   </div>
 
   <div class="panel" id="panel-secuencias">
