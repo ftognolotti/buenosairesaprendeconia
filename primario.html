@@ -402,7 +402,8 @@ main {
   .rubrica-table td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:#345066; vertical-align:top; }
   .rubrica-table tr:last-child td { border-bottom:none; }
   .rubrica-table td:first-child { font-weight:600; color:#1D3343; }
-  .rubrica-table td:last-child { background:#ffffff; color:#1D3343; font-weight:500; }
+  .rubrica-table th:last-child, .rubrica-table td:last-child { font-weight:400; }
+  .rubrica-table td:last-child { background:#ffffff; color:#1D3343; }
   .rub-head-pur { background:var(--pur-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--pur-text); border-bottom:1px solid var(--pur-border); }
   .rub-head-tea { background:var(--tea-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--tea-text); border-bottom:1px solid var(--tea-border); }
   .table-wrap { overflow-x:auto; }
@@ -1504,7 +1505,8 @@ color: var(--azul-oscuro);
   </div>
 
   <div class="panel" id="panel-rubrica">
-    <p class="rubrica-intro">Esta rúbrica constituye un instrumento orientador, para observar trayectorias y planificar intervenciones. En Primer Ciclo, el enfoque está puesto en percibir, explorar y asombrarse con mediación docente permanente. En Segundo Ciclo, en crear, cuestionar y decidir para una ciudadanía digital crítica. Los objetivos de aprendizaje están anclados al Diseño Curricular (2024).</p>
+    <p class="rubrica-intro">Tal como lo establece la estructura del Diseño curricular, la evaluación se organiza por ciclo. Los niveles (Logrado, En proceso o Exploratorio) no indican un déficit, sino etapas en un recorrido de aprendizaje espiralado.</p>
+    <p class="rubrica-intro">Las rúbricas que se presentan a continuación tienen carácter orientativo y deberán adecuarse a los objetivos y contenidos abordados, al espacio curricular, a las propuestas de enseñanza y a las características del grupo.</p>
 
     <div class="sub-nav no-print">
       <button class="sub-btn-rub active-r1" onclick="showRubrica('r1',this)">Primer Ciclo (1.°–3.°)</button>
@@ -1515,11 +1517,13 @@ color: var(--azul-oscuro);
     <div class="rub-head-pur"><span class="rub-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><path d="M8 5v14"/></svg></span>Primer Ciclo (1.° a 3.°)</div>
     <div class="table-wrap">
       <table class="rubrica-table">
-        <thead><tr><th>Criterio</th><th>Exploratorio</th><th>En proceso</th><th>Logrado</th></tr></thead>
+        <thead><tr><th>Criterio</th><th>Logrado</th><th>En proceso</th><th>Exploratorio</th></tr></thead>
         <tbody>
-          <tr><td>Reconocer la IA en el entorno</td><td>Nombra dispositivos sin distinguir entre un programa común y una IA.</td><td>Identifica ejemplos de IA y reconoce —con guía docente— que son sistemas computacionales que procesan datos.</td><td>Distingue entre acciones humanas y funciones de la IA, evita expresiones que la humanicen.</td></tr>
-          <tr><td>Interactuar y cuestionar</td><td>Observa el funcionamiento de la herramienta sin intervenir.</td><td>Participa en exploraciones guiadas y formula preguntas simples sobre los resultados.</td><td>Indaga el porqué de las respuestas de la IA, cuestionando —con guía docente— su comportamiento.</td></tr>
-          <tr><td>Desarrollar la protección digital</td><td>Nombra algunas normas de cuidado en Internet con ayuda del docente.</td><td>Describe pautas básicas de protección de datos personales.</td><td>Identifica acciones para resguardar su privacidad y la necesidad de equilibrio físico ante las pantallas.</td></tr>
+          <tr><td>Reconocimiento de la IA en el entorno</td><td>Distingue claramente entre acciones humanas y funciones de la IA.</td><td>Identifica ejemplos de IA y reconoce —con guía docente— que son sistemas computacionales que procesan datos.</td><td>Nombra dispositivos sin distinguir entre un programa común y una IA.</td></tr>
+          <tr><td>Indagación y cuestionamiento</td><td>Formula preguntas sobre el porqué de las respuestas de la IA y su comportamiento mecánico, con guía docente.</td><td>Participa en exploraciones guiadas y formula preguntas simples sobre los resultados.</td><td>Observa el funcionamiento de la herramienta sin intervención.</td></tr>
+          <tr><td>Protección de la privacidad</td><td>Identifica acciones concretas de resguardo de la privacidad en entornos digitales.</td><td>Describe pautas básicas para la protección de datos personales.</td><td>Nombra algunas normas de cuidado en Internet con ayuda del docente.</td></tr>
+          <tr><td>Bienestar digital</td><td>Explica la importancia de alternar el tiempo de uso de pantallas con juegos y actividades físicas en su día a día.</td><td>Menciona la importancia de realizar actividades físicas fuera del entorno digital.</td><td>Identifica la presencia de pantallas en la rutina diaria con guía docente.</td></tr>
+          <tr><td>Convivencia y ciudadanía digital</td><td>Explica la importancia del respeto, el cuidado y la colaboración en las interacciones que también pueden darse en entornos digitales.</td><td>Identifica, con acompañamiento docente, acciones de respeto y cuidado en situaciones vinculadas con el uso de tecnologías digitales.</td><td>Nombra algunas normas básicas de cuidado y respeto al conversar sobre situaciones relacionadas con el mundo digital.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1529,12 +1533,15 @@ color: var(--azul-oscuro);
     <div class="rub-head-tea"><span class="rub-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><path d="M8 5v14"/></svg></span>Segundo Ciclo (4.° a 7.°)</div>
     <div class="table-wrap">
       <table class="rubrica-table">
-        <thead><tr><th style="width:22%">Criterio</th><th style="width:10%">Grado</th><th style="width:22%">Exploratorio</th><th style="width:22%">En proceso</th><th style="width:24%">Logrado</th></tr></thead>
+        <thead><tr><th style="width:22%">Criterio</th><th style="width:10%">Grado</th><th style="width:24%">Logrado</th><th style="width:22%">En proceso</th><th style="width:22%">Exploratorio</th></tr></thead>
         <tbody>
-          <tr><td>Evaluar confiabilidad de fuentes con IA</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Identifica errores en respuestas de IA presentadas en clase con ayuda del docente.</td><td>Reconoce que la IA puede inventar datos al analizar ejemplos presentados por el docente.</td><td>Identifica alucinaciones en materiales generados por el docente, validando la información con fuentes confiables.</td></tr>
-          <tr><td>Desarrollar la protección digital</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Diferencia la simulación de sentimientos o empatía de la IA de la comunicación humana real en ejemplos presentados por el docente.</td><td>Nombra riesgos asociados al procesamiento invisible de datos personales y la construcción de la identidad digital en sistemas algorítmicos.</td><td>Señala vulnerabilidades técnicas específicas (como la manipulación de instrucciones o <em>prompt injection</em>) en el diseño de instrucciones.</td></tr>
-          <tr><td>Identificar sesgos y estereotipos</td><td><span class="badge badge-blu">5.°–7.°</span></td><td>No señala estereotipos en los resultados de la IA.</td><td>Identifica sesgos con orientación del docente.</td><td>Explica cómo la IA reproduce sesgos a partir del entrenamiento con datos humanos.</td></tr>
-          <tr><td>Reconocer impacto ético y social</td><td><span class="badge badge-blu">6.°–7.°</span></td><td>Describe la IA como tecnología neutral.</td><td>Reconoce algún impacto con guía docente.</td><td>Identifica impactos en derechos de autor, privacidad y ciudadanía digital.</td></tr>
+          <tr><td>Comprensión del funcionamiento de la IA</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Distingue la simulación de empatía de la IA de la comunicación humana.</td><td>Menciona que las respuestas de la IA pueden simular comprensión o cercanía.</td><td>Identifica, con acompañamiento docente, que la IA responde a partir de patrones y no comprende ni siente como una persona.</td></tr>
+          <tr><td>Evaluación de confiabilidad</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Identifica alucinaciones en materiales generados por el docente y valida la información con fuentes confiables.</td><td>Menciona que la IA puede inventar datos al analizar ejemplos presentados por el docente.</td><td>Identifica errores evidentes en respuestas de la IA presentadas en clase con ayuda del docente.</td></tr>
+          <tr><td>Protección de la privacidad</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Identifica riesgos para la privacidad al utilizar herramientas de IA y adopta estrategias para proteger sus datos personales.</td><td>Identifica que las herramientas de IA procesan información y que algunos datos personales no deben compartirse.</td><td>Identifica, con acompañamiento docente, ejemplos de datos personales que requieren cuidado.</td></tr>
+          <tr><td>Bienestar digital</td><td><span class="badge badge-blu">4.°–7.°</span></td><td>Describe la mecánica de los algoritmos de recomendación y propone pautas de autorregulación.</td><td>Identifica la influencia de los sistemas de IA en el consumo continuo de contenidos.</td><td>Menciona la importancia de alternar el uso de dispositivos con otras actividades para favorecer el bienestar digital, sin relacionarlo con la influencia de los algoritmos de recomendación.</td></tr>
+          <tr><td>Identificación de sesgos y estereotipos</td><td><span class="badge badge-blu">5.°–7.°</span></td><td>Explica cómo la IA puede producir sesgos a partir de los datos con los que fue entrenada.</td><td>Identifica sesgos o estereotipos en los resultados generados por sistemas de IA, con orientación del docente.</td><td>Menciona que las respuestas generadas por la IA pueden contener sesgos o estereotipos.</td></tr>
+          <tr><td>Autenticidad, autoría e integridad académica</td><td><span class="badge badge-blu">6.°–7.°</span></td><td>Declara el uso de herramientas de IA en sus producciones y diferencia el aporte personal del contenido generado por IA.</td><td>Registra, con mediación docente, en qué momentos de la actividad utilizó asistencia de IA.</td><td>Presenta producciones generadas por IA como si fueran totalmente propias, sin señalar la intervención de la herramienta.</td></tr>
+          <tr><td>Impacto ético, social y ambiental</td><td><span class="badge badge-blu">6.°–7.°</span></td><td>Debate acerca de las implicancias de la IA en la sociedad: el consumo energético e hídrico, los derechos a la privacidad y las transformaciones en el mundo del trabajo.</td><td>Ejemplifica, a partir de preguntas guía del docente, algunas consecuencias del desarrollo de la IA.</td><td>Describe la tecnología desde sus funciones de uso o entretenimiento, sin vincularla con efectos sociales, éticos o ambientales.</td></tr>
         </tbody>
       </table>
     </div>
