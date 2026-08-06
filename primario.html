@@ -432,6 +432,7 @@ main {
 
 
   /* Paleta institucional */
+  html, body, button, input, textarea, select { font-family:'Archivo', sans-serif !important; }
   body { background:var(--blanco); color:var(--negro); }
   header { background:var(--blanco); border-bottom-color:var(--celeste); }
   header h1 { color:var(--azul-oscuro); }
@@ -497,6 +498,22 @@ color: var(--azul-oscuro);
 
   .doc-link-muted { color:var(--negro); }
   .doc-desc { font-size:13px; color:var(--negro); line-height:1.55; margin-top:2px; }
+  /* Ajustes de consistencia para contenidos y materiales. */
+  #panel-primer .pc-depth-heading, #panel-segundo .pc-depth-heading { display:flex; align-items:center; gap:6px; }
+  #panel-primer .pc-depth-heading .star, #panel-segundo .pc-depth-heading .star { order:1; }
+  #panel-primer .pc-resource-heading { text-transform:none; letter-spacing:normal; }
+  #panel-secuencias .card-body { line-height:1.55; }
+  #panel-secuencias .campo { margin:0; }
+  #panel-secuencias .campo-h { margin:18px 0 8px; }
+  #panel-secuencias .campo-h:first-child { margin-top:0; }
+  #panel-secuencias .doc-desc { line-height:1.55; margin:0 0 12px; }
+  #panel-secuencias ul.doc-desc { padding-left:20px; margin-top:0; margin-bottom:16px; }
+  #panel-secuencias .campo-h .badge { margin:0; }
+  #panel-primer .pc-content-heading, #panel-segundo .pc-content-heading { font-size:16px; font-weight:600; color:var(--azul-oscuro); margin:16px 0 5px; line-height:1.3; }
+  #panel-primer .pc-content-heading:first-of-type, #panel-segundo .pc-content-heading:first-of-type { margin-top:0; }
+  #panel-primer .pc-application-heading, #panel-segundo .pc-application-heading { font-size:12px; font-weight:600; color:#035C80; letter-spacing:.04em; text-transform:uppercase; margin:12px 0 3px; padding-left:10px; border-left:2px solid var(--fucsia); }
+  #panel-segundo p:has(> .doc-link) { font-size:12px; font-weight:600; color:#035C80; letter-spacing:.04em; text-transform:uppercase; line-height:1.3; margin:12px 0 3px; padding-left:10px; border-left:2px solid var(--fucsia); }
+  #panel-segundo p:has(> .doc-link) .doc-link { color:inherit; font:inherit; letter-spacing:inherit; text-transform:inherit; text-decoration:none; }
 
 /* CAMBIO DE LETRA GENERAL */
   body, header .sub, .mapa-hero p { font-size: 16px !important; }
@@ -793,10 +810,6 @@ color: var(--azul-oscuro);
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
       Segundo Ciclo
     </button>
-    <button class="tab-btn" data-tab="etico"   onclick="showTab('etico',this)"   role="tab">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Ética
-    </button>
     <button class="tab-btn" data-tab="pdi" onclick="showTab('pdi',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
       Protección Digital
@@ -894,12 +907,6 @@ color: var(--azul-oscuro);
         <span class="badge badge-pur">Basado en el DC Primario GCBA 2024</span>
       </div>
       <p>Desde el asombro y la curiosidad, los alumnos perciben la IA en su entorno y exploran sus funciones mediante juegos y narrativas guiadas. A continuación, se presenta el listado de los contenidos de IA que define el Diseño Curricular de Nivel Primario (2024) para cada grado y se propone un ejemplo para su abordaje en el aula. En algunos casos, se incluye además una secuencia didáctica o material listo para usar en la clase:</p>
-      <div class="ejes-dig" style="margin-top:8px">
-        <span class="ejes-dig-label">Ejes de Educación Digital:</span>
-        <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-        <span class="ej ej-cd">Ciudadanía Digital</span>
-        <span class="ej ej-pc">PC, Programación y Robótica</span>
-      </div>
     </div>
 
     <div class="sub-nav no-print">
@@ -914,15 +921,15 @@ color: var(--azul-oscuro);
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-blu">Tecnologías, Diseño y Programación</span>
-            <span class="ej ej-pc">PC, P y R</span>
-            <span class="ej ej-cd">Ciudadanía Digital</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Participa en conversaciones mediadas por el docente para reconocer cómo la IA está presente en nuestra vida cotidiana</li>
-            <li><span class="dot dot-pur"></span>Percibe y nombra objetos o aplicaciones del hogar y la escuela que funcionan con ayuda de la IA.</li>
-            <li><span class="dot dot-pur"></span>A través de actividades lúdicas y con mediación docente, empieza a preguntarse cómo funcionan estas tecnologías.</li>
-           <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Observa cómo una máquina puede identificar dibujos y patrones para entender que "aprende" a partir de ejemplos.</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y reflexión crítica sobre estas tecnologías.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta en la pantalla colectiva un entorno de IA y formula preguntas orientadoras como «¿Quién le enseñó a responder de esa forma?». Los estudiantes observan la demostración, identifican dispositivos con IA en sus hogares y clasifican ejemplos de la vida cotidiana en dos grupos: acciones humanas y respuestas automáticas.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Inteligencia artificial en el reconocimiento de dibujos y patrones.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta un juego de reconocimiento de dibujos, por ejemplo Quick Draw, en pantalla colectiva. Los alumnos guían al docente para dibujar y observan cómo la IA «adivina», debatiendo si la IA «ve» o sigue patrones.</p>
         </div>
       </div>
     </div>
@@ -932,14 +939,15 @@ color: var(--azul-oscuro);
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-blu">Tecnologías, Diseño y Programación</span>
-            <span class="ej ej-pc">PC, P y R</span>
-            <span class="ej ej-cd">Ciudadanía Digital</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Con mediación docente, conversa sobre cómo la IA puede ayudar a las personas en sus tareas diarias.</li>
-            <li><span class="dot dot-pur"></span>Reconoce y nombra máquinas que realizan tareas de forma automática en distintos espacios de su entorno.</li>
-            <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Observa cómo la IA y los robots industriales realizan tareas repetitivas sin cansarse, como sucede con los asistentes de respuesta (chatbots).</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías, y su relación con los procesos de automatización.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Se presenta una herramienta interactiva de aprendizaje automático, como Teachable Machine. Los alumnos «entrenan» a la cámara para que reconozca cuándo muestran un lápiz y cuándo muestran una goma. Al automatizar la clasificación, experimentan en primera persona cómo la IA aprende a partir de los ejemplos que nosotros le cargamos y qué pasa si le mostramos un objeto diferente, por ejemplo un sacapuntas.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">El rol de los procesos de automatización y el uso de la inteligencia artificial en el trabajo, en tareas repetitivas, por ejemplo chatbots y robots industriales.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes analizan videos breves de brazos robóticos en fábricas y conversan con un chatbot programado para responder preguntas sencillas. Luego, simulan una línea de ensamblaje en el aula: un grupo realiza una tarea repetitiva y otro actúa como los «programadores» que diseñan las instrucciones para que esa tarea sea siempre idéntica, debatiendo cómo las máquinas ayudan a las personas en tareas cansadoras.</p>
         </div>
       </div>
     </div>
@@ -949,36 +957,37 @@ color: var(--azul-oscuro);
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-blu">Conocimiento del Mundo</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Explora, junto al docente, cómo la IA genera información sobre el pasado para empezar a preguntarse de dónde saca la máquina esos datos.</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías, en relación con la búsqueda de información sobre otras épocas.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">En el marco de un proyecto sobre un momento histórico determinado, por ejemplo la época colonial, el docente proyecta su pantalla y el grupo realiza preguntas a un chatbot interactivo configurado con información histórica. Los estudiantes analizan si las respuestas del sistema coinciden con el material que vieron en clase e identifican si la base de datos de la IA está bien provista de información histórica real o si inventa respuestas incorrectas (alucinaciones).</p>
         </div>
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-blu">Teatro / Educación Artística</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Participa en juegos y narrativas con IA para observar cómo reacciona la tecnología a nuestras propuestas y conversar sobre lo que sucede.</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y reflexión crítica sobre estas tecnologías.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta un video donde se muestra cómo una herramienta de IA analiza los puntos de articulación de un actor para mover un personaje animado. Los estudiantes imitan físicamente los movimientos del personaje en el espacio del aula, sin pantallas, y luego reflexionan sobre cómo las computadoras procesan formas geométricas del cuerpo humano a partir de datos visuales.</p>
         </div>
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-blu">Tecnologías, Diseño y Programación</span>
-            <span class="ej ej-pc">PC, P y R</span>
-            <span class="ej ej-cd">Ciudadanía Digital</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Con mediación docente, explora cómo algunas máquinas y robots pueden cambiar su comportamiento al "aprender" de lo que sucede a su alrededor (aprendizaje automático).</li>
-            <li><span class="dot dot-pur"></span>Conversa sobre la importancia de usar la IA de forma segura en entornos institucionales y cómo estas tecnologías influyen en nuestro día a día.</li>
-            <li><span class="dot dot-pur"></span>Comienza a reconocer, con ayuda del docente, qué cosas puede hacer bien la IA y en qué situaciones puede fallar o darnos información falsa.</li>
-            <li><span class="dot dot-pur"></span>Identifica y nombra con sus palabras algunas reglas simples de cómo funciona la IA, como su capacidad de encontrar patrones.</li>
-            <li><span class="dot dot-pur"></span>Descubre y señala ejemplos de IA en objetos o situaciones que observa en su casa o en la escuela.</li>
-            <li><span class="dot dot-pur"></span>Reconoce los cuidados necesarios al usar tecnología e IA en la escuela y con su familia.</li>
-            <li><span class="dot dot-pur"></span><span class="star" aria-label="Profundización/Ampliación"></span> Formula sus primeras preguntas sobre qué es verdad y qué no en las respuestas de la IA, reconociendo que puede tener errores.</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">A partir de un conjunto de imágenes —algunas fotos reales y otras generadas de forma sintética mediante algoritmos—, los alumnos buscan imperfecciones físicas, errores lógicos de iluminación o texturas extrañas. La actividad se enfoca en entender que las imágenes creadas por computadoras son cálculos matemáticos visuales y que no debemos creer automáticamente todo lo que vemos en las pantallas.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desafíos que proponen los diferentes entornos virtuales y tecnologías digitales en el ámbito personal, familiar y escolar, especialmente en relación con el uso de inteligencia artificial en situaciones cotidianas.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente propone una charla guiada a partir de un disparador: una historieta corta donde un papá o una mamá le saca una foto a su hijo y la sube a una aplicación de Inteligencia Artificial para transformarlo en un personaje de dibujo animado en 3D. Decide subirla a una red social porque le gustó muchísimo cómo quedó y quiere compartirla con todos. Preguntas guía: ¿A dónde viaja nuestra foto real cuando la subimos a esa aplicación para que la IA la transforme? ¿Las aplicaciones guardan la forma de nuestra cara? ¿Nos gustaría que esa imagen modificada circule por internet? ¿Por qué es importante que los adultos nos pregunten antes de usar filtros de IA con nuestras fotos? A partir de las respuestas, se introduce el concepto de huella digital y la importancia de proteger nuestro rostro como un dato personal único. Los estudiantes arman un «compromiso familiar» recordatorio para llevar a casa sobre el uso seguro y respetuoso de imágenes y herramientas de IA.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Posibilidades y riesgos de la inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El grupo clasifica situaciones de uso de IA según su propósito. Verde para usos que claramente enriquecen el aprendizaje, por ejemplo pedirle a un chatbot de imágenes que nos muestre cómo se vería un dinosaurio con plumas para estudiar su anatomía. Amarillo para analizar la pertinencia y el para qué: se debate que no es conveniente usar un chatbot si solo buscamos copiar la respuesta final sin esfuerzo, pero que sí puede ser una gran oportunidad si, con mediación del docente, le pedimos al sistema que nos dé pistas, analogías o ejemplos que nos ayuden a pensar y a resolver el problema por nosotros mismos. Rojo para usos donde se vulnera la privacidad o la seguridad, como subir fotos de personas reales a una IA para transformarlas en caricaturas, exponiendo datos personales sin necesidad.</p>
         </div>
       </div>
     </div>
@@ -988,13 +997,11 @@ color: var(--azul-oscuro);
         <div class="campo">
           <div class="campo-h">
             <span class="badge badge-tea">Educación Digital (todos los grados)</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-            <span class="ej ej-cd">Ciudadanía Digital</span>
           </div>
-          <ul class="dot-list">
-            <li><span class="dot dot-pur"></span>Explora diversos entornos digitales y sistemas de IA de forma guiada, utilizando el juego para observar y conversar sobre la información que estos nos muestran.</li>
-            <li><span class="dot dot-pur"></span>Descubre, junto al docente, recursos digitales con IA como una oportunidad para jugar, asombrarse y empezar a preguntarse cómo funciona esta tecnología.</li>
-          </ul>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Indagación de recursos digitales con inteligencia artificial como oportunidad para la experimentación y la reflexión crítica sobre esta tecnología.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Como cierre de proyecto, los chicos registran de manera colectiva en un afiche de aula sus aprendizajes sobre la IA. Se enfocan en dos conceptos clave: «Las computadoras solo hacen lo que las personas programan» y «Nosotros somos quienes decidimos cómo usar las tecnologías de manera segura para cuidarnos entre todos», reforzando la soberanía humana sobre las máquinas.</p>
         </div>
       </div>
     </div>
@@ -1012,18 +1019,10 @@ color: var(--azul-oscuro);
   <div class="panel" id="panel-segundo">
     <div class="ciclo-banner tea">
       <div class="badges" style="margin-bottom:10px">
-        <span class="badge badge-tea" style=border-color:var(--tea-text) blackground-color: #ffffff;>Segundo ciclo · 4.°, 5.°, 6.° y 7.° grado</span>
-        <span class="badge" style=color:#fff;border-color:var(--tea-text)>Basado en el DC Primario GCBA 2024</span>
+        <span class="badge badge-tea">Segundo ciclo · 4.°, 5.°, 6.° y 7.° grado</span>
+        <span class="badge badge-tea">Basado en el DC Primario GCBA 2024</span>
       </div>
-      
-      <p>Desde un enfoque de «crear para cuestionar», la IA se utiliza exclusivamente como un insumo para la experimentación guiada bajo la mediación docente permanente, permitiendo analizar la confiabilidad de la información y la importancia de la autoría humana original. A continuación, se presenta el listado de los contenidos de IA que define el Diseño Curricular de Nivel Primario (2024) para cada grado y se propone un ejemplo para su abordaje en el aula. En algunos casos, se incluye además una secuencia didáctica o material listo para usar en la clase:</p>
-
-      <div class="ejes-dig" style="margin-top:8px">
-        <span class="ejes-dig-label">Ejes de Educación Digital:</span>
-        <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-        <span class="ej ej-cd">Ciudadanía Digital</span>
-        <span class="ej ej-pc">PC, Programación y Robótica</span>
-      </div>
+      <p>Desde un enfoque de «crear para cuestionar», la IA se utiliza como un insumo para la experimentación guiada bajo mediación docente. A continuación se presentan los contenidos de IA por grado, junto con propuestas para su abordaje en el aula.</p>
     </div>
 
     <div class="sub-nav no-print">
@@ -1033,229 +1032,411 @@ color: var(--azul-oscuro);
       <button class="sub-btn" onclick="showGrade('g6',this)">6.° grado</button>
       <button class="sub-btn" onclick="showGrade('g7',this)">7.° grado</button>
       <button class="sub-btn" onclick="showGrade('g67',this)">6.° y 7.° (ED)</button>
+      <button class="sub-btn" onclick="showGrade('gtodos',this)">Todos los grados</button>
     </div>
 
     <div class="card sub-panel active" id="seg-g4">
-  <div class="card-body">
-    <div class="campo">
-      <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-      <ul class="dot-list">
-        <li><span class="dot"></span>Busca significados de palabras en diccionarios y sitios web, comparando los resultados que ofrecen los motores de búsqueda y aplicaciones con IA</li>
-        <li><span class="dot"></span>Bajo guía docente, indaga contenidos digitales en buscadores e IA, identificando las distintas posibilidades que ofrece cada herramienta.</li>
-        <li><span class="dot"></span>Aplica criterios para identificar la procedencia de la información y ensaya estrategias para advertir la veracidad o falsedad en imágenes y textos generados por IA.</li>
-      </ul>
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Lengua</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales sobre temas de estudio a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial, a trav&#233;s de lecturas guiadas por el docente para trabajar estrategias lectoras y generar intercambios y reflexiones sobre los textos, las fuentes y los soportes.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes escriben el inicio de un cuento y registran, en una hoja de trabajo, las indicaciones que le dar&#237;an a una IA para continuarlo. El docente selecciona una de las propuestas creadas por los estudiantes e interact&#250;a con la IA de manera colectiva. Luego, la clase analiza si la respuesta respeta las indicaciones y reescribe la continuaci&#243;n del cuento incorporando sus propias decisiones.</p>
+          <p><a class="doc-link" href="#">Secuencia 4&#176; grado - Lengua</a></p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad, para generar estrategias que colaboren con advertir la veracidad o falsedad de las im&#225;genes y de la informaci&#243;n digital.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta un par de im&#225;genes (una fotograf&#237;a real y una creada con IA) donde la diferencia no resulta evidente a simple vista. En equipos, los estudiantes asumen el rol de &quot;detectives de datos&quot; para analizar minuciosamente ambas im&#225;genes en una hoja de trabajo, buscando pistas sutiles de la automatizaci&#243;n (texturas at&#237;picas, patrones repetitivos o brillos artificiales) y debatiendo sobre cu&#225;l consideran que fue generada por IA. Luego de la puesta en com&#250;n, el docente revela el origen de cada una y gu&#237;a una reflexi&#243;n colectiva: como las im&#225;genes de IA son cada vez m&#225;s veros&#237;miles, no alcanza con la intuici&#243;n, sino que es indispensable construir criterios de validaci&#243;n (consultar fuentes primarias, verificar autor&#237;as y dudar de la perfecci&#243;n digital) para no dar por cierto todo lo que se ve en pantalla.</p>
+          <p><a class="doc-link" href="#">C&#225;psula audiovisual - Detectives de informaci&#243;n con IA</a></p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Lectura guiada por el docente de textos para explorar diversidad de fuentes (sitios web, recursos digitales, buscadores y aplicaciones con inteligencia artificial, etc.) sobre un tema de estudio.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes investigan un tema de estudio en peque&#241;os grupos utilizando fuentes tradicionales. Luego, el docente proyecta un motor de b&#250;squeda enriquecido con IA o un chatbot conversacional e introduce preguntas formuladas colectivamente por la clase. A partir de los resultados obtenidos, los estudiantes registran y comparan en una hoja de trabajo la informaci&#243;n brindada por la IA con las dem&#225;s fuentes, analizando la procedencia, la confiabilidad y la presencia de posibles errores o &quot;alucinaciones&quot;, para luego seleccionar de forma cr&#237;tica qu&#233; datos incorporar a su informe final.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Naturales</span></div>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Materiales, implantes y/o pr&#243;tesis tecnol&#243;gicas y su relaci&#243;n con el uso de la inteligencia artificial para potenciar la calidad de vida de las personas.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta, mediante un video breve o una lectura guiada, casos reales de personas que utilizan tecnolog&#237;as asistivas (por ejemplo, brazos rob&#243;ticos o aplicaciones que describen el mundo para personas ciegas). En el aula, los estudiantes realizan un ejercicio de &quot;dise&#241;o de ideas&quot;: deben identificar una dificultad cotidiana (ej. levantar un objeto pesado o reconocer un color) y dibujar c&#243;mo una m&#225;quina inteligente podr&#237;a ayudar a una persona a realizar esa tarea con mayor facilidad. Finalmente, el grupo debate de forma colectiva c&#243;mo la IA &quot;aprende&quot; a reconocer esos objetos para asistir al usuario, enfatizando que la tecnolog&#237;a no es m&#225;gica, sino que sigue reglas creadas por personas para cuidar y potenciar la calidad de vida de otros.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URLs, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de Inteligencia Artificial (IA).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta en la pantalla colectiva dos pesta&#241;as: un buscador web tradicional y un asistente de IA. Frente a una pregunta sobre el tema de estudio, el docente ingresa la b&#250;squeda en ambas herramientas con el aporte de la clase. Los estudiantes comparan en una hoja de trabajo los dos formatos de respuesta: identifican que el buscador ofrece una lista de sitios web para explorar y verificar, mientras que la IA redacta un texto resumido a partir de patrones probabil&#237;sticos. Finalmente, debaten sobre cu&#225;ndo conviene usar cada herramienta y registran las ventajas y riesgos de cada una.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Artes visuales / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Creaci&#243;n y resignificaci&#243;n de im&#225;genes mediante inteligencia artificial (IA). Exploraci&#243;n de las posibilidades que brindan los modelos generativos de im&#225;genes: recreaciones mediante instrucciones textuales, integraci&#243;n de m&#250;ltiples im&#225;genes, creaci&#243;n de avatares, etc&#233;tera.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta un generador de im&#225;genes con IA en la pantalla colectiva. A partir de una obra de arte estudiada o un boceto previo de la clase, los estudiantes sugieren verbalmente diferentes instrucciones de texto (prompts) para transformar o reinterpretar la imagen. El docente ingresa los prompts colectivos y genera diversas versiones. En sus cuadernos, los estudiantes analizan y comparan la obra original con las im&#225;genes generadas, debatiendo sobre qu&#233; elementos visuales (colores, estilos, formas) interpret&#243; o modific&#243; la m&#225;quina y valorando la intencionalidad y la sensibilidad de la creaci&#243;n art&#237;stica humana por encima del procesamiento autom&#225;tico.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">M&#250;sica / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial (IA) para la b&#250;squeda de informaci&#243;n sobre autores, compositores e int&#233;rpretes.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta la b&#250;squeda de informaci&#243;n sobre un compositor o int&#233;rprete en dos entornos digitales: un sitio de noticias/enciclopedia musical web y una herramienta de IA conversacional. Con las sugerencias del grupo, el docente ingresa una consulta (por ejemplo: &quot;&#191;Qu&#233; instrumentos utilizaba este compositor y cu&#225;l fue su obra m&#225;s famosa?&quot;). En una planilla de registro, los estudiantes anotan y comparan los datos que entrega cada fuente. Guiados por el docente, identifican que el sitio web cita autores e instituciones de referencia, mientras que la IA redacta un texto s&#237;ntesis sin citar siempre sus fuentes. Finalmente, reflexionan colectivamente sobre la importancia de verificar la informaci&#243;n musical en fuentes oficiales o especializadas antes de utilizarla en una investigaci&#243;n.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Tecnolog&#237;as, Dise&#241;o y Programaci&#243;n</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Introducci&#243;n a la inteligencia artificial. &#191;Qu&#233; es la inteligencia artificial (IA)?</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta dos respuestas sobre un mismo tema sin revelar su origen. Los estudiantes analizan ambos textos buscando pistas para distinguir la autor&#237;a humana de la imitaci&#243;n de la m&#225;quina. La actividad cierra reforzando la centralidad humana, concluyendo que solo las personas sienten y deciden por valores, mientras que la IA solo procesa patrones estad&#237;sticos.</p>
+          <p><a class="doc-link" href="#">C&#225;psila audiovisual - &#191;Qui&#233;n me responde? Personas, robots e inteligencia artificial</a></p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Utilidades de la inteligencia artificial en aplicaciones cotidianas, por ejemplo, en motores de b&#250;squeda en internet o en los algoritmos y sistemas de recomendaci&#243;n.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta una plataforma de videos o m&#250;sica e ingresa a dos perfiles con diferentes historiales de uso. La clase observa c&#243;mo el sistema recomienda contenidos distintos para cada perfil y registra las diferencias en una hoja de trabajo. Guiados por el docente, los estudiantes analizan c&#243;mo funciona el algoritmo: la IA no conoce sus gustos &quot;m&#225;gicamente&quot;, sino que analiza las selecciones anteriores para predecir y sugerir lo que tiene mayor probabilidad de gustarles. Finalmente, reflexionan colectivamente sobre c&#243;mo estos sistemas influyen en lo que eligen ver o escuchar diariamente.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Aplicaciones simples de inteligencia artificial: herramientas y aplicaciones, como asistentes virtuales o filtros de im&#225;genes, y acercamiento a su funcionamiento.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta un asistente de voz o una herramienta de dictado por voz colectiva. Los estudiantes realizan pruebas en voz alta planteando diferentes desaf&#237;os: decir una frase muy r&#225;pido, hablar en susurros, usar palabras inventadas o generar ruido de fondo con aplausos. En una hoja de trabajo, registran qu&#233; palabras la herramienta logr&#243; transcribir bien y en cu&#225;les se equivoc&#243;. A partir de las fallas, la clase reflexiona sobre c&#243;mo la IA no &quot;entiende&quot; lo que escuchan sus o&#237;dos como lo har&#237;a un ser humano, sino que busca coincidencias probabil&#237;sticas analizando ondas de sonido y datos previos con los que fue entrenada.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso a sistemas de inteligencia artificial para la generaci&#243;n de contenidos digitales. Reflexi&#243;n sobre las caracter&#237;sticas propias de estos sistemas y los desaf&#237;os que presentan.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta una herramienta generativa e ingresa una consigna breve consensuada con la clase para generar un disparador inicial (por ejemplo, los primeros tres renglones del comienzo de una historia o una idea b&#225;sica para un proyecto). En grupos, los estudiantes leen la propuesta del sistema, analizan sus fortalezas o limitaciones en una hoja de trabajo y la utilizan &#250;nicamente como punto de partida. A partir de all&#237;, contin&#250;an la producci&#243;n de forma aut&#243;noma, tomando sus propias decisiones sobre el desarrollo, el estilo y el desenlace para aportarle originalidad, sentido y su propia voz humana.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Riesgos de usos no &#233;ticos de la inteligencia artificial, como la creaci&#243;n de contenido falso.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente organiza una din&#225;mica grupal de auditor&#237;a visual en la que los estudiantes observan y votan para diferenciar fotograf&#237;as reales de producciones sint&#233;ticas. A partir de esta actividad, se busca desarrollar el pensamiento cr&#237;tico y la alfabetizaci&#243;n digital en los alumnos para que comprendan el funcionamiento t&#233;cnico de estas tecnolog&#237;as, reconozcan la responsabilidad humana detr&#225;s de la difusi&#243;n de contenidos digitales y promuevan pautas de protecci&#243;n digital, uso &#233;tico y no hostigamiento.</p>
+          <p><a class="doc-link" href="#">C&#225;psula audiovisual - Im&#225;genes falsas y contenido generado con IA</a></p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta colectivamente en la pantalla del aula tres breves fichas informativas sobre un mismo animal de la fauna argentina (una extra&#237;da de un sitio enciclop&#233;dico, otra de un blog personal y una tercera generada previamente por el docente mediante una herramienta de IAG con &quot;alucinaciones&quot; e informaci&#243;n inventada). Los estudiantes, reunidos en peque&#241;os grupos, leen y comparan los textos guiados por una planilla de cotejo para detectar inconsistencias, analizar la procedencia de cada texto y contrastar los datos con fuentes bibliogr&#225;ficas confiables. El objetivo es que los alumnos logren identificar errores mec&#225;nicos o datos falsos en textos digitales y valoren la importancia de auditar la confiabilidad de la informaci&#243;n antes de darla por v&#225;lida.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Fundamentos de programaci&#243;n para inteligencia artificial: conceptos b&#225;sicos de programaci&#243;n relacionados con la inteligencia artificial, aprendizaje autom&#225;tico mediante el uso de p&#225;ginas y plataformas.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente introduce la l&#243;gica del entrenamiento de algoritmos y proyecta en la pantalla una plataforma educativa abierta de aprendizaje autom&#225;tico por reconocimiento de im&#225;genes y sonidos. De forma grupal y con la mediaci&#243;n continua del docente, los estudiantes clasifican y cargan im&#225;genes de objetos reciclables para &quot;ense&#241;ar&quot; al modelo a reconocer patrones visuales y predecir categor&#237;as. El objetivo es que los alumnos comprendan que la inteligencia artificial no &quot;piensa&quot; ni posee intuici&#243;n humana, sino que genera resultados probabil&#237;sticos basados en los datos y patrones cargados durante su entrenamiento.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Derechos de autor, nociones de propiedad y uso, su relaci&#243;n con las producciones de la inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta dos ilustraciones similares de un paisaje urbano (una realizada por un ilustrador y otra generada con un motor de im&#225;genes a partir de un texto instructivo) e inicia un debate guiado. En parejas, los estudiantes analizan qui&#233;n es el autor original en cada caso, conversan sobre el esfuerzo creativo humano y simulan etiquetar las producciones utilizando la leyenda &quot;Creado por autor humano&quot; o &quot;Generado con asistencia de IA&quot;. El objetivo es que los estudiantes reconozcan el valor de la autor&#237;a humana original, comprendan los principios b&#225;sicos del derecho de autor y asuman la responsabilidad &#233;tica de declarar la transparencia en el uso de herramientas tecnol&#243;gicas.</p>
+        </div>
+      </div>
     </div>
-    
-    <div class="campo">
-      <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-      <ul class="dot-list">
-        <li><span class="dot"></span>Con mediación docente, explora diversas herramientas digitales e IA para encontrar información, reconociendo qué ventajas ofrece cada una para el estudio de las Ciencias Sociales.</li>
-      </ul>
-    </div>
-    
-    <div class="campo">
-      <div class="campo-h"><span class="badge badge-blu">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-      <ul class="dot-list">
-        <li>
-            <span class="dot"></span>
-            Busca datos sobre autores y compositores utilizando diferentes recursos digitales e IA, evaluando la información obtenida junto al docente. Música.
-        </li>
-        <li>
-            <span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span>
-            Bajo guía docente, explora las posibilidades de los modelos generativos para crear o transformar imágenes mediante consignas simples (prompts) y avatares. Artes Visuales.
-        </li>
-      </ul>
-    </div>
-    
-    <div class="campo">
-      <div class="campo-h"><span class="badge badge-blu">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-      <ul class="dot-list">
-        <li><span class="dot"></span>Identifica qué es la IA y observa cómo funciona en aplicaciones comunes, como los sistemas que nos recomiendan videos o canciones.</li>
-        <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Con acompañamiento docente, explora herramientas como filtros o asistentes para acercarse a la idea de cómo las máquinas "aprenden" (aprendizaje automático)</li>
-        <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Conversa —con mediación docente— sobre los riesgos de crear contenido falso con IA y reconoce que existe la autoría en las obras que circulan en Internet.</li>
-      </ul>
-    </div>
-  </div>
 
-    </div>
     <div class="card sub-panel" id="seg-g5">
       <div class="card-body">
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con guía docente, explora el funcionamiento de buscadores y chats de IA para observar y conversar sobre cómo se generan los diferentes tipos de resultados.</li>
-            <li><span class="dot"></span>Ensaya el diseño de preguntas y consignas (prompts) bajo guía docente para encontrar información, evaluando las respuestas obtenidas de forma grupal.</li>
-            <li><span class="dot"></span>Con acompañamiento docente, analiza si la información que genera la IA a partir de un prompt es pertinente y específica para el tema de estudio, comparándola con otras fuentes.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Lengua</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta frente a la clase un buscador web convencional junto con la pantalla de un asistente de inteligencia artificial generativa para modelar una indagaci&#243;n sobre un tema del &#225;rea. Durante la actividad grupal guiada, la maestra formula palabras clave en la web y ensaya prompts colectivos en la herramienta de IA para comparar las respuestas de cada plataforma. Los estudiantes observan los resultados obtenidos, dialogan en equipos y registran las diferencias entre los enlaces a sitios web y las s&#237;ntesis autom&#225;ticas de texto. A continuaci&#243;n, los ni&#241;os identifican las instrucciones m&#225;s precisas para orientar la b&#250;squeda seg&#250;n la necesidad informativa, siempre bajo el acompa&#241;amiento directo de la docente.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Reconocimiento de caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente exhibe en la pantalla colectiva dos textos breves: una nota informativa de un sitio web educativo y una respuesta producida por IA que contiene alucinaciones o datos inventados. A trav&#233;s de un intercambio orientador, el maestro promueve la lectura atenta de ambas piezas para dudar de los datos que no poseen un origen transparente. Los estudiantes cotejan grupalmente la informaci&#243;n del texto autom&#225;tico con libros de la biblioteca escolar y enciclopedias digitales para auditar la veracidad del contenido. Luego del an&#225;lisis colectivo, los alumnos se&#241;alan los errores del sistema inform&#225;tico y elaboran una lista grupal con pautas para validar la procedencia de una fuente.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Lectura guiada por el docente de textos para explorar diversidad de fuentes (sitios web, recursos digitales, buscadores y aplicaciones con inteligencia artificial, etc.) sobre un tema de estudio.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta el concepto de instrucci&#243;n (prompt) como el conjunto de indicaciones que se le brinda a una IA para realizar una tarea. Los estudiantes, en grupos, elaboran distintas versiones de una misma instrucci&#243;n. El docente selecciona una propuesta e interact&#250;a con la IA de manera colectiva. Luego, la clase compara la respuesta obtenida y elabora recomendaciones para escribir instrucciones claras.</p>
+          <p><a class="doc-link" href="#">Secuencia 5&#176; grado - Lengua</a></p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con mediación docente, observa y analiza la procedencia de los datos estadísticos generados por sistemas tecnológicos para conversar sobre su confiabilidad y veracidad.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Matem&#225;tica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n estad&#237;stica (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes dise&#241;ar&#225;n una encuesta en el aula, organizar&#225;n los resultados en tablas y construir&#225;n gr&#225;ficos de barras. Luego, comparar&#225;n sus propias conclusiones con el an&#225;lisis generado por una IA para debatir sobre el valor &#250;nico de la mirada humana frente al procesamiento de datos.</p>
+          <p><a class="doc-link" href="#">Secuencia 5&#176; grado - Matem&#225;tica</a></p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Aplica criterios de confiabilidad para analizar —con mediación docente— los datos que genera la IA sobre el movimiento de los astros y la Luna, verificando la información con fuentes científicas.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Naturales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) como la procedencia y confiabilidad. Importancia de su identificaci&#243;n para el estudio del movimiento de los astros y de la Luna.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente formula una consulta en un entorno de inteligencia artificial frente a la clase sobre la visibilidad lunar y plantea el interrogante &#171;&#191;En qu&#233; fuentes se bas&#243; la m&#225;quina para dar esta respuesta?&#187;. En peque&#241;os equipos, los alumnos analizan el texto generado, identifican la falta de referencias directas e investigan el tema en sitios web de instituciones astron&#243;micas oficiales.</p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con guía docente, explora diversos entornos digitales, reconociendo las diferencias entre un buscador tradicional y un sistema de IA para el estudio de las sociedades.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URLs, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de Inteligencia Artificial (IA).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta en pantalla colectiva la b&#250;squeda de un tema hist&#243;rico de Ciencias Sociales realizada tanto en un motor tradicional por URL como en un sistema de Inteligencia Artificial Generativa. Los estudiantes, organizados en grupos de trabajo, comparan las respuestas obtenidas con el fin de evaluar la precisi&#243;n y la confiabilidad de cada recurso digital. A partir de consignas orientadoras, las y los alumnos verifican los datos en fuentes oficiales e identifican posibles alucinaciones o sesgos en el contenido generado por la m&#225;quina.</p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con mediación docente, explora cómo la IA puede funcionar como apoyo para descubrir información sobre arte y cultura, analizando críticamente las sugerencias de espectáculos que ofrece el sistema.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Artes visuales / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales sobre divulgaci&#243;n art&#237;stico-cultural en sitios institucionales, a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial (IA).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta la navegaci&#243;n por el portal de un museo institucional e introduce una consulta colectiva mediante un sistema de IA generativa para explorar exposiciones art&#237;sticas. En peque&#241;os grupos, los estudiantes comparan los resultados autom&#225;ticos con la informaci&#243;n de la web oficial para detectar posibles alucinaciones o incoherencias. Asimismo, la clase ensaya en conjunto preguntas m&#225;s precisas a fin de ajustar la b&#250;squeda.</p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Educación Física</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Explora junto al docente cómo los sistemas de IA pueden procesar datos sobre el deporte para analizar sus desafíos y características técnicas.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">M&#250;sica / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial (IA) en la indagaci&#243;n de oferta musical y espect&#225;culos.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente gu&#237;a una exploraci&#243;n colectiva sobre espect&#225;culos musicales locales mediante el uso combinado de URLs de salas de conciertos y consultas guiadas a una IA. Los estudiantes, organizados en equipos, verifican si la agenda de conciertos recomendada por el algoritmo coincide con la oferta real publicada por las instituciones culturales. A partir de este contraste, el grupo analiza si la herramienta present&#243; sesgos o informaci&#243;n desactualizada sobre los eventos.</p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con apoyo docente, indaga recursos de IA para la lectura y escucha en otras lenguas, reflexionando sobre la procedencia y confiabilidad de los textos obtenidos.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Educaci&#243;n F&#237;sica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso a sistemas de inteligencia artificial (IA) para la generaci&#243;n de datos y contenidos digitales sobre pr&#225;cticas deportivas y su posterior an&#225;lisis. Reflexi&#243;n sobre las caracter&#237;sticas propias de estos sistemas y los desaf&#237;os que presentan.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta frente al grupo total la formulaci&#243;n de consultas a un sistema de inteligencia artificial para la generaci&#243;n de datos sobre t&#225;cticas y reglas deportivas. A continuaci&#243;n, los estudiantes contrastan colectivamente la informaci&#243;n obtenida con reglamentos oficiales de Educaci&#243;n F&#237;sica para detectar posibles alucinaciones del modelo. En peque&#241;os equipos, los alumnos discuten sobre las limitaciones t&#233;cnicas del sistema y los sesgos que presentan los contenidos digitales deportivos.</p>
         </div>
-
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Reconoce procesos tecnológicos, como la IA, donde la intervención humana no se observa a simple vista.</li>
-            <li><span class="dot"></span>Conversa, con mediación docente, sobre el uso responsable de la IA, identificando posibles prejuicios (sesgos) en sus respuestas y la importancia de cuidar la privacidad.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Lenguas adicionales (Ingl&#233;s, Franc&#233;s, Italiano y Portugu&#233;s)</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales para la lectura y escucha de diversos g&#233;neros textuales, a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial (IA).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta frente a la clase una b&#250;squeda guiada en un motor de b&#250;squeda tradicional y en un asistente de Inteligencia Artificial para obtener textos breves en la lengua adicional sobre festividades culturales. Los estudiantes, organizados en peque&#241;os grupos, observan ambas opciones, leen los textos proyectados y comparan la precisi&#243;n del vocabulario que ofrece cada herramienta. El objetivo pedag&#243;gico es que el grupo identifique las diferencias entre los resultados est&#225;ticos de un buscador y las respuestas sint&#233;ticas de una IA.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta a todo el curso dos textos cortos en la lengua adicional sobre un animal en peligro de extinci&#243;n: uno proveniente de un sitio web oficial y otro generado colectivamente en pantalla por una IA. En equipos, los estudiantes analizan el origen de las fuentes, verifican la informaci&#243;n en diccionarios o enciclopedias digitales y detectan posibles alucinaciones del modelo automatizado.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Tecnolog&#237;as, Dise&#241;o y Programaci&#243;n</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Principios &#233;ticos en el uso de la inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta en la pantalla colectiva del aula un entorno de IA generativa e introduce la formulaci&#243;n grupal de consignas. A continuaci&#243;n, los estudiantes conversan en peque&#241;os equipos sobre la privacidad de los datos personales y el respeto por los derechos de autor que deben resguardar. Luego, cada grupo propone un compromiso escrito para citar las fuentes y actuar de forma transparente</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Riesgos de usos no &#233;ticos de la inteligencia artificial, como la creaci&#243;n de contenido falso.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente organiza una din&#225;mica grupal de auditor&#237;a visual en la que los estudiantes observan y votan para diferenciar fotograf&#237;as reales de producciones sint&#233;ticas. A partir de esta actividad, se busca desarrollar el pensamiento cr&#237;tico y la alfabetizaci&#243;n digital en los alumnos para que comprendan el funcionamiento t&#233;cnico de estas tecnolog&#237;as, reconozcan la responsabilidad humana detr&#225;s de la difusi&#243;n de contenidos digitales y promuevan pautas de protecci&#243;n digital, uso &#233;tico y no hostigamiento.</p>
+          <p><a class="doc-link" href="#">C&#225;psula audiovisual - Im&#225;genes falsas y contenido generado con IA</a></p>
         </div>
       </div>
     </div>
 
     <div class="card sub-panel" id="seg-g45">
       <div class="card-body">
-        <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (4.° y 5.°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>De forma grupal y con guía docente, investiga en entornos digitales e IA aplicando estrategias para buscar, seleccionar y validar información, reconociendo que estos sistemas pueden generar errores o  "alucinaciones".</li><li><span class="dot"></span>Identifica cómo se organiza la información y los contenidos digitales, reconociendo —con ayuda del docente— las particularidades de los entornos que utilizan sistemas de IA.</li><li><span class="dot"></span>Participa en experiencias colectivas de generación de contenidos con IA, analizando junto al docente cómo estos sistemas procesan patrones para producir respuestas que parecen humanas.</li><li><span class="dot"></span>Identifica y conversa sobre las nuevas formas de vincularnos en la cultura digital, reconociendo —con mediación docente— qué retos y posibilidades abren la interconexión y los sistemas de IA.</li><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Analiza junto al docente situaciones de usos no éticos de la IA, como la creación de contenidos o imágenes falsas, para comprender la importancia de actuar con responsabilidad y cuidado en Internet.</li></ul></div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Educaci&#243;n Digital</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de informaci&#243;n y contenidos digitales a partir de motores de b&#250;squeda o URL, distinguiendo las posibilidades que ofrecen diversas herramientas digitales para encontrar la informaci&#243;n deseada, incluso sistemas de inteligencia artificial (IA).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente proyecta en pantalla colectiva la b&#250;squeda de un tema curricular con un motor tradicional y con un sistema de IA. Los estudiantes analizan en equipos el tipo de resultado de cada herramienta para comparar los enlaces web frente al texto sintetizado. El objetivo de esta propuesta busca que la clase distinga las posibilidades y los formatos que ofrece cada recurso digital en la indagaci&#243;n de informaci&#243;n.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Caracter&#237;sticas de las fuentes de informaci&#243;n (incluso aquellas producidas por inteligencia artificial generativa) a partir de criterios que permitan identificar su procedencia y confiabilidad.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta una respuesta generada por IA que contiene alucinaciones o datos falsos junto con una fuente institucional verificada. Los estudiantes eval&#250;an grupalmente ambos textos, contrastan las afirmaciones e identifican las inconsistencias del modelo automatizado. El objetivo de esta experiencia consiste en construir criterios colectivos de confiabilidad para validar el origen y la precisi&#243;n de las fuentes digitales.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso a sistemas de inteligencia artificial para la generaci&#243;n de contenidos digitales. Reflexi&#243;n sobre las caracter&#237;sticas propias de estos sistemas y los desaf&#237;os que presentan.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente ingresa a una herramienta de IA generativa en la pantalla del aula y redacta instrucciones o prompts acordados con el grupo. Los estudiantes examinan colectivamente el contenido digital generado, ensayan ajustes en las consignas y detectan posibles sesgos o estereotipos en el resultado. El objetivo de la propuesta procura desmitificar la tecnolog&#237;a al evidenciar que estos sistemas responden a c&#225;lculos estad&#237;sticos y patrones de datos sin comprensi&#243;n humana.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Modos de vinculaci&#243;n y pr&#225;cticas emergentes de la cultura digital, identificando oportunidades y desaf&#237;os que traen las tecnolog&#237;as digitales, la interconexi&#243;n y los sistemas de inteligencia artificial, entre otros desarrollos.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente muestra un intercambio donde una herramienta de IA utiliza un tono emp&#225;tico y simulaciones de afecto hacia el usuario. Los estudiantes debaten en grupos sobre las respuestas del sistema para establecer las diferencias entre emociones reales y programas mec&#225;nicos.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Riesgos de usos no &#233;ticos de la inteligencia artificial, como la creaci&#243;n de contenidos falsos.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente organiza una din&#225;mica grupal de auditor&#237;a visual en la que los estudiantes observan y votan para diferenciar fotograf&#237;as reales de producciones sint&#233;ticas. A partir de esta actividad, se busca desarrollar el pensamiento cr&#237;tico y la alfabetizaci&#243;n digital en los alumnos para que comprendan el funcionamiento t&#233;cnico de estas tecnolog&#237;as, reconozcan la responsabilidad humana detr&#225;s de la difusi&#243;n de contenidos digitales y promuevan pautas de protecci&#243;n digital, uso &#233;tico y no hostigamiento.</p>
+          <p><a class="doc-link" href="#">C&#225;psula audiovisual - Im&#225;genes falsas y contenido generado con IA</a></p>
+        </div>
       </div>
-
-    
     </div>
+
     <div class="card sub-panel" id="seg-g6">
       <div class="card-body">
         <div class="campo">
-          <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Indaga el funcionamiento de buscadores y sistemas de IA bajo guía docente, para analizar cómo la lógica de la herramienta condiciona el tipo de resultado obtenido.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> Participa en el ensayo colectivo de consignas (prompts), observando cómo pequeñas variaciones en el texto modifican las respuestas probabilísticas del sistema.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> Contrasta, con mediación del docente, la información de fuentes tradicionales con la generada por IA para comprender las diferencias entre la verificación de hechos y el procesamiento de patrones.</li>
-            <li><span class="dot"></span><span class="star" title="Profundización/Ampliación" aria-label="Profundización/Ampliación"></span> En grupo y con guía docente, analiza las respuestas de la IA generativa para identificar mecánicas de "alucinación", discutiendo por qué el sistema prioriza completar el texto sobre la verdad.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Lengua</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Funcionamiento b&#225;sico de motores de b&#250;squeda y sistemas de inteligencia artificial conversacionales para evaluar el tipo de resultado cuando se realiza una b&#250;squeda de una manera u otra.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta una serie de consignas de b&#250;squeda y gu&#237;a a los estudiantes en el uso de palabras clave en un buscador tradicional frente a la formulaci&#243;n de consultas en un entorno conversacional con cuenta institucional. Los alumnos ejecutan las consultas individuales con su supervisi&#243;n, registran las respuestas obtenidas y comparan la estructura sint&#225;ctica de los resultados. A continuaci&#243;n, el grupo analiza colectivamente c&#243;mo el buscador muestra enlaces organizados por criterios algor&#237;tmicos mientras que la inteligencia artificial sintetiza texto probabil&#237;stico.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Dise&#241;o de preguntas posibles y consignas (prompts) para buscar nueva informaci&#243;n sobre un tema ya conocido, usando programas de inteligencia artificial generativa (chat de inteligencia artificial).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes redactan un texto argumentativo y utilizan la IA como herramienta de revisi&#243;n para recibir sugerencias de mejora. Luego analizan cr&#237;ticamente cada propuesta, deciden cu&#225;les aceptar, modificar o rechazar y justifican sus decisiones como autores del texto.</p>
+          <p><a class="doc-link" href="#">Secuencia 6&#176; grado - Lengua</a></p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Exploraci&#243;n de diversidad de fuentes en bibliotecas f&#237;sicas o virtuales, otros sitios web, recursos digitales, buscadores y aplicaciones con inteligencia artificial, entre otras, sobre un tema de estudio y evaluaci&#243;n de la confiabilidad y adecuaci&#243;n de la informaci&#243;n.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">La docente propone una investigaci&#243;n guiada sobre un tema de estudio del &#225;rea e indica la consulta paralela en enciclopedias f&#237;sicas, sitios web educativos y una aplicaci&#243;n con inteligencia artificial. Los estudiantes recopilan los datos provenientes de cada soporte y cotejan las afirmaciones mediante una plantilla de validaci&#243;n informativa. En parejas, los chicos identifican las citas bibliogr&#225;ficas, eval&#250;an la presencia de autor&#237;as reales y detectan posibles alucinaciones o datos err&#243;neos del sistema generativo.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Lectura de la informaci&#243;n que ofrece la inteligencia artificial generativa, a partir de preguntas realizadas (prompts) en funci&#243;n de lo que se sabe sobre el tema, evaluando la pertinencia y especificidad de la informaci&#243;n producida por el programa.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente modela la redacci&#243;n de instrucciones o prompts precisos sobre un tema le&#237;do previamente en clase para trabajar la especificidad textual. Cada estudiante interact&#250;a de forma individual y acotada en la plataforma institucional para ingresar su consulta y confrontar la respuesta del programa contra sus conocimientos previos. Luego, los alumnos ajustan las preguntas y leen los nuevos resultados para determinar si la herramienta aporta informaci&#243;n pertinente o incluye imprecisiones.</p>
         </div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>En grupo y con guía docente, debate sobre las implicancias de delegar el análisis de grandes volúmenes de datos (big data) a sistemas de IA, reflexionando sobre la importancia del juicio humano en estos procesos.</li></ul></div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Investiga —en un marco de trabajo colaborativo— cómo la IA y la Robótica transforman la sociedad, comparando estos cambios con hitos tecnológicos de la historia.</li></ul></div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Educación Artística | Artes Visuales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Indaga, con guía docente, en las herramientas de edición con IA para comprender cómo los modelos matemáticos transforman imágenes a partir de comandos textuales.</li></ul></div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Educación Artística | Música</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Con mediación docente, explora modelos generativos de audio para analizar la mecánica de traducción de datos en sonidos y debatir sobre el concepto de autoría.</li></ul></div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Investiga junto al docente el funcionamiento de tecnologías emergentes como la IA, para conversar sobre cómo estos desarrollos impactan en nuestra vida cotidiana y en la sociedad.</li><li><span class="dot"></span>En grupo, analiza el funcionamiento de la IA para identificar cómo se repiten estereotipos (de género, corporales o lingüísticos) y problematizar el entrenamiento de estos sistemas a partir de datos humanos.</li><li><span class="dot"></span>Con guía docente y de forma grupal, debate sobre los cambios en la sociedad frente al avance de la automatización y la IA, reflexionando sobre el rol central de las personas en las tareas que delegan a las máquinas.</li><li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span>Usa IA como asistente para resolver problemas de Programación.</li></ul></div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Artes visuales / Educaci&#243;n art&#237;stica</span></div>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">La edici&#243;n de fotograf&#237;as mediante inteligencia artificial (IA). Herramientas de edici&#243;n con inteligencia artificial: difuminaci&#243;n y eliminaci&#243;n de fondos, optimizaci&#243;n, colorizaci&#243;n o animaci&#243;n de objetos y figuras mediante comandos y prompts.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Lenguas adicionales (Franc&#233;s e Italiano)</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de sitios web y entornos digitales diversos a partir de estrategias para reconocer la autor&#237;a de los contenidos que circulan en internet, incluso aquellos producidos por inteligencia artificial.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Tecnolog&#237;as, Dise&#241;o y Programaci&#243;n</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Datos y an&#225;lisis de resultados en relaci&#243;n con un problema. Distintos tipos de informaci&#243;n (recursos que faciliten encontrar informaci&#243;n t&#233;cnica, por ejemplo, el testeo de c&#243;digo obtenido con grandes modelos de lenguaje basados en inteligencia artificial).</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Impacto del uso de la inteligencia artificial y la automatizaci&#243;n en la organizaci&#243;n del trabajo.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Estereotipos (corporales, de g&#233;nero y ling&#252;&#237;sticos, entre otros) en el funcionamiento de las inteligencias artificiales; problematizaci&#243;n del entrenamiento y el consumo acr&#237;tico.</p>
+          <p><a class="doc-link" href="#">C&#225;psula audiovisual - El espejo de los prejuicios</a></p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Reconocimiento de la proliferaci&#243;n de informaciones falsas a trav&#233;s de medios digitales y c&#243;mo inciden los sistemas de inteligencia artificial en esta problem&#225;tica.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de sitios web y entornos digitales a partir de estrategias para reconocer la autor&#237;a de los contenidos que circulan en internet, incluso aquellos producidos por inteligencia artificial.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Contenidos propios o de construcci&#243;n colaborativa creados a partir de aplicaciones que utilicen inteligencia artificial.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Empleo de herramientas de inteligencia artificial como asistentes para la resoluci&#243;n de problemas de programaci&#243;n.</p>
+        </div>
       </div>
     </div>
 
     <div class="card sub-panel" id="seg-g7">
       <div class="card-body">
-        
         <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-blu">Lengua</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Participa en el ensayo de consignas (prompts) bajo guía docente para observar cómo la IA procesa nuevos datos sobre un tema conocido, analizando la lógica de sus respuestas probabilísticas.</li>
-            <li><span class="dot"></span>Con guía docente, analiza las funciones de autocompletar o sugerencias de escritura para comprender cómo el sistema predice palabras basándose en patrones estadísticos y facilitar tareas de revisión.</li>
-            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> De forma grupal y con mediación docente, analiza críticamente los resultados de la IA para evaluar su pertinencia y detectar posibles "alucinaciones", comparando la información producida con fuentes verificadas y conocimientos previos.</li>
-          </ul>
-        </div>
-
-        <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-blu">Matemática</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>En grupo y con mediación docente, debate sobre las oportunidades y los desafíos de la gestión de grandes volúmenes de datos (big data) y la IA, reflexionando sobre cómo la probabilidad y la estadística influyen en las decisiones de estos sistemas.</li>
-          </ul>
-        </div>
-
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Indaga, con guía docente, las interacciones entre la investigación científica y la IA, reflexionando sobre cómo estas tecnologías modifican la construcción del conocimiento y las implicancias sociales de su uso.</li></ul></div>
-        
-        <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-blu">Ciencias Sociales</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Explora, con guía docente, herramientas de IA para enriquecer proyectos escolares, promoviendo el análisis reflexivo sobre la fiabilidad y validez de la información generada por el sistema.</li>
-          </ul>
-        </div>
-
-        <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-blu">Educación Artística | Artes Visuales</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>En grupo y con mediación docente, reflexiona sobre la interacción consciente en el ciberespacio y el lugar del cuerpo en las artes, analizando los derechos y responsabilidades éticas al utilizar IA en la creación estética.</li>
-            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Con guía docente y de forma colaborativa, analiza cómo la IA y otras tecnologías transformaron la producción y circulación del arte, debatiendo sobre la transparencia y el valor de la autoría humana original. (Artes Visuales) </li>
-            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> En grupo y con mediación docente, debate sobre la legislación actual y los derechos de autor en obras creadas con asistencia de IA, reconociendo la propiedad intelectual como un valor humano central.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Lengua</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Dise&#241;o de preguntas posibles y de consignas (prompts) para buscar nuevos datos sobre un tema ya conocido usando programas de inteligencia artificial generativa (chat de inteligencia artificial).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente propone una investigaci&#243;n sobre la biograf&#237;a de un autor literario ya trabajado en clase y presenta pautas fijas para estructurar consignas o prompts en un chat de inteligencia artificial de uso institucional. Los estudiantes dise&#241;an prompts precisospara solicitar datos in&#233;ditos del autor, prueban distintas formulaciones de preguntas y registran los resultados obtenidos. Luego, el grupo coteja la informaci&#243;n hallada con textos de la biblioteca f&#237;sica a fin de verificar su veracidad.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Aprovechamiento de las funcionalidades de los recursos digitales que incorporan inteligencia artificial con el fin de facilitar las tareas rutinarias del usuario, tales como autocompletar, sugerencias de escritura, respuestas autom&#225;ticas y otras</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente facilita la reescritura de un borrador narrativo propio mediante un procesador de texto que incluye herramientas autom&#225;ticas de autocompletado y sugerencias gramaticales. Los estudiantes redactan sus escritos, prueban las opciones de correcci&#243;n que ofrece el software y deciden de forma argumentada cu&#225;les sugerencias aceptar, transformar o descartar. Asimismo, comparan c&#243;mo influyen estas funciones mec&#225;nicas en el ritmo de la redacci&#243;n y en el vocabulario elegido</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Creaci&#243;n y socializaci&#243;n de contenidos digitales propios y de construcci&#243;n colaborativa, enriquecidos con diversos lenguajes y formatos, de manera pertinente y acorde al prop&#243;sito o fin dado, a trav&#233;s de diversas aplicaciones, incluso aquellas que utilicen la inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">Los estudiantes pedir&#225;n a la IA tres textos con distintas perspectivas sobre un tema para detectar sesgos y omisiones. Luego, escribir&#225;n un art&#237;culo de opini&#243;n propio que integre estas miradas y transparente las fuentes utilizadas.</p>
+          <p><a class="doc-link" href="#">Secuencia 7&#176;grado- Lengua</a></p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Lectura de los resultados que ofrece la inteligencia artificial generativa a partir de preguntas realizadas (prompts) y de la evaluaci&#243;n de la pertinencia y especificidad de la informaci&#243;n producida por el programa</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta una respuesta obtenida a trav&#233;s de un chat de inteligencia artificial sobre la estructura de un texto expositivo de an&#225;lisis. Los estudiantes leen de forma individual el texto producido por la herramienta digital, subrayan imprecisiones y contrastan los datos con manuales escolares de la disciplina. Posteriormente, identifican alucinaciones o conceptos gen&#233;ricos del programa para elaborar un informe de lectura reflexivo. La meta consiste en fortalecer la capacidad de evaluar la pertinencia, especificidad y confiabilidad de los contenidos generados por la tecnolog&#237;a.</p>
         </div>
         <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-blu">Educación Artística | Música</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-             <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Indaga colectivamente las posibilidades de los modelos generativos de audio, analizando cómo estos sistemas procesan grandes volúmenes de datos para generar sonidos.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Matem&#225;tica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales tanto en los entornos locales como en los globales (gesti&#243;n de grandes vol&#250;menes de datos —big data—, inteligencia artificial, rob&#243;tica, entre otros)</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta un caso real de predicci&#243;n algor&#237;tmica (predicci&#243;n del tiempo, algoritmos de recomendaci&#243;n o score crediticio). Los estudiantes analizan: &#191;con qu&#233; datos fue entrenada esa IA? &#191;Qu&#233; predice? &#191;Puede equivocarse? Calculan probabilidades simples con el mismo tipo de datos y las comparan con la predicci&#243;n de la IA. Finalmente, participan de una puesta en com&#250;n en la que presentan sus conclusiones, justifican sus respuestas a partir de los datos analizados y debaten sobre los riesgos y l&#237;mites de las predicciones algor&#237;tmicas.</p>
+          <p><a class="doc-link" href="#">Secuencia 7&#176; grado - Matem&#225;tica</a></p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">[en relaci&#243;n a probabilidad] Gesti&#243;n de grandes vol&#250;menes de datos (big data), inteligencia artificial.</p>
         </div>
         <div class="campo">
-          <div class="campo-h">
-            <span class="badge badge-tea">Educación Alimentaria</span>
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
-          </div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Con mediación docente, explora cómo la IA puede sugerir alternativas de menús saludables, analizando colectivamente la pertinencia de estas opciones para atender diferentes necesidades nutricionales.</li>
-          </ul>
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales tanto en los entornos locales como en los globales (gesti&#243;n de grandes vol&#250;menes de datos —big data—, inteligencia artificial, rob&#243;tica, internet de las cosas, realidad virtual, realidad mixta y aumentada, metaverso, micro y nanotecnolog&#237;a, ciberseguridad, y otros desarrollos emergentes), en comparaci&#243;n con otros avances tecnol&#243;gicos dados en los per&#237;odos hist&#243;ricos estudiados.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales tanto en los entornos locales como en los globales (inteligencia artificial, rob&#243;tica, realidad virtual, realidad mixta y aumentada, metaverso y otros desarrollos emergentes).</p>
         </div>
-
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-          <ul class="dot-list">
-            <li><span class="dot"></span>Indaga en la resolución de problemas de diseño en entornos de Industria 4.0 y Robótica, utilizando la IA como una herramienta de apoyo para iterar soluciones bajo guía docente.</li>
-            <li><span class="dot"></span>En grupo y con guía docente, analiza dilemas éticos en el uso de IA e identifica cómo el entrenamiento automático puede reproducir sesgos, promoviendo un diseño inclusivo y responsable.</li>
-            <li><span class="dot"></span><span class="star" aria-label="Profundización/Ampliación"></span> Bajo guía docente, ensaya el uso de IA generativa como asistente para la producción de código, evaluando críticamente la lógica del software sugerido y detectando posibles errores o alucinaciones.</li>
-          </ul></div>
-        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Conoce el funcionamiento básico de motores de búsqueda y sistemas de IA conversacionales. Con guía docente, evalúa resultados según cómo se formula la búsqueda.</li></ul></div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Artes visuales / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Canales y dispositivos de informaci&#243;n cultural: cat&#225;logos, infograf&#237;as, etc&#233;tera, en bibliotecas y sitios web. Cambios que introdujo internet, la inteligencia artificial, la realidad virtual y la realidad aumentada respecto de la producci&#243;n y circulaci&#243;n de informaci&#243;n art&#237;stica-cultural y producci&#243;n visual.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Derechos de autor y la legislaci&#243;n de la inteligencia artificial en la creaci&#243;n art&#237;stica.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">M&#250;sica / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Producci&#243;n musical mediante el uso de IA. Exploraci&#243;n de las posibilidades que brindan los modelos generativos de audio con inteligencia artificial.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Teatro / Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales tanto en los entornos locales como en los globales (inteligencia artificial, realidad virtual, realidad mixta y aumentada, metaverso, ciberseguridad, y otros desarrollos emergentes) con relaci&#243;n a consumos culturales digitales y las experiencias esc&#233;nicas.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Lenguas adicionales (Franc&#233;s e Italiano)</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Funcionamiento b&#225;sico de motores de b&#250;squeda y sistemas de inteligencia artificial conversacionales y evaluaci&#243;n del tipo de resultado cuando se realiza una b&#250;squeda de una manera u otra.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Tecnolog&#237;as, Dise&#241;o y Programaci&#243;n</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Campos de la rob&#243;tica: la rob&#243;tica m&#233;dica, la inteligencia artificial aplicada a la rob&#243;tica y la rob&#243;tica espacial.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Procesos industriales: del sistema m&#225;quina-producto a sistemas industriales con nuevas tecnolog&#237;as interconectadas en las operaciones (industria 4.0, interconectividad, automatizaci&#243;n, datos en tiempo real, uso de inteligencia artificial).</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Proyectos de inteligencia artificial avanzados que requieren aprendizaje autom&#225;tico y redes neuronales, como el desarrollo de sistemas de reconocimiento facial o la creaci&#243;n de chatbots avanzados.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Cuestiones &#233;ticas relacionadas con la inteligencia artificial y la tecnolog&#237;a, como el sesgo algor&#237;tmico y la privacidad de los datos.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Problemas &#233;ticos en el desarrollo y uso de sistemas de aprendizaje autom&#225;ticos basados en inteligencia artificial aplicados a procesos productivos de la industria (referido al dise&#241;o inclusivo y al entrenamiento libre de sesgos, por ejemplo, de g&#233;nero).</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Reconocimiento de la proliferaci&#243;n de informaciones falsas a trav&#233;s de medios digitales y c&#243;mo inciden los sistemas de inteligencia artificial en esta problem&#225;tica.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales, tanto en los entornos locales como en los globales, por ejemplo, gesti&#243;n de grandes vol&#250;menes de datos —big data—, inteligencia artificial, rob&#243;tica, internet de las cosas, realidad virtual, realidad mixta y aumentada, metaverso, micro- y nanotecnolog&#237;a, ciberseguridad y otros desarrollos emergentes.</p>
+          <h3 class="pc-content-heading pc-depth-heading"><span class="star" aria-label="Profundización/Ampliación"></span> Contenido de profundización</h3>
+          <p class="doc-desc">Habilidades necesarias para el uso efectivo de inteligencia artificial generativa.</p>
+        </div>
       </div>
     </div>
 
     <div class="card sub-panel" id="seg-g67">
       <div class="card-body">
-        <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (6.° y 7.°)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Indaga el funcionamiento de los sistemas de IA conversacionales bajo guía docente, para analizar cómo la lógica de la herramienta condiciona el tipo de resultado obtenido según la manera en que se formula la búsqueda.</li><li><span class="dot"></span>Conoce las funcionalidades de IA en recursos digitales: autocompletar, sugerencias de escritura, respuestas automáticas.</li><li><span class="dot"></span>Reconoce la proliferación de desinformación en entornos digitales, identificando —con mediación docente— cómo los sistemas de IA pueden potenciar este fenómeno al priorizar patrones sobre la verdad.</li><li><span class="dot"></span>Con ayuda docente, indaga y aplica estrategias guiadas para reconocer la autoría de los contenidos en Internet, analizando la importancia de distinguir entre producciones humanas y aquellas asistidas por procesos de IA.</li><li><span class="dot"></span>Participa en la producción colaborativa de contenidos utilizando la IA como un insumo para la experimentación, debatiendo junto al docente sobre el valor de la autoría humana y la transparencia en el uso de estas herramientas.</li><li><span class="dot"></span>Con mediación y guía docente, reflexiona sobre las oportunidades y los desafíos de las tecnologías emergentes (big data, IA, ciberseguridad), conversando sobre su impacto en la ciudadanía y comparándolas con otros hitos tecnológicos de la historia.</li></ul></div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Educaci&#243;n Digital</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Funcionamiento b&#225;sico de motores de b&#250;squeda y sistemas de inteligencia artificial conversacionales para evaluar el tipo de resultado cuando se realiza una b&#250;squeda de una manera u otra.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta una consigna de investigaci&#243;n y gu&#237;a a los estudiantes en una comparaci&#243;n en paralelo entre un buscador tradicional y un asistente de IA desde la cuenta institucional (bue). Los alumnos realizan consultas con diferentes grados de precisi&#243;n en sus preguntas (prompts) y registran los resultados obtenidos en cada plataforma. Se espera que identifiquen que el buscador recupera enlaces web por coincidencia de palabras clave, mientras que la IA genera textos sint&#233;ticos mediante c&#225;lculos de probabilidad.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Funcionalidades de recursos digitales que incorporan inteligencia artificial con el fin de facilitar las tareas rutinarias de los usuarios (autocompletar, sugerencias de escritura y respuestas autom&#225;ticas, entre otras).</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente propone la redacci&#243;n individual de una carta formal mediante un procesador de texto con herramientas de asistencia de escritura activadas. Los estudiantes observan las sugerencias de autocompletado y deciden si aceptan o rechazan las opciones seg&#250;n la intenci&#243;n del mensaje. Asimismo, los alumnos analizan colectivamente en qu&#233; casos estas automatizaciones agilizan la tarea y cu&#225;ndo pueden alterar el sentido original de sus ideas.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Reconocimiento de la proliferaci&#243;n de informaciones falsas a trav&#233;s de medios digitales y c&#243;mo inciden los sistemas de inteligencia artificial en esta problem&#225;tica.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente presenta un paquete de recursos sobre un hecho hist&#243;rico que incluye art&#237;culos e im&#225;genes reales junto con producciones sint&#233;ticas generadas por IA. Los estudiantes analizan los materiales en entornos protegidos, contrastan los datos con fuentes primarias confiables y detectan posibles alucinaciones o inconsistencias de la m&#225;quina. A partir de este an&#225;lisis, los alumnos identifican c&#243;mo la automatizaci&#243;n incrementa la difusi&#243;n de desinformaci&#243;n y construyen un listado de criterios de verificaci&#243;n.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Acceso e indagaci&#243;n de sitios web y entornos digitales a partir de estrategias para reconocer la autor&#237;a de los contenidos que circulan en internet, incluso aquellos producidos por inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente comparte un conjunto de recursos digitales diversos y orienta una auditor&#237;a para rastrear las marcas de autor&#237;a en cada uno. Los estudiantes exploran los sitios web, verifican las credenciales de los creadores y aplican estrategias para identificar patrones caracter&#237;sticos de la IA generativa o marcas de agua.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Contenidos propios o de construcci&#243;n colaborativa creados a partir de aplicaciones que utilicen la inteligencia artificial.</p>
+          <h4 class="pc-application-heading">Aplicación en el aula</h4>
+          <p class="doc-desc">El docente coordina un proyecto para la revista escolar digital en el que gu&#237;a a los estudiantes en la redacci&#243;n propia de una entrada tem&#225;tica. Cada alumno redacta de manera independiente su propio borrador a partir de investigaciones previas. Luego, mediante cuentas institucionales, los estudiantes consultan a la IA generativa para solicitar sugerencias de correcci&#243;n o contrastar datos espec&#237;ficos en sus textos con gu&#237;a docente. Cada estudiante eval&#250;a las respuestas del sistema, decide con criterio propio qu&#233; aportes incorporar y declara con transparencia el uso de la herramienta.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Oportunidades y desaf&#237;os vinculados a las tecnolog&#237;as digitales, tanto en los entornos locales como en los globales, por ejemplo, gesti&#243;n de grandes vol&#250;menes de datos —big data—, inteligencia artificial, rob&#243;tica, internet de las cosas, realidad virtual, realidad mixta y aumentada, metaverso, micro- y nanotecnolog&#237;a, ciberseguridad y otros desarrollos emergentes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sub-panel" id="seg-gtodos">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Naturales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Los contenidos relacionados con los modelos cient&#237;ficos escolares incluyen la reflexi&#243;n sobre c&#243;mo se construyen y modifican en el tiempo los conocimientos cient&#237;ficos, y sus implicancias sociales. De esta manera, en los contenidos propuestos de los distintos campos de conocimiento se incorporan algunos relacionados con la historia de la ciencia, otros que ponen en di&#225;logo la ciencia, la tecnolog&#237;a y la sociedad y otros relativos a la ciencia ciudadana. As&#237; como tambi&#233;n, algunos contenidos vinculados con el desarrollo cient&#237;fico en el pa&#237;s y las interacciones entre el campo cient&#237;fico y la inteligencia artificial.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Ciencias Sociales</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">La b&#250;squeda de informaci&#243;n a trav&#233;s de medios digitales es otra forma de experimentar la b&#250;squeda y selecci&#243;n, as&#237; como la utilizaci&#243;n de herramientas de inteligencia artificial como soporte para diferentes actividades innovadoras, alentando el pensamiento reflexivo y cr&#237;tico sobre la fiabilidad y validez de los contenidos, y la capacidad de compromiso y colaboraci&#243;n en lo que respecta a su uso en las instancias de participaci&#243;n escolar.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Educaci&#243;n Art&#237;stica</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">En una etapa en la que los estudiantes suelen redescubrir el mundo a trav&#233;s de los discursos y experiencias est&#233;ticas presentes en las redes sociales y las industrias del entretenimiento infantil y juvenil, Educaci&#243;n Art&#237;stica debe proporcionar herramientas para que puedan analizar y contextualizar esta informaci&#243;n, desarrollando as&#237; su capacidad de pensamiento cr&#237;tico y su apreciaci&#243;n est&#233;tica m&#225;s all&#225; de los ideales de belleza predominantes. En este sentido, Educaci&#243;n Art&#237;stica asume la responsabilidad de favorecer una interacci&#243;n consciente de las posibilidades y responsabilidades que requieren el ciberespacio, los medios de comunicaci&#243;n y la inteligencia artificial en sus funciones comunicativas-est&#233;ticas.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Explorar el ciberespacio, reflexionar sobre el lugar del cuerpo en las artes perform&#225;ticas y abordar los derechos y responsabilidades que implica el arte p&#250;blico o producido con inteligencia artificial conlleva un abordaje que incluye y trasciende las herramientas conceptuales y procedimentales art&#237;sticas.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Tecnolog&#237;as, Dise&#241;o y Programaci&#243;n</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Integrar la inteligencia artificial como asistente para el dise&#241;o de prototipos y como herramienta que permite iterar y aproximar soluciones a los objetivos propuestos. Esto requiere, adem&#225;s, el desarrollo de la l&#243;gica conversacional propia de estas plataformas.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Dise&#241;o y resoluci&#243;n de problemas en rob&#243;tica. Incluye la resoluci&#243;n de problemas pr&#225;cticos utilizando simuladores, robots y herramientas de inteligencia artificial, y el dise&#241;o de dispositivos con microcontroladores, usando componentes electr&#243;nicos y actuadores mec&#225;nicos.</p>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">Reflexi&#243;n sobre los procesos tecnol&#243;gicos, computacionales y el uso de la IA. Es un eje transversal en el que se trabaja en el an&#225;lisis y la comprensi&#243;n de los prop&#243;sitos vinculados a los procesos de dise&#241;o de los dispositivos y entornos digitales, y en c&#243;mo se encuentran involucrados los usuarios. Tambi&#233;n se busca analizar y comprender los efectos de la informaci&#243;n digital y la inteligencia artificial como parte constitutiva de los entornos virtuales.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="badge badge-blu">Educaci&#243;n Alimentaria</span></div>
+          <h3 class="pc-content-heading">Contenido</h3>
+          <p class="doc-desc">La inteligencia artificial (IA) puede colaborar al ofrecer alternativas de men&#250;s o comidas que atiendan las diferentes necesidades.</p>
+        </div>
       </div>
     </div>
 
@@ -1263,12 +1444,11 @@ color: var(--azul-oscuro);
       <span class="star note-star" aria-label="Profundización/Ampliación"></span> <strong>Nota:</strong> Los contenidos marcados con un rombo corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
     </div>
 
-    <div class="warn-box">
+    <div class="warn-box" style="margin-top:16px">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <p>En Segundo Ciclo la autonomía crece gradualmente. El docente mantiene su rol de mediador pedagógico en todo momento. En 6.° y 7.° se habilita mayor autonomía estudiantil siempre dentro del entorno institucional seguro.</p>
+      <p>Toda actividad en Segundo Ciclo requiere mediación docente. El foco está puesto en experimentar, cuestionar la información y sostener la autoría humana.</p>
     </div>
   </div>
-
   <div class="panel" id="panel-etico">
     <p class="etico-intro">La alfabetización en IA se propone como un catalizador de las <b>transversales definidas en el Diseño Curricular</b>, entendidas como potencialidades humanas que se ponen de manifiesto en un saber hacer en relación con un saber y, a un saber ser y estar (Ministerio de Educación GCABA, 2024). La trayectoria de estas capacidades respeta la progresión del aprendizaje en el Nivel Primario:
     </p>
@@ -1393,16 +1573,6 @@ color: var(--azul-oscuro);
         </div>
             <div class="campo">
               <div class="campo-h"><a class="doc-link" href="https://www.youtube.com/watch?v=P-K-BTSSFi0" target="_blank" rel="noopener">Presentación del Anexo de Inteligencia Artificial para Nivel Primario y Nivel Secundario</a></div>
-            <div class="contenedor-video">
-                <iframe 
-                    src="https://www.youtube.com/embed/P-K-BTSSFi0"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
-            </div>
       </div>
     </div>
   </div>
@@ -1430,8 +1600,6 @@ color: var(--azul-oscuro);
   </div>
 
   <div class="panel" id="panel-secuencias">
-    <p class="rubrica-intro"></p>
-
     <div class="sub-nav no-print">
       <button class="sub-btn-seq active-seq-pc" onclick="showSecuencia('pc',this)">Primer Ciclo</button>
       <button class="sub-btn-seq" onclick="showSecuencia('sc',this)">Segundo Ciclo</button>
@@ -1522,12 +1690,58 @@ color: var(--azul-oscuro);
 </main>
 
 <script>
+// Ajustes editoriales incorporados en la versión actualizada.
+(() => {
+  const technologyField = Array.from(document.querySelectorAll('#pc-g3 .campo'))
+    .find(field => field.querySelector('.campo-h')?.textContent.includes('Tecnolog'));
+  if (technologyField) {
+    const application = technologyField.querySelector('.pc-application-heading');
+    if (application && !technologyField.querySelector('.pc-resource-heading')) {
+      const resource = document.createElement('h4');
+      resource.className = 'pc-application-heading pc-resource-heading';
+      resource.innerHTML = '<a class="doc-link" href="https://youtu.be/GnUX9PJdZZE?si=m4e79AYXeAiCmZQs" target="_blank" rel="noopener">Cápsula audiovisual: Imágenes falsas y contenido generado con IA</a>';
+      application.before(resource);
+    }
+  }
+
+  // La cápsula de 3.º se muestra después de la aplicación en el aula.
+  if (technologyField) {
+    const application = technologyField.querySelector('.pc-application-heading');
+    const resource = technologyField.querySelector('.pc-resource-heading');
+    if (application && resource) application.after(resource);
+  }
+
+  // El registro audiovisual conserva el mismo formato descriptivo que los demás documentos.
+  const presentationLink = document.querySelector('a[href="https://www.youtube.com/watch?v=P-K-BTSSFi0"]');
+  if (presentationLink) {
+    const presentationField = presentationLink.closest('.campo');
+    if (presentationField && !presentationField.querySelector('.doc-desc')) {
+      const description = document.createElement('p');
+      description.className = 'doc-desc';
+      description.textContent = 'Registro audiovisual de la presentación del Anexo curricular de Inteligencia Artificial para Nivel Primario y Nivel Secundario, a cargo de Victoria Ezcurra, Gerenta Operativa de Educación Digital.';
+      presentationLink.closest('.campo-h').after(description);
+    }
+  }
+
+  // Los subtítulos de Materiales para el aula adoptan el identificador gráfico de las materias.
+  document.querySelectorAll('#panel-secuencias .campo-h').forEach(heading => {
+    if ((heading.textContent.includes('audiovisuales') || heading.textContent.includes('Secuencias')) && !heading.querySelector('.badge')) {
+      heading.innerHTML = '<span class="badge badge-blu">' + heading.textContent.trim() + '</span>';
+    }
+  });
+
+  const anexoList = document.querySelector('#panel-anexo .dot-list');
+  if (anexoList) {
+    anexoList.innerHTML = '<li><span class="dot"></span><a class="doc-link" href="https://drive.google.com/file/d/1ixy8k4jpMvyWZjeSx9qO2jg9YTEBzy8I/view?usp=sharing" target="_blank" rel="noopener">Accedé a una síntesis en versión podcast del Anexo curricular de Inteligencia Artificial y Protección Digital</a></li><li><span class="dot"></span><a class="doc-link" href="#" data-pending-link="true">Accedé al PDF del Anexo curricular de Inteligencia Artificial y Protección Digital</a></li>';
+  }
+})();
+
 // ── TAB NAVIGATION ──────────────────────────────────────────
 function normalizeMainPanels() {
   const main = document.querySelector('main');
   if (!main) return;
 
-  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica', 'panel-docs', 'panel-secuencias', 'panel-anexo'].forEach(id => {
+  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-pdi', 'panel-rubrica', 'panel-docs', 'panel-secuencias', 'panel-anexo'].forEach(id => {
     const panel = document.getElementById(id);
     if (panel && panel.parentElement !== main) main.appendChild(panel);
   });
@@ -1536,7 +1750,7 @@ function normalizeSecondCyclePanels() {
   const panel = document.getElementById('panel-segundo');
   if (!panel) return;
 
-  const cards = ['seg-g4', 'seg-g5', 'seg-g45', 'seg-g6', 'seg-g7', 'seg-g67']
+  const cards = ['seg-g4', 'seg-g5', 'seg-g45', 'seg-g6', 'seg-g7', 'seg-g67', 'seg-gtodos']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
@@ -1607,31 +1821,6 @@ const ENTRIES = [
   {tab:'primer',grade:'g3',subject:'Teatro / Educación Artística',gradeLabel:'3.° grado',keywords:'recursos digitales ia inteligencia artificial experimentación reflexión crítica teatro artística'},
   {tab:'primer',grade:'g3',subject:'Tecnologías, Diseño y Programación',gradeLabel:'3.° grado',keywords:'máquinas sistemas robots aprendizaje automático ia inteligencia artificial posibilidades riesgos características básicas cotidiana oportunidades desafíos entornos virtuales redes'},
   {tab:'primer',grade:'gtodos',subject:'Educación Digital',gradeLabel:'Todos los grados',keywords:'navegar entornos digitales ia inteligencia artificial experimentación reflexión información recursos digitales'},
-  {tab:'segundo',grade:'g4',subject:'Ciencias Naturales',gradeLabel:'4.° grado',keywords:'materiales implantes prótesis tecnológicas ia calidad de vida'},
-  {tab:'segundo',grade:'g4',subject:'Ciencias Sociales',gradeLabel:'4.° grado',keywords:'accede indaga información digital herramientas sistemas ia'},
-  {tab:'segundo',grade:'g4',subject:'Educación Artística',gradeLabel:'4.° grado',keywords:'creación resignificación imágenes ia prompts avatares artes visuales autores compositores música'},
-  {tab:'segundo',grade:'g4',subject:'Tecnologías, Diseño y Programación',gradeLabel:'4.° grado',keywords:'comprende ia aplicaciones cotidianas buscadores algoritmos recomendación asistentes virtuales aprendizaje automático riesgos contenido falso derechos autor'},
-  {tab:'segundo',grade:'g5',subject:'Lengua',gradeLabel:'5.° grado',keywords:'motores búsqueda chats ia prompts información ia generativa pertinencia especificidad'},
-  {tab:'segundo',grade:'g5',subject:'Matemática',gradeLabel:'5.° grado',keywords:'fuentes estadística producida ia procedencia confiabilidad'},
-  {tab:'segundo',grade:'g5',subject:'Ciencias Naturales / Sociales',gradeLabel:'5.° grado',keywords:'fuentes ia astros luna indagación digital herramientas ia'},
-  {tab:'segundo',grade:'g5',subject:'Ed. Artística / Ed. Física / Lenguas adicionales',gradeLabel:'5.° grado',keywords:'divulgación artístico-cultural ia música espectáculos deportivas análisis lenguas adicionales'},
-  {tab:'segundo',grade:'g5',subject:'Tecnologías, Diseño y Programación',gradeLabel:'5.° grado',keywords:'procesos humana ia sesgo algorítmico privacidad datos contenido falso ética'},
-  {tab:'segundo',grade:'g45',subject:'Educación Digital',gradeLabel:'4.° y 5.° (ED)',keywords:'investigar entornos digitales ia búsqueda selección validación fuentes gestionar información ia generación contenidos prácticas emergentes cultura digital riesgos contenidos falsos'},
-  {tab:'segundo',grade:'g6',subject:'Lengua',gradeLabel:'6.° grado',keywords:'prompts datos ia generativa chat autocompletar sugerencias escritura respuestas automáticas contenidos digitales colaborativos'},
-  {tab:'segundo',grade:'g6',subject:'Matemática',gradeLabel:'6.° grado',keywords:'big data ia robótica probabilidad estadística oportunidades desafíos'},
-  {tab:'segundo',grade:'g6',subject:'Ciencias Sociales',gradeLabel:'6.° grado',keywords:'ia robótica realidad virtual avances tecnológicos históricos'},
-  {tab:'segundo',grade:'g6',subject:'Educación Artística',gradeLabel:'6.° grado',keywords:'edición fotográfica ia difuminado fondos colorización animación prompts artes visuales producción musical modelos generativos derechos autor'},
-  {tab:'segundo',grade:'g6',subject:'Tecnologías, Diseño y Programación',gradeLabel:'6.° grado',keywords:'tecnologías emergentes ia realidad virtual impresión 3d estereotipos corporales género lingüísticos trabajo automatización programación'},
-  {tab:'segundo',grade:'g7',subject:'Ciencias Naturales',gradeLabel:'7.° grado',keywords:'interacciones campo científico ia construcción conocimiento'},
-  {tab:'segundo',grade:'g7',subject:'Tecnologías, Diseño y Programación',gradeLabel:'7.° grado',keywords:'diseño plataformas ia industria 4.0 robótica problemas éticos sesgos redes neuronales reconocimiento facial chatbots ia generativa código diseño inclusivo género'},
-  {tab:'segundo',grade:'g7',subject:'Lenguas adicionales',gradeLabel:'7.° grado',keywords:'motores búsqueda ia conversacionales evaluación resultados lenguas adicionales'},
-  {tab:'segundo',grade:'g67',subject:'Educación Digital',gradeLabel:'6.° y 7.° (ED)',keywords:'ia conversacionales búsqueda autocompletar sugerencias escritura información falsa autoría contenidos big data robótica iot metaverso ciberseguridad ciudadanía digital'},
-  {tab:'etico',grade:null,subject:'La IA es una herramienta, no una persona',gradeLabel:'1.° a 7.°',keywords:'herramienta persona máquina piensa siente procesa datos diferenciar'},
-  {tab:'etico',grade:null,subject:'Mis datos son míos',gradeLabel:'1.° a 7.°',keywords:'datos nombre foto dirección contraseñas cuentas institucionales privacidad ley 25326'},
-  {tab:'etico',grade:null,subject:'La IA puede equivocarse',gradeLabel:'1.° a 7.°',keywords:'ia error alucinaciones verdad verificar fuentes confiabilidad'},
-  {tab:'etico',grade:null,subject:'La IA aprende de lo que las personas escriben',gradeLabel:'4.° a 7.°',keywords:'sesgo estereotipos género idioma cultura entrenamiento ia aprende textos'},
-  {tab:'etico',grade:null,subject:'Aclarar cuándo usé IA',gradeLabel:'4.° a 7.°',keywords:'autoría declarar uso ia trabajo partes asistidas derechos autor'},
-  {tab:'etico',grade:null,subject:'La IA tiene impacto en la sociedad',gradeLabel:'6.° y 7.°',keywords:'impacto laboral ambiental deepfakes big data acceso desigual trabajo privacidad ia sociedad'},
   {tab:'pdi',grade:null,subject:'Protección Digital Infantil y Adolescente',gradeLabel:'1.° a 7.°',keywords:'protección digital infantil adolescente privacidad datos seguridad bienestar derechos entornos digitales'},
   {tab:'pdi',grade:null,subject:'Resguardo de la privacidad',gradeLabel:'1.° a 7.°',keywords:'mis datos son míos privacidad nombres fotos secretos ia no olvida'},
   {tab:'pdi',grade:null,subject:'Trucos, engaños y violencia digital',gradeLabel:'4.° a 7.°',keywords:'engaños manipulación deepfakes contenidos violentos hostigar excluir violencia digital'},
@@ -1650,8 +1839,8 @@ const ENTRIES = [
   {tab:'rubrica',grade:'r2',subject:'Desarrollo de las 4C',gradeLabel:'Segundo Ciclo',keywords:'4c pensamiento crítico creatividad sesgos producir reflexivamente debates éticos impacto ia'},
 ];
 
-const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Materiales para el aula',anexo:'Anexo IA',mapa:'Mapa'};
-const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-cor',docs:'badge-blu',secuencias:'badge-amb',anexo:'badge-cor',mapa:'badge-blu'};
+const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Materiales para el aula',anexo:'Anexo IA',mapa:'Mapa'};
+const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',pdi:'badge-blu',rubrica:'badge-cor',docs:'badge-blu',secuencias:'badge-amb',anexo:'badge-cor',mapa:'badge-blu'};
 
 function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 function hl(text, q){
