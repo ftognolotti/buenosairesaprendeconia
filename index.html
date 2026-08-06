@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buenos Aires Aprende con IA</title>
+  <title>Anexo Curricular de Inteligencia Artificial</title>
   <meta name="description" content="Anexos Curriculares de Inteligencia Artificial para los Niveles Primario y Secundario del Ministerio de Educación de la Ciudad Autónoma de Buenos Aires." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,16 @@
       padding: 15px 60px;
       color: var(--blanco);
       background: var(--gris-oscuro);
+      border: 2px solid var(--gris-oscuro);
       border-radius: 8px;
       font-size: 1rem;
       font-weight: 800;
       line-height: 1.2;
       text-decoration: none;
+      cursor: not-allowed;
+      font-family: inherit;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
     :root {
@@ -58,6 +63,15 @@
       flex-shrink: 0; /* Evita que se deforme o achique */
     }
 
+    .footer-iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      display: block;
+      overflow: hidden;
+      flex-shrink: 0; /* Evita que se deforme o achique */
+    }
+
     /* 1. CONFIGURACIÓN DEL CONTENEDOR PADRE FLEX */
     body {
       margin: 0;
@@ -74,8 +88,8 @@
     main {
       flex: 1;                /* Absorbe el espacio libre restando el alto del iframe */
       display: flex;
-      align-items: center;     /* Centra la landing de forma horizontal */
-      justify-content: center; /* Centra la landing de forma vertical */
+      align-items: center;     /* Centra la landing de forma vertical */
+      justify-content: center; /* Centra la landing de forma horizontal */
       padding: 20px;          /* Espacio mínimo a los costados para que no toque los bordes */
     }
 
@@ -278,8 +292,7 @@
   </style>
 </head>
 <body>
-  <iframe src="header.html" class="header-iframe" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
-  <div class="barra-superior"></div>
+  <iframe src="header.html" class="header-iframe" title="Encabezado institucional"></iframe>
 
   <main>
     <section class="landing" aria-labelledby="titulo">
@@ -305,12 +318,12 @@
       </div>
 
       <div class="acciones" aria-label="Accesos a anexos curriculares">
-        <a class="boton-proximamente">Próximamente</a>
+        <button type="button" class="boton-proximamente" disabled aria-disabled="true">Próximamente</button>
       </div>
     </section>
   </main>
 
-  <iframe src="footer.html" style="width: 100%; border: none; display: block; overflow: hidden;" scrolling="no"></iframe>
+  <iframe src="footer.html" class="footer-iframe" title="Pie de página institucional"></iframe>
 
 </body>
 </html>
