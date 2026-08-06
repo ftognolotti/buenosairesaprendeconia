@@ -510,8 +510,7 @@ color: var(--azul-oscuro);
   #panel-secuencias .doc-desc { line-height:1.55; margin:0 0 12px; }
   #panel-secuencias ul.doc-desc { padding-left:20px; margin-top:0; margin-bottom:16px; }
   #panel-secuencias .campo-h .badge { margin:0; }
-  #panel-primer .pc-content-heading, #panel-segundo .pc-content-heading { font-size:16px; font-weight:600; color:var(--azul-oscuro); margin:16px 0 5px; line-height:1.3; }
-  #panel-primer .pc-content-heading:first-of-type, #panel-segundo .pc-content-heading:first-of-type { margin-top:0; }
+  #panel-primer .pc-content-heading, #panel-segundo .pc-content-heading { font-size:16px; font-weight:600; color:var(--azul-oscuro); margin:20px 0 5px; line-height:1.3; }
   #panel-primer .pc-application-heading, #panel-segundo .pc-application-heading { font-size:12px; font-weight:600; color:#035C80; letter-spacing:.04em; text-transform:uppercase; margin:12px 0 3px; padding-left:10px; border-left:2px solid var(--fucsia); }
   #panel-segundo p:has(> .doc-link) { font-size:12px; font-weight:600; color:#035C80; letter-spacing:.04em; text-transform:uppercase; line-height:1.3; margin:12px 0 3px; padding-left:10px; border-left:2px solid var(--fucsia); }
   #panel-segundo p:has(> .doc-link) .doc-link { color:inherit; font:inherit; letter-spacing:inherit; text-transform:inherit; text-decoration:none; }
@@ -1705,15 +1704,10 @@ color: var(--azul-oscuro);
       const resource = document.createElement('h4');
       resource.className = 'pc-application-heading pc-resource-heading';
       resource.innerHTML = '<a class="doc-link" href="https://youtu.be/GnUX9PJdZZE?si=m4e79AYXeAiCmZQs" target="_blank" rel="noopener">Cápsula audiovisual: Imágenes falsas y contenido generado con IA</a>';
-      application.before(resource);
+      const applicationDescription = application.nextElementSibling;
+      if (applicationDescription) applicationDescription.after(resource);
+      else application.after(resource);
     }
-  }
-
-  // La cápsula de 3.º se muestra después de la aplicación en el aula.
-  if (technologyField) {
-    const application = technologyField.querySelector('.pc-application-heading');
-    const resource = technologyField.querySelector('.pc-resource-heading');
-    if (application && resource) application.after(resource);
   }
 
   // El registro audiovisual conserva el mismo formato descriptivo que los demás documentos.
